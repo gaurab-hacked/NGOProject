@@ -11,9 +11,9 @@ import {
   Checkbox,
   Input,
 } from "@nextui-org/react";
-import { EyeSlashFilledIcon } from "@/app/(front)/(pages)/login/EyeSlashFilledIcon.jsx";
-import { EyeFilledIcon } from "@/app/(front)/(pages)/login/EyeFilledIcon.jsx";
-import { MailIcon } from "@/app/(front)/(pages)/login/MailIcon";
+import { EyeSlashFilledIcon } from "./icons/EyeSlashFilledIcon.jsx";
+import { EyeFilledIcon } from "./icons/EyeFilledIcon.jsx";
+import { MailIcon } from "./icons/MailIcon.jsx";
 import { useDispatch } from "react-redux";
 import { loginUser } from "@/redux/slices/authSlice";
 import { Toaster, toast } from "sonner";
