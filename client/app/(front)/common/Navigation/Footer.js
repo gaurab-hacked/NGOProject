@@ -19,8 +19,8 @@ const Footer = () => {
   const date = new Date();
 
   return !isDashboard ? (
-    <footer>
-      <div className={` mt-5 pt-3 bg-blue-50`}>
+    <footer className="shadow">
+      <div className={`mt-0 pt-3 bg-blue-50`}>
         <div className="container mx-auto px-5 pt-5 mb-2">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className={`col-span-4 lg:col-span-4 mb-2 pr-3 lg:pr-5`}>
@@ -47,7 +47,7 @@ const Footer = () => {
               <div className="lg:grid lg:grid-cols-3">
                 <div className="mb-5">
                   <h5 className="text-slate-900 font-semibold text-uppercase mb-1">
-                    Quick Shop
+                    Explore
                   </h5>
                   <div className="flex flex-col">
                     <Link
@@ -55,63 +55,49 @@ const Footer = () => {
                       className={`flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Home
+                      Our Initiatives
                     </Link>
                     <Link
                       href="#"
                       className={`flex  w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs  mr-1" />
-                      Our Shop
+                      Digital Programs
                     </Link>
                     <Link
                       href="#"
                       className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Shop Detail
-                    </Link>
-                    <Link
-                      href="#"
-                      className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
-                    >
-                      <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Shopping Cart
+                      Projects
                     </Link>
                   </div>
                 </div>
                 <div className="mb-5">
                   <h5 className="text-slate-900 font-semibold text-uppercase mb-1">
-                    My Account
+                    Connect
                   </h5>
-                  <div className="flex  flex-col">
+                  <div className="flex flex-col">
                     <Link
                       href="#"
-                      className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
+                      className={`flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Profile
+                      Contact Us
+                    </Link>
+                    <Link
+                      href="#"
+                      className={` flex w-[200px] text-sm font-semibold text-slate-600 items-center`}
+                    >
+                      <ArrowForwardIosIcon className="!text-xs mr-1" />
+                      Community Engagement
                     </Link>
                     <Link
                       href="#"
                       className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Order List
-                    </Link>
-                    <Link
-                      href="#"
-                      className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
-                    >
-                      <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Wishlist
-                    </Link>
-                    <Link
-                      href="#"
-                      className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
-                    >
-                      <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Payment Methods
+                      Get Involved
                     </Link>
                   </div>
                 </div>
@@ -122,18 +108,18 @@ const Footer = () => {
                   <div className="flex flex-col space-y-1 ml-1 mt-1">
                     <p className=" flex  text-sm font-semibold text-slate-600 items-center">
                       <MdEmail className="text-primary mr-3" />
-                      info@subhalabha.com
+                      desnepal@gmail.com
                     </p>
                     <p className="mb-0 flex text-sm font-semibold text-slate-600 items-center">
                       <AiTwotonePhone className="text-primary mr-3" />
-                      +977-9810325922
+                      +977-9767485800
                     </p>
                     <Link
                       href="https://www.google.com/maps/place/Suvalaav+Jewellers/@27.7410232,85.3101737,49m/data=!3m1!1e3!4m14!1m7!3m6!1s0x39eb1924434e767b:0x50b0d5a9db419ade!2sSuvalaav+Jewellers!8m2!3d27.7410876!4d85.310239!16s%2Fg%2F11tss8cwyc!3m5!1s0x39eb1924434e767b:0x50b0d5a9db419ade!8m2!3d27.7410876!4d85.310239!16s%2Fg%2F11tss8cwyc?entry=ttu"
                       className={`tracking-wide flex text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ImLocation className="text-primary mr-3" />
-                      Macchapokhari, Kathmandu, Nepal
+                      kupandol-10 Lalitpur, Nepal
                     </Link>
                   </div>
                 </div>
@@ -144,8 +130,8 @@ const Footer = () => {
         <hr />
         <div className={`w-full flex justify-center items-center`}>
           <p className="pt-2 pb-4 font-semibold text-sm text-slate-700 tracking-wide">
-            Copyright © {date.getFullYear()} subha labha jewellers. All rights
-            reserved.
+            Copyright © {date.getFullYear()} Digital Empowerment Society. All
+            rights reserved.
           </p>
         </div>
       </div>

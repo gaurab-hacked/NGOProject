@@ -2,7 +2,6 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-// import Donate from "./svg/hand_dollar.svg";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import LOGO from "./newlogo.jpg";
 import Image from "next/image";
@@ -10,26 +9,48 @@ import Image from "next/image";
 const BottomNav = () => {
   return (
     <>
-      <div className="w-full h-[60px] bg-white shadow flex items-center justify-between">
-        <div id="logo w-[40%] flex">
+      <div className="w-full h-[60px] bg-white shadow-lg flex items-center justify-between sticky z-40 top-0">
+        <div id="logo" className="w-[40%] flex">
           <Image src={LOGO} className="ml-10" alt="logo" height={55} />
         </div>
         <div className="w-[60%]">
-          <ul className="flex h-full items-center w-[95%] justify-between ">
+          <ul className="flex h-full items-center w-[95%] justify-between">
             <li>
-              <Link href={"/"}>Home</Link>
+              <Link className="p-1" href={"/"}>
+                Home
+              </Link>
+              <div className="w-full rounded-md bg-slate-700 h-[3px]"></div>
+            </li>
+
+            <li>
+              <Link className="p-1" href={"/"}>
+                What We Do
+              </Link>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link href={"/"}>What We Do</Link>
+              <Link className="p-1" href={"/"}>
+                News & Events
+              </Link>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link href={"/"}>Projects</Link>
+              <Link className="p-1" href={"/"}>
+                Projects
+              </Link>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link href={"/"}>Contact</Link>
+              <Link className="p-1" href={"/"}>
+                Gallery
+              </Link>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link href={"/"}>News & Events</Link>
+              <Link className="p-1" href={"/"}>
+                Contact
+              </Link>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
               <Button

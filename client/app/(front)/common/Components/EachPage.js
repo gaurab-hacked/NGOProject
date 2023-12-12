@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import scrollImage from "@/public/scrollImage.gif";
+import HeroImage from "./heropage.png";
 const EachPage = () => {
   const scrollDown = () => {
     window.scrollTo({
@@ -12,10 +13,11 @@ const EachPage = () => {
   };
 
   return (
-    <div className="h-[430px] relative w-full bg-black">
-      <img
-        className="position-absolute w-full h-full opacity-40"
-        src="https://media.istockphoto.com/id/486592060/photo/indian-jewellery.jpg?s=612x612&w=0&k=20&c=-7hy7-dPV7q7brtV60TrCR2Uq3vhrIaEU3tUqjqNYww="
+    // <div className="h-[500px] relative w-full bg-black mt-7">
+    <div className="h-[500px] relative w-full bg-black">
+      <Image
+        className="position-absolute w-full h-full opacity-80"
+        src={HeroImage}
         style={{ objectFit: "cover" }}
       />
       <div className="absolute z-50 inset-0">
@@ -24,7 +26,7 @@ const EachPage = () => {
             className="p-3 flex justify-center items-center flex-col gap-5"
             style={{ maxWidth: "700px" }}
           >
-            <h2 className="font-bold text-3xl text-white tracking-wider opacity-90">
+            {/* <h2 className="font-bold text-3xl text-white tracking-wider opacity-90">
               Gold Tilahari{" "}
               <span
                 id="text-stroke"
@@ -45,7 +47,7 @@ const EachPage = () => {
                 View More{" "}
                 <ArrowForwardIcon className="-ml-1 text-sm mt-[1px]" />
               </Button>
-            </div>
+            </div> */}
             <div className="absolute bottom-10 ">
               <Image
                 src={scrollImage}
