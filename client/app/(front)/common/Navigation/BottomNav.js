@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { BiSolidDonateHeart } from "react-icons/bi";
@@ -7,9 +7,25 @@ import LOGO from "./newlogo.jpg";
 import Image from "next/image";
 
 const BottomNav = () => {
+  const [scrollCount, setscrollCount] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setscrollCount(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="w-full h-[60px] bg-white shadow-lg flex items-center justify-between sticky z-40 top-0">
+      <div
+        className={`w-full h-[60px] bg-white shadow-lg flex items-center justify-between ${
+          scrollCount > 90 ? "fixed" : "sticky"
+        } z-40 top-0`}
+      >
         <div id="logo" className="w-[40%] flex">
           <Image src={LOGO} className="ml-10" alt="logo" height={55} />
         </div>

@@ -19,6 +19,7 @@ const EachPage = () => {
         className="position-absolute w-full h-full opacity-80"
         src={HeroImage}
         style={{ objectFit: "cover" }}
+        alt="something"
       />
       <div className="absolute z-50 inset-0">
         <div className="carousel-caption flex flex-col h-full items-center justify-center">

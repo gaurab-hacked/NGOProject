@@ -5,12 +5,12 @@ const Patners = () => {
   return (
     <>
       <div className="relative w-full h-full">
-        <div className="min-h-[20vh] pb-16 w-[100%] mt-4 p-10 ">
+        <div className="min-h-[10vh] w-[100%] mt-4 p-10 ">
           <div className="w-[60%] m-auto flex flex-col">
             <h2 className="text-2xl pb-5 font-semibold text-center underline">
               Our Pathers
             </h2>
-            <div className="flex w-[80%] m-auto my-10 justify-between ">
+            <div className="flex w-[80%] items-center m-auto my-10 mb-5 justify-between ">
               <Image
                 src={"./microsoft.png"}
                 width={200}

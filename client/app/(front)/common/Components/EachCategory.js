@@ -16,7 +16,7 @@ const EachCategory = () => {
               radius="none"
               className="w-[100px] h-full group-hover:scale-110 group-hover:rotate-6"
               src="https://media.istockphoto.com/id/1488741199/photo/indian-rajasthani-antique-gold-tone-traditional-stylish-gold-plated-jhumka-earrings.jpg?s=612x612&w=0&k=20&c=Yss34Vi9HVWwpyR-jG01HJ9PvnM5dEYuSjGZl5oRShY="
-              alt=""
+              alt="something"
             />
           </div>
           <div className="flex flex-col justify-start pl-3">

@@ -4,6 +4,7 @@ import Introduction from "./Introduction";
 import Vision from "./Vision";
 import AccordianFun from "./AccordianFun";
 import Pathers from "./Patners";
+import CardCollection from "./CardsCollection";
 const pageData = {
   vision: {
     title: "Our Vision",
@@ -17,14 +18,16 @@ const pageData = {
 
 const Home = () => {
   return (
-    <>
+    <div className="max-w-[1550px] m-auto">
       <Carousel />
       <Introduction />
       <Vision data={pageData.vision} />
       <AccordianFun />
-      <Vision data={pageData.challange} />
+      <hr />
       <Pathers />
-    </>
+      <Vision data={pageData.challange} />
+      <CardCollection />
+    </div>
   );
 };
 
