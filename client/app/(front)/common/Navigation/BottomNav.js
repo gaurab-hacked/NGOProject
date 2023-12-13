@@ -6,9 +6,10 @@ import { BiSolidDonateHeart } from "react-icons/bi";
 import LOGO from "./newlogo.jpg";
 import { IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const BottomNav = () => {
-  const [scrollCount, setScrollCount] = useState(window.scrollY);
+  const [scrollCount, setScrollCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +23,18 @@ const BottomNav = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setScrollCount(window.scrollY);
+  }, []);
+
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+  const pathname = usePathname();
+
   return (
     <>
       <div
@@ -40,42 +47,54 @@ const BottomNav = () => {
         </div>
         <div className="w-[60%]">
           <ul className="flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between">
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/"}>
                 Home
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
 
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/what-we-do"}>
                 What We Do
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/what-we-do" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/news-and-events"}>
                 News & Events
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/news-and-events" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/projects"}>
                 Projects
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/projects" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/gallery"}>
                 Gallery
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/gallery" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
-            <li>
+            <li className="relative h-full py-1">
               <Link className="p-1" href={"/contact"}>
                 Contact
               </Link>
-              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
+              {pathname === "/contact" && (
+                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+              )}
             </li>
             <li>
               <Card
