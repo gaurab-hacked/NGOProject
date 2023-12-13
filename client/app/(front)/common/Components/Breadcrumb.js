@@ -7,7 +7,7 @@ import { SearchIcon } from "@/app/dashboard/common/components/Tables/Icons/Searc
 const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
   return (
     <Card
-      className="h-[55px] border mb-4 mt-3 flex flex-row px-5 w-full justify-between"
+      className="h-[55px] mb-8 mt-3 flex flex-row px-5 w-full justify-between"
       radius="sm"
     >
       <div className="h-full w-[60%]">
@@ -19,7 +19,9 @@ const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
             <>
               /
               <li>
-                <Link href={"/"}>{subcategory}</Link>
+                <Link href={`/${subcategory.toLowerCase()}`}>
+                  {subcategory}
+                </Link>
               </li>
             </>
           )}
@@ -27,7 +29,11 @@ const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
             <>
               /
               <li>
-                <Link href={"/"}>{subsubcategory}</Link>
+                <Link
+                  href={`/${subcategory.toLowerCase()}/${subsubcategory.toLowerCase()}`}
+                >
+                  {subsubcategory}
+                </Link>
               </li>
             </>
           )}

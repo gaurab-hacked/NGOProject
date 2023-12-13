@@ -5,7 +5,11 @@ import Albums from "./AllPhotos";
 const page = () => {
   return (
     <div className="w-[90%] min-h-[75vh] mx-auto my-10">
-      <Breadcrumb category={"Gallery"} subcategory={"Images"} />
+      <Breadcrumb
+        category={"Home"}
+        subcategory={"Gallery"}
+        subsubcategory={"Images"}
+      />
       <Albums />
     </div>
   );

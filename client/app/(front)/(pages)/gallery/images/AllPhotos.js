@@ -1,49 +1,51 @@
 "use client";
 import React, { useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import EachPhotos from "./EachPhotos";
+import image1 from "@/public/hero.jpg";
+import Image from "next/image";
 
 export default function Albums() {
   const list = [
     {
       title: "Orange",
-      img: "/images/fruit-1.jpeg",
+      img: image1,
       price: "$5.50",
     },
     {
       title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
+      img: image1,
       price: "$3.00",
     },
     {
       title: "Raspberry",
-      img: "/images/fruit-3.jpeg",
+      img: image1,
       price: "$10.00",
     },
     {
       title: "Lemon",
-      img: "/images/fruit-4.jpeg",
+      img: image1,
       price: "$5.30",
     },
     {
       title: "Avocado",
-      img: "/images/fruit-5.jpeg",
+      img: image1,
       price: "$15.70",
     },
     {
       title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
+      img: image1,
       price: "$8.00",
     },
     {
       title: "Banana",
-      img: "/images/fruit-7.jpeg",
+      img: image1,
       price: "$7.50",
     },
     {
       title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
+      img: image1,
       price: "$12.20",
     },
   ];
