@@ -63,7 +63,7 @@ const BottomNav = () => {
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link className="p-1" href={"/contacts"}>
+              <Link className="p-1" href={"/contact"}>
                 Contact
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}

@@ -69,7 +69,7 @@ export default function Albums() {
                 radius="lg"
                 width="100%"
                 alt={item.title}
-                className="w-full object-cover h-[200px]"
+                className="w-full !min-w-[250px] object-cover h-[200px]"
                 src={item.img}
               />
             </CardBody>

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { SearchIcon } from "@/app/dashboard/common/components/Tables/Icons/SearchIcon";
 
-const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
+const Breadcrumb = ({ category, subcategory, subsubcategory, showSearch }) => {
   return (
     <Card
       className="h-[55px] mb-8 mt-3 flex flex-row px-5 w-full justify-between"
@@ -39,8 +39,9 @@ const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
           )}
         </ul>
       </div>
-      <div className="w-[25%] pb-1 flex justify-between items-center gap-3">
-        {/* <Select
+      {showSearch && (
+        <div className="w-[25%] pb-1 flex justify-between items-center gap-3">
+          {/* <Select
           size="sm"
           variant="underlined"
           label="Select an animal"
@@ -64,12 +65,13 @@ const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
           <SelectItem value="3">Contact</SelectItem>
           <SelectItem value="4">Service</SelectItem>
         </Select> */}
-        <Input
-          endContent={<SearchIcon />}
-          radius="sm"
-          placeholder="Search Images..."
-        />
-      </div>
+          <Input
+            endContent={<SearchIcon />}
+            radius="sm"
+            placeholder="Search Images..."
+          />
+        </div>
+      )}
     </Card>
   );
 };
