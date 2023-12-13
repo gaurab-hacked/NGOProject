@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button } from "@nextui-org/react";
+import { Button, Card } from "@nextui-org/react";
 import Link from "next/link";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import LOGO from "./newlogo.jpg";
+import { IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
 
 const BottomNav = () => {
@@ -19,6 +20,12 @@ const BottomNav = () => {
     };
   }, []);
 
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div
@@ -81,6 +88,17 @@ const BottomNav = () => {
           </ul>
         </div>
       </div>
+      {scrollCount > 600 && (
+        <Card
+          isPressable
+          className="h-[30px] w-[30px] rounded-sm bg-red-300 fixed right-10 bottom-[35vh] z-50 bg-blue-500 flex justify-center item-center"
+          style={{ alignItems: "center" }}
+          radius="none"
+          onClick={scrollUp}
+        >
+          <IoIosArrowUp className="text-white text-2xl" />
+        </Card>
+      )}
     </>
   );
 };

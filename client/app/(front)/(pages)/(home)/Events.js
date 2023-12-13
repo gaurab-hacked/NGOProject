@@ -1,10 +1,11 @@
+import { Card } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 import { IoEye } from "react-icons/io5";
 
 const Events = () => {
   return (
-    <div className="absolute h-[570px] -top-[250px] rounded overflow-hidden shadow bg-blue-50 right-12 w-[340px] z-10 ">
+    <Card className="absolute h-[570px] -top-[250px] rounded overflow-hidden bg-blue-50 right-12 w-[340px] z-10 ">
       <div>
         <h3 className="bg-[#08bee3bc] uppercase tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
           News & Events
@@ -57,7 +58,7 @@ const Events = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

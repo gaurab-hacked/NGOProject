@@ -45,7 +45,7 @@ const page = () => {
         subcategory={"Contact"}
         showSearch={false}
       />
-      <div className="min-h-[70vh] grid gap-x-3 grid-cols-11 py-10 px-2 max-w-[1300px] mx-auto">
+      <div className="min-h-[70vh] grid gap-x-3 grid-cols-11 py-10 px-2 max-w-[1500px] mx-auto">
         <div className="col-span-5">
           <h1 className="mb-10 text-3xl tracking-wide font-semibold">
             Digital Empowerment Society
