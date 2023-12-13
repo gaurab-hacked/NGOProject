@@ -55,7 +55,7 @@ const EachPage = () => {
                 width={45}
                 height={45}
                 alt="scroll"
-                className="cursor-pointer"
+                className="cursor-pointer !w-[45px] !h-[45px]"
                 onClick={scrollDown}
               />
             </div>

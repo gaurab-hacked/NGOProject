@@ -30,40 +30,40 @@ const BottomNav = () => {
           <Image src={LOGO} className="ml-10" alt="logo" height={55} />
         </div>
         <div className="w-[60%]">
-          <ul className="flex h-full items-center w-[95%] justify-between">
+          <ul className="flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between">
             <li>
               <Link className="p-1" href={"/"}>
                 Home
               </Link>
-              <div className="w-full rounded-md bg-slate-700 h-[3px]"></div>
+              {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
 
             <li>
-              <Link className="p-1" href={"/"}>
+              <Link className="p-1" href={"/what-we-do"}>
                 What We Do
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link className="p-1" href={"/"}>
+              <Link className="p-1" href={"/news-and-events"}>
                 News & Events
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link className="p-1" href={"/"}>
+              <Link className="p-1" href={"/projects"}>
                 Projects
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link className="p-1" href={"/"}>
+              <Link className="p-1" href={"/gallery"}>
                 Gallery
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Link className="p-1" href={"/"}>
+              <Link className="p-1" href={"/contacts"}>
                 Contact
               </Link>
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}

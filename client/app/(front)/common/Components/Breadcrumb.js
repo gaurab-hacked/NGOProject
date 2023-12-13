@@ -1,27 +1,40 @@
-import { Select, SelectItem } from "@nextui-org/react";
+"use client";
+import { Card, Input } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
+import { SearchIcon } from "@/app/dashboard/common/components/Tables/Icons/SearchIcon";
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ category, subcategory, subsubcategory }) => {
   return (
-    <div className="h-[55px] border mb-4 mt-3 flex px-5 w-full justify-between shadow">
+    <Card
+      className="h-[55px] border mb-4 mt-3 flex flex-row px-5 w-full justify-between"
+      radius="sm"
+    >
       <div className="h-full w-[60%]">
         <ul className="flex h-full text-slate-600 font-semibold tracking-wide items-center">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}>{category}</Link>
           </li>
-          /
-          <li>
-            <Link href={"/"}>about-us</Link>
-          </li>
-          /
-          <li>
-            <Link href={"/"}>Rings</Link>
-          </li>
+          {subcategory && (
+            <>
+              /
+              <li>
+                <Link href={"/"}>{subcategory}</Link>
+              </li>
+            </>
+          )}
+          {subsubcategory && (
+            <>
+              /
+              <li>
+                <Link href={"/"}>{subsubcategory}</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
-      <div className="w-[30%] pb-1 flex justify-between items-center gap-3">
-        <Select
+      <div className="w-[25%] pb-1 flex justify-between items-center gap-3">
+        {/* <Select
           size="sm"
           variant="underlined"
           label="Select an animal"
@@ -44,9 +57,14 @@ const Breadcrumb = () => {
           <SelectItem value="2">About</SelectItem>
           <SelectItem value="3">Contact</SelectItem>
           <SelectItem value="4">Service</SelectItem>
-        </Select>
+        </Select> */}
+        <Input
+          endContent={<SearchIcon />}
+          radius="sm"
+          placeholder="Search Images..."
+        />
       </div>
-    </div>
+    </Card>
   );
 };
 
