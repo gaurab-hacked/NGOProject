@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button, Card } from "@nextui-org/react";
+import { Button, Card, Divider } from "@nextui-org/react";
 import Link from "next/link";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import LOGO from "./newlogo.jpg";
@@ -8,13 +8,15 @@ import { IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
 
 const BottomNav = () => {
-  const [scrollCount, setscrollCount] = useState(0);
+  const [scrollCount, setScrollCount] = useState(window.scrollY);
 
   useEffect(() => {
     const handleScroll = () => {
-      setscrollCount(window.scrollY);
+      setScrollCount(window.scrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -34,7 +36,7 @@ const BottomNav = () => {
         } z-40 top-0`}
       >
         <div id="logo" className="w-[40%] flex">
-          <Image src={LOGO} className="ml-10" alt="logo" height={55} />
+          <Image src={LOGO} className="ml-10 h-[60px]" alt="logo" height={60} />
         </div>
         <div className="w-[60%]">
           <ul className="flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between">
@@ -76,14 +78,24 @@ const BottomNav = () => {
               {/* <div className="w-full rounded-md bg-slate-700 h-[3px]"></div> */}
             </li>
             <li>
-              <Button
-                radius="none"
-                className="text-sm uppercase tracking-wide rounded-sm text-white"
-                color="success"
-                startContent={<BiSolidDonateHeart className="scale-110" />}
+              <Card
+                className="flex h-[33px] flex-row rounded-sm overflow-hidden gap-[1px] item-center  justify-center text-white"
+                style={{ alignItems: "center", justifyContent: "center" }}
+                isPressable
               >
-                Donate
-              </Button>
+                <div
+                  className="h-full pb-[6px] bg-success flex px-2 py-1"
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <BiSolidDonateHeart className="text-lg" />
+                </div>
+                <div
+                  className="h-full pb-[6px] tracking-wider bg-success flex px-2 py-1 text-sm"
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  Donate
+                </div>
+              </Card>
             </li>
           </ul>
         </div>

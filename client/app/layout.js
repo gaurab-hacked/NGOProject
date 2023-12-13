@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className="dark:!bg-black bg-white text-black dark:!text-white">
         <Provider>
           <NextTopLoader
-            color="#2299DD"
+            color="#FAAF2C"
             initialPosition={0.08}
             crawlSpeed={200}
             height={3}
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             showSpinner={false}
             easing="ease"
             speed={200}
-            shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+            shadow="0 0 10px #FAAF2C,0 0 5px #FAAF2C"
           />
           <ThemeProviders>
             <Navigation />

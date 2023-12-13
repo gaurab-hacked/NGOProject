@@ -7,7 +7,7 @@ const Events = () => {
   return (
     <Card className="absolute h-[570px] -top-[250px] rounded overflow-hidden bg-blue-50 right-12 w-[340px] z-10 ">
       <div>
-        <h3 className="bg-[#08bee3bc] uppercase tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
+        <h3 className="bg-[#08bee3bc] capitalize tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
           News & Events
         </h3>
         <div className="flex gap-2 mt-4 flex-col m-2">

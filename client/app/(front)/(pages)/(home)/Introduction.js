@@ -1,15 +1,16 @@
 import React from "react";
 import Events from "./Events";
+import { Card } from "@nextui-org/react";
 
 const Introduction = () => {
   return (
     <div className="relative w-full h-full">
       <div className="min-h-[50vh] w-[80%] my-10 p-10 ">
-        <div className="w-[65%] m-auto p-5 pb-8 shadow rounded-md">
+        <Card className="w-[65%] m-auto p-5 pb-8 rounded-md">
           <h2 className="text-center font-semibold text-2xl my-5 mt-3 underline">
             Welcome to the Digital Empowerment Society!
           </h2>
-          <p className="text-justify text-slate-600">
+          <p className="text-justify text-gray-600">
             Nepal, no doubt, has been seen phenomenal growth in the Information
             and Communication Technology (ICT) sector. There is only a
             significant upsurge in the adoption of ICT-related tools (like
@@ -21,7 +22,7 @@ const Introduction = () => {
             behind compared to the urban ones in terms of possessing ICT-related
             tools/devices.
           </p>
-          <p className="text-justify text-slate-600">
+          <p className="text-justify text-gray-600">
             There is a palpable need to bridge this digital divide by promoting
             digital literacy among underserved communities. In this light,
             Digital Empowerment Society (DES) as a non-governmental organization
@@ -33,12 +34,12 @@ const Introduction = () => {
             believe that every Nepali should enjoy his/her digital rights for
             his/her greater socio-economic well-being.
           </p>
-          <p className="text-justify text-slate-600">
+          <p className="text-justify text-gray-600">
             Our efforts are directed at providing comprehensive digital
             education programs that enable individuals to navigate the
             complexities of the digital landscape.
           </p>
-        </div>
+        </Card>
       </div>
       <Events />
     </div>
