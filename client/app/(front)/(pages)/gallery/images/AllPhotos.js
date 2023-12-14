@@ -61,7 +61,6 @@ export default function Albums() {
             key={index}
             isPressable
             onPress={() => btnref.current.click()}
-            // ref={btnref}
           >
             <CardBody className="overflow-visible p-0">
               <Image
