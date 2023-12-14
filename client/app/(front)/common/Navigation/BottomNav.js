@@ -34,62 +34,147 @@ const BottomNav = () => {
     });
   };
   const pathname = usePathname();
-
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  useEffect(() => {
+    if (!hamburgerOpen) {
+      document.querySelector("body").style.overflowY = "auto";
+    } else {
+      document.querySelector("body").style.overflowY = "hidden";
+    }
+  }, [hamburgerOpen]);
   return (
     <>
       <div
-        className={`w-full h-[60px] bg-white shadow-lg flex items-center justify-between ${
+        className={`w-full z-[10000000] overflow-hidden h-[60px] bg-white shadow-lg flex items-center justify-between ${
           scrollCount > 90 ? "fixed" : "sticky"
         } z-40 top-0`}
       >
         <div id="logo" className="w-[40%] flex">
           <Image src={LOGO} className="ml-10 h-[60px]" alt="logo" height={60} />
         </div>
-        <div className="w-[60%]">
-          <ul className="flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between">
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/"}>
+        <div
+          onClick={() => setHamburgerOpen((p) => !p)}
+          className="flex justify-center duration-200 items-center flex-col h-[30px] w-[30px] gap-1 absolute cursor-pointer right-9 z-[50000000000000000000] lg:hidden"
+        >
+          <div
+            className={`h-[3px] duration-150  rounded-sm w-[25px] ${
+              hamburgerOpen
+                ? " absolute bottom-3 left-[0px] bg-white rotate-45  w-[30px]"
+                : "bg-blue-500"
+            } `}
+          ></div>
+          <div
+            className={`h-[3px] duration-150 rounded-sm w-[25px] ${
+              hamburgerOpen
+                ? "absolute bottom-3 right-[0px] bg-white rotate-[135deg] w-[30px]"
+                : "bg-blue-500"
+            } `}
+          ></div>
+          <div
+            className={`h-[3px] duration-150 bg-blue-500 rounded-sm w-[25px] ${
+              hamburgerOpen ? "hidden" : ""
+            } `}
+          ></div>
+        </div>
+        <div className="w-[60%] lg:static lg:right-2 absolute -right-[100%]">
+          <ul
+            className={`flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between ${
+              hamburgerOpen
+                ? "bg-[#0f92ad] fixed top-0 -right-[0] h-[100vh] w-full !z-[10000000] flex-col !justify-center gap-[20px] !align-center"
+                : "flex-row"
+            }`}
+          >
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/"}
+              >
                 Home
               </Link>
               {pathname === "/" && (
-                <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+                <div className="w-full absolute bottom-0 rounded-lg bg-slate-700 h-[3px]"></div>
               )}
             </li>
 
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/what-we-do"}>
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/what-we-do"}
+              >
                 What We Do
               </Link>
               {pathname === "/what-we-do" && (
                 <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
               )}
             </li>
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/news-and-events"}>
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/news-and-events"}
+              >
                 News & Events
               </Link>
               {pathname === "/news-and-events" && (
                 <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
               )}
             </li>
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/projects"}>
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/projects"}
+              >
                 Projects
               </Link>
               {pathname === "/projects" && (
                 <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
               )}
             </li>
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/gallery"}>
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/gallery"}
+              >
                 Gallery
               </Link>
               {pathname === "/gallery" && (
                 <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
               )}
             </li>
-            <li className="relative h-full py-1">
-              <Link className="p-1" href={"/contact"}>
+            <li
+              className={`relative h-full py-1 ${
+                hamburgerOpen ? "!text-white !h-[35px]" : ""
+              }`}
+            >
+              <Link
+                onClick={() => setHamburgerOpen(false)}
+                className="p-1"
+                href={"/contact"}
+              >
                 Contact
               </Link>
               {pathname === "/contact" && (
@@ -122,7 +207,7 @@ const BottomNav = () => {
       {scrollCount > 600 && (
         <Card
           isPressable
-          className="h-[30px] w-[30px] rounded-sm bg-red-300 fixed right-10 bottom-[35vh] z-50 bg-blue-500 flex justify-center item-center"
+          className="h-[30px] w-[30px] rounded-sm fixed right-10 bottom-[35vh] z-[100] bg-blue-500 flex justify-center item-center"
           style={{ alignItems: "center" }}
           radius="none"
           onClick={scrollUp}
