@@ -3,20 +3,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { IoMdCart } from "react-icons/io";
-import StoreIcon from "@mui/icons-material/Store";
 import { FaUsers } from "react-icons/fa";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
 import { MdCategory } from "react-icons/md";
 import { GiKnightBanner } from "react-icons/gi";
 import { DiSublime } from "react-icons/di";
-import { AiOutlineStock } from "react-icons/ai";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
+import { AiFillProject } from "react-icons/ai";
 import { HiMiniUserCircle } from "react-icons/hi2";
+import { FaNewspaper } from "react-icons/fa6";
+import { BsPostcardFill } from "react-icons/bs";
+import { IoIosImages } from "react-icons/io";
+import { IoImageSharp } from "react-icons/io5";
+
 import "./css/SideNav.css";
-import NoCrashIcon from "@mui/icons-material/NoCrash";
 const SideNav = (props) => {
   const { hamClick } = props;
   const loc = usePathname();
@@ -72,64 +71,6 @@ const SideNav = (props) => {
                 </span>
               </li>
             </Link>
-            {/* <Link
-              href="/dashboard/notification"
-              style={{ textDecoration: "none" }}
-            >
-              <li
-                className={
-                  loc.includes("/dashboard/notification") ? `black:!bg-[#363636]  !bg-[#dcd4ff]` : ""
-                }
-              >
-                <NotificationsNoneIcon className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Notifications
-                </span>
-              </li>
-            </Link> */}
-
-            <Link href="/dashboard/orders" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/orders")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <IoMdCart className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Orders
-                </span>
-              </li>
-            </Link>
-            <Link href="/dashboard/delivery" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/delivery")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <LocalShippingIcon className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Delivery
-                </span>
-              </li>
-            </Link>
-            <Link href="/dashboard/finished" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/finished")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <NoCrashIcon className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Finished
-                </span>
-              </li>
-            </Link>
             <p
               className={`${hamClick ? "hidden" : "block"} title tracking-wide`}
             >
@@ -161,7 +102,7 @@ const SideNav = (props) => {
                     : ""
                 }
               >
-                <DiSublime className="icon" />
+                <DiSublime className="icon !scale-125" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
                   Subcategory
                 </span>
@@ -175,76 +116,87 @@ const SideNav = (props) => {
                     : ""
                 }
               >
-                <GiKnightBanner className="icon" />
+                <GiKnightBanner className="icon !scale-125" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
                   Banner
                 </span>
               </li>
             </Link>
-            <Link href="/dashboard/products" style={{ textDecoration: "none" }}>
+            <Link href="/dashboard/projects" style={{ textDecoration: "none" }}>
               <li
                 className={
-                  loc.includes("/dashboard/products")
+                  loc.includes("/dashboard/projects")
                     ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
-                <StoreIcon className="icon" />
+                <AiFillProject className="icon" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Products
+                  Projects
+                </span>
+              </li>
+            </Link>
+            <Link
+              href="/dashboard/news-and-events"
+              style={{ textDecoration: "none" }}
+            >
+              <li
+                className={
+                  loc.includes("/dashboard/news-and-events")
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
+                    : ""
+                }
+              >
+                <FaNewspaper className="icon !scale-90" />
+                <span className={`${hamClick ? "hidden" : "block"}`}>
+                  News & Events
+                </span>
+              </li>
+            </Link>
+            <Link href="/dashboard/blogs" style={{ textDecoration: "none" }}>
+              <li
+                className={
+                  loc.includes("/dashboard/blogs")
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
+                    : ""
+                }
+              >
+                <BsPostcardFill className="icon !scale-90" />
+                <span className={`${hamClick ? "hidden" : "block"}`}>
+                  Blogs
                 </span>
               </li>
             </Link>
             <p
               className={`${hamClick ? "hidden" : "block"} title tracking-wide`}
             >
-              STATS
+              Gallery
             </p>
-            <Link
-              href="/dashboard/filledchart"
-              style={{ textDecoration: "none" }}
-            >
+            <Link href="/dashboard/albums" style={{ textDecoration: "none" }}>
               <li
                 className={
-                  loc.includes("/dashboard/filledchart")
+                  loc.includes("/dashboard/albums")
                     ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
-                <AnalyticsIcon className="icon" />
+                <IoIosImages className="icon" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Filled Chart
+                  Albums
                 </span>
               </li>
             </Link>
-            <Link
-              href="/dashboard/linechart"
-              style={{ textDecoration: "none" }}
-            >
+            <Link href="/dashboard/images" style={{ textDecoration: "none" }}>
               <li
                 className={
-                  loc.includes("/dashboard/linechart")
+                  loc.includes("/dashboard/images")
                     ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
-                <AiOutlineStock className="icon" />
+                <IoImageSharp className="icon" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Line Chart
-                </span>
-              </li>
-            </Link>
-            <Link href="/dashboard/barchart" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/barchart")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <BarChartIcon className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Bar Chart
+                  Images
                 </span>
               </li>
             </Link>
@@ -275,7 +227,7 @@ const SideNav = (props) => {
                     : ""
                 }
               >
-                <HiMiniUserCircle className="icon" />
+                <HiMiniUserCircle className="icon !scale-110" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
                   Profile
                 </span>

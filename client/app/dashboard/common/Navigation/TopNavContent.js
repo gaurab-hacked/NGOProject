@@ -57,11 +57,9 @@ const TopNavContent = (props) => {
             Hello Admin, {greeting}
           </div>
         </div>
-        <div className="w-[230px] mr-2 flex justify-around items-center">
-          <div className="flex gap-1 items-center">
-            <ThemeSwitcher />
+        <div className="w-[120px] mr-5 flex justify-around items-center">
+          <div className="flex items-center">
             <Message unreadMsg={unreadMsg} />
-            {/* <Notification /> */}
           </div>
           <div className="pofile">
             <Profile loginData={loginData} />
