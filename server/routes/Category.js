@@ -1,4 +1,5 @@
-const route = require("express").Router();
+const express = require("express");
+const route = express.Router();
 const checkPrivilege = require("../middleware/checkPrivilege");
 const Category = require("../models/Category");
 require("dotenv").config();
@@ -9,11 +10,11 @@ route.get("/categories", async (req, res) => {
     const data = await Category.find();
     res.json(data);
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error" });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-// get categories [GET: http://localhost:8000/api/category/category/:id]  (register not required)
+// get category by ID [GET: http://localhost:8000/api/category/category/:id]  (register not required)
 route.get("/category/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -23,78 +24,80 @@ route.get("/category/:id", async (req, res) => {
     }
     res.json(data);
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error" });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-// Post categories [POST: http://localhost:8000/api/category/category]  (register required)
+// Post category [POST: http://localhost:8000/api/category/category]  (register required)
 route.post("/category", checkPrivilege, async (req, res) => {
   try {
     const { categoryName, displayOrder, active } = req.body;
-    // check category already exist or not
-    const checkExistance = await Category.findOne({ categoryName });
-    if (checkExistance)
-      return res.status(400).json({ error: "Category Already Exist" });
+    const checkExistence = await Category.findOne({ categoryName });
 
-    const category = await new Category({
+    if (checkExistence) {
+      return res.status(400).json({ error: "Category Already Exists" });
+    }
+
+    const category = new Category({
       categoryName,
       displayOrder,
       active,
     });
-    if (!category) return res.json({ error: "Unable To Add Category" });
+
     await category.save();
     res.json({ success: "Category Added", data: category });
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
+    res.status(500).json({ error: "Internal Server Error " + e });
   }
 });
-// Update categories [PATCH: http://localhost:8000/api/category/category/:id]  (register required)
+
+// Update category [PATCH: http://localhost:8000/api/category/category/:id]  (register required)
 route.patch("/category/:id", checkPrivilege, async (req, res) => {
   try {
     const { categoryName, displayOrder, active } = req.body;
-    // check category is exist or not
     const category = await Category.findById(req.params.id);
-    if (!category)
-      return res.status(400).json({ error: "Category doesn't exist" });
 
-    // set update detail in a new variable
+    if (!category) {
+      return res.status(404).json({ error: "Category not found" });
+    }
+
     const newCategory = {};
+
     if (categoryName) {
       newCategory.categoryName = categoryName;
     }
     if (displayOrder) {
       newCategory.displayOrder = displayOrder;
     }
-    if (String(active).length > 2) {
+    if (typeof active === "boolean") {
       newCategory.active = active;
     }
 
-    // Find the category and update
-    const categorynew = await Category.findByIdAndUpdate(
+    const updatedCategory = await Category.findByIdAndUpdate(
       req.params.id,
       { $set: newCategory },
       { new: true }
     );
+
     res.json({
       success: "Category update successful",
-      category: categorynew,
+      category: updatedCategory,
     });
   } catch (e) {
     res.status(500).json({ error: "Internal Server Error " + e });
   }
 });
 
-// delete categories [DELETE: http://localhost:8000/api/category/category/:id]  (register required)
+// delete category [DELETE: http://localhost:8000/api/category/category/:id]  (register required)
 route.delete("/category/:id", checkPrivilege, async (req, res) => {
   try {
     const categoryId = req.params.id;
-    // Find category and check if it exists
     const category = await Category.findById(categoryId);
+
     if (!category) {
-      return res.status(400).json({ error: "Category Not Found" });
+      return res.status(404).json({ error: "Category not found" });
     }
 
-    // Delete the category
     await Category.findByIdAndDelete(categoryId);
 
     res.json({ success: "Category Deleted Successfully" });

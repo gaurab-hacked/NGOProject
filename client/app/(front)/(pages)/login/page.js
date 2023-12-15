@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input, Link, Button, Card, CardBody } from "@nextui-org/react";
 import { EyeFilledIcon } from "./EyeFilledIcon";
 import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import { MailIcon } from "./MailIcon";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/redux/slices/authSlice";
 import { useRouter } from "next/navigation";
 
@@ -33,6 +33,43 @@ export default function login() {
     e.preventDefault();
     handelLogin(userFormData);
   };
+
+  const [isLogin, setIsLogin] = useState({ data: "", isLogged: false });
+  const { userData, authToken, loading } = useSelector(
+    (state) => state.authReducer
+  );
+
+  useEffect(() => {
+    if (userData !== null && authToken !== null) {
+      localStorage.setItem("userData", JSON.stringify(userData));
+      localStorage.setItem("token", JSON.stringify(authToken));
+    }
+  }, [userData, authToken]);
+
+  let dataLocalstorage = "";
+
+  if (typeof window !== "undefined" && window.localStorage) {
+    const userDataItem = window.localStorage.getItem("userData");
+    if (userDataItem) {
+      dataLocalstorage = userDataItem;
+    }
+  }
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      setIsLogin({
+        data: JSON.parse(storedUserData),
+        isLogged: true,
+      });
+    }
+  }, [dataLocalstorage, userData]);
+
+  useEffect(() => {
+    if (Number(isLogin.data.privilege) < 1) {
+      router.push("/");
+    }
+  }, [isLogin, userData]);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (

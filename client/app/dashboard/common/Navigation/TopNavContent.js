@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ThemeSwitcher from "@/app/theme/ThemeSwitcher";
-// import Notification from "../components/Notification";
 import Message from "../components/Message";
 import Profile from "../components/Profile";
 

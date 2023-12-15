@@ -12,6 +12,7 @@ import {
   SelectItem,
   Textarea,
   Progress,
+  Checkbox,
 } from "@nextui-org/react";
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
 
@@ -31,11 +32,10 @@ export default function ModalApp(props) {
   const [subCategoryData, setSubCategoryData] = useState({
     subCategoryName: "",
     categoryId: "",
-    description: "",
+    active: true,
   });
   const [validationErrors, setValidationErrors] = useState({
     subCategoryName: "",
-    description: "",
     categoryId: "",
   });
 
@@ -43,29 +43,30 @@ export default function ModalApp(props) {
     setSubCategoryData({
       subCategoryName: updateData.status ? updateData.data.subCategoryName : "",
       categoryId: updateData.status ? updateData.data.categoryId : "",
-      description: updateData.status ? updateData.data.description : "",
+      active: true,
     });
   }, [updateData]);
 
   const subCategoryDataChange = (e) => {
-    setSubCategoryData({ ...subCategoryData, [e.target.name]: e.target.value });
+    if (e.target.name === "active") {
+      setSubCategoryData({ ...subCategoryData, active: e.target.checked });
+    } else {
+      setSubCategoryData({
+        ...subCategoryData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   const validateForm = () => {
     let isValid = true;
     const newValidationErrors = {
       subCategoryName: "",
-      description: "",
       categoryId: "",
     };
 
     if (!subCategoryData.subCategoryName.trim()) {
       newValidationErrors.subCategoryName = "Subcategory Name is required";
-      isValid = false;
-    }
-
-    if (!subCategoryData.description.trim()) {
-      newValidationErrors.description = "Description is required";
       isValid = false;
     }
 
@@ -102,12 +103,11 @@ export default function ModalApp(props) {
     setSubCategoryData({
       subCategoryName: "",
       categoryId: "",
-      description: "",
+      active: true,
     });
     setUpdateData({ status: false, data: {} });
     setValidationErrors({
       subCategoryName: "",
-      description: "",
     });
   };
 
@@ -134,7 +134,11 @@ export default function ModalApp(props) {
       >
         <ModalContent>
           {(onClose) => (
-            <form method="post" onSubmit={subCategoryDataSubmit}>
+            <form
+              method="post"
+              className="pb-5"
+              onSubmit={subCategoryDataSubmit}
+            >
               <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 black:text-slate-200">
                 Add Subcategory
               </ModalHeader>
@@ -194,21 +198,30 @@ export default function ModalApp(props) {
                     {validationErrors.subCategoryName}
                   </div>
                 )}
-
-                <Textarea
-                  type="text"
-                  name="description"
-                  value={subCategoryData.description}
-                  onChange={subCategoryDataChange}
-                  variant="underlined"
-                  placeholder="Enter Subcategory Description"
-                  className="-mt-1"
-                />
-                {validationErrors.description && (
-                  <div className="errorFront">
-                    {validationErrors.description}
-                  </div>
+                {updateData.status ? (
+                  <Checkbox
+                    defaultSelected={updateData.data.active}
+                    size="md"
+                    className="mt-1"
+                    name="active"
+                    value={subCategoryData.active}
+                    onChange={subCategoryDataChange}
+                  >
+                    Active Category
+                  </Checkbox>
+                ) : (
+                  <Checkbox
+                    defaultSelected={subCategoryData.active ? true : false}
+                    size="md"
+                    className="mt-1"
+                    name="active"
+                    value={subCategoryData.active}
+                    onChange={subCategoryDataChange}
+                  >
+                    Active Category
+                  </Checkbox>
                 )}
+
                 {postUpload > 0 && (
                   <Progress
                     aria-label="Downloading..."

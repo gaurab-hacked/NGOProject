@@ -29,7 +29,6 @@ import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIco
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
   "subCategoryName",
-  "description",
   "categoryName",
   "active",
   "actions",
@@ -40,7 +39,6 @@ const columns = [
   { name: "SUBCATEGORY NAME", uid: "subCategoryName", sortable: true },
   { name: "CATEGORY NAME", uid: "categoryName", sortable: true },
   { name: "CATEGORY ACTIVE", uid: "active" },
-  { name: "DESCRIPTION", uid: "description" },
   { name: "DATE", uid: "date" },
   { name: "ACTIONS", uid: "actions" },
 ];
@@ -138,33 +136,16 @@ export default function TablePage(props) {
         return (
           <Chip
             className="capitalize"
-            color={
-              user.category
-                ? user.category.active
-                  ? "success"
-                  : "danger"
-                : "default"
-            }
+            color={user.active ? "success" : "danger"}
             size="sm"
             variant="flat"
           >
-            {user.category
-              ? user.category.active
-                ? "Active"
-                : "Inactive"
-              : "-"}
+            {user.active ? "Active" : "Inactive"}
           </Chip>
         );
       case "sn":
         return <div name={cellValue}>{user.sn}</div>;
-      case "description":
-        return (
-          <div>
-            {user.description.length > 20
-              ? user.description.slice(0, 20) + "..."
-              : user.description}
-          </div>
-        );
+
       case "actions":
         return (
           <div className="relative flex items-center gap-2">

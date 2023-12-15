@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Subcategory = mongoose.Schema({
   subCategoryName: String,
   categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "category" },
-  description: String,
+  active: Boolean,
   date: {
     type: Date,
     default: Date.now(),

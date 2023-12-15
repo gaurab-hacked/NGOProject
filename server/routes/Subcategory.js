@@ -30,7 +30,7 @@ route.get("/subcategory", async (req, res) => {
 // post subcategories [POST: http://localhost:8000/api/subcategory/subcategory]  (register required)
 route.post("/subcategory", checkPrivilege, async (req, res) => {
   try {
-    const { subCategoryName, description, categoryId } = req.body;
+    const { subCategoryName, categoryId, active } = req.body;
     const findCategory = await Category.findById(categoryId);
     if (!findCategory)
       return res.status(400).json({ error: "Category not exist" });
@@ -42,8 +42,8 @@ route.post("/subcategory", checkPrivilege, async (req, res) => {
     // adding new category
     const subcategory = await new Subcategory({
       subCategoryName,
-      description,
       categoryId,
+      active,
     });
     const subcatadded = await subcategory.save();
     if (subcatadded) {
@@ -77,7 +77,7 @@ route.delete("/subcategory/:id", checkPrivilege, async (req, res) => {
 // Update subcategories [PATCH: http://localhost:8000/api/subcategory/subcategory/:id]  (register required)
 route.patch("/subcategory/:id", checkPrivilege, async (req, res) => {
   try {
-    const { subCategoryName, description, categoryId } = req.body;
+    const { subCategoryName, categoryId, active } = req.body;
     // check subcategory is exist or not
     const subcategory = await Subcategory.findById(req.params.id);
     if (!subcategory) {
@@ -98,7 +98,9 @@ route.patch("/subcategory/:id", checkPrivilege, async (req, res) => {
       }
       newSubCat.categoryId = categoryId;
     }
-    newSubCat.description = description;
+    if (typeof active === "boolean") {
+      newSubCat.active = active;
+    }
 
     // Find and update the subcategory
     const subcat = await Subcategory.findByIdAndUpdate(

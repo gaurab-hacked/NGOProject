@@ -20,15 +20,8 @@ export const getCategorys = createAsyncThunk("get/categories", async () => {
 export const postCategory = createAsyncThunk(
   "posts/category",
   async (post, thunkApi) => {
-    const formData = new FormData();
-    formData.append("categoryName", post.categoryName);
-    formData.append("displayOrder", post.displayOrder);
-    formData.append("active", post.active);
-    formData.append("image", post.image);
-
     const config = {
       headers: {
-        "Content-Type": "multipart/form-data",
         "auth-token": JSON.parse(localStorage.getItem("token")),
       },
       onUploadProgress: (progressEvent) => {
@@ -43,7 +36,7 @@ export const postCategory = createAsyncThunk(
 
     const response = await axios.post(
       `${API_BASE_URL}/api/category/category`,
-      formData,
+      post,
       config
     );
     return response.data;
@@ -52,15 +45,8 @@ export const postCategory = createAsyncThunk(
 export const updateCategory = createAsyncThunk(
   "update/category",
   async (updatedPost, thunkApi) => {
-    const formData = new FormData();
-    formData.append("categoryName", updatedPost.categoryName);
-    formData.append("displayOrder", updatedPost.displayOrder);
-    formData.append("active", updatedPost.active);
-    formData.append("image", updatedPost.image);
-
     const config = {
       headers: {
-        "Content-Type": "multipart/form-data",
         "auth-token": JSON.parse(localStorage.getItem("token")),
       },
       onUploadProgress: (progressEvent) => {
@@ -72,10 +58,9 @@ export const updateCategory = createAsyncThunk(
         }
       },
     };
-
     const response = await axios.patch(
       `${API_BASE_URL}/api/category/category/${updatedPost.id}`,
-      formData,
+      updatedPost,
       config
     );
     return response.data;
