@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="dark:!bg-black bg-white text-black dark:!text-white">
+      <body className="bg-white text-black">
         <Provider>
           <NextTopLoader
             color="#FAAF2C"

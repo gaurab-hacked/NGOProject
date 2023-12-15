@@ -4,7 +4,7 @@ import Projects from "./Projects";
 
 const page = () => {
   return (
-    <div className="w-[90%] mx-auto my-10 min-h-[70vh]">
+    <div className="w-[90%] mx-auto my-10 min-h-[65vh]">
       <Breadcrumb
         showSearch={true}
         category={"Home"}

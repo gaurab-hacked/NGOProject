@@ -46,7 +46,7 @@ const BottomNav = () => {
     <>
       <div
         className={`w-full z-[10] overflow-hidden h-[60px] bg-white shadow-lg flex items-center justify-between ${
-          scrollCount > 90 ? "fixed" : "sticky"
+          scrollCount > 30 ? "fixed" : "sticky"
         } z-40 top-0`}
       >
         <div id="logo" className="w-[40%] flex">
