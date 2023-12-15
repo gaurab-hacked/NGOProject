@@ -19,14 +19,9 @@ app.use("/api/auth", require("./routes/Auth.js"));
 app.use("/api/category", require("./routes/Category"));
 app.use("/api/subcategory", require("./routes/Subcategory"));
 app.use("/api/post", require("./routes/Blogs"));
-app.use("/api/post", require("./routes/Rating"));
-app.use("/api/comment", require("./routes/Comment"));
-app.use("/api/comment", require("./routes/CommentReply"));
 app.use("/api/carousel", require("./routes/Carousel"));
-app.use("/api/order", require("./routes/OrderAddress"));
-app.use("/api/order", require("./routes/Order"));
+app.use("/api/project", require("./routes/Project"));
 app.use("/api/contact", require("./routes/Contact"));
-app.use("/api/metal", require("./routes/Prise"));
 app.use("/api/target", require("./routes/Target"));
 
 // !================= for static routes =================

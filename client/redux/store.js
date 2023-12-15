@@ -9,6 +9,7 @@ import orderReducer from "./slices/orderSlice";
 import userDetailReducer from "./slices/userDetailSlice";
 import statisticsReducer from "./slices/statisticsSlice";
 import targetReducer from "./slices/targetSlice";
+import projectReducer from "./slices/projectSlice";
 
 export function makeStore() {
   return configureStore({
@@ -23,6 +24,7 @@ export function makeStore() {
       userDetailReducer,
       statisticsReducer,
       targetReducer,
+      projectReducer,
     },
   });
 }
