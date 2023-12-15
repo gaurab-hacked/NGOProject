@@ -52,25 +52,7 @@ const SideNav = (props) => {
                 </span>
               </li>
             </Link>
-            <p
-              className={`${hamClick ? "hidden" : "block"} title tracking-wide`}
-            >
-              USEFUL
-            </p>
-            <Link href="/dashboard/message" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/message")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <BiSolidMessageSquareDetail className="icon" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Message
-                </span>
-              </li>
-            </Link>
+
             <p
               className={`${hamClick ? "hidden" : "block"} title tracking-wide`}
             >
@@ -205,6 +187,20 @@ const SideNav = (props) => {
             >
               USER
             </p>
+            <Link href="/dashboard/message" style={{ textDecoration: "none" }}>
+              <li
+                className={
+                  loc.includes("/dashboard/message")
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
+                    : ""
+                }
+              >
+                <BiSolidMessageSquareDetail className="icon" />
+                <span className={`${hamClick ? "hidden" : "block"}`}>
+                  Message
+                </span>
+              </li>
+            </Link>
             <Link href="/dashboard/users" style={{ textDecoration: "none" }}>
               <li
                 className={
@@ -216,20 +212,6 @@ const SideNav = (props) => {
                 <FaUsers className="icon" />
                 <span className={`${hamClick ? "hidden" : "block"}`}>
                   Users
-                </span>
-              </li>
-            </Link>
-            <Link href="/dashboard/profile" style={{ textDecoration: "none" }}>
-              <li
-                className={
-                  loc.includes("/dashboard/profile")
-                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
-                    : ""
-                }
-              >
-                <HiMiniUserCircle className="icon !scale-110" />
-                <span className={`${hamClick ? "hidden" : "block"}`}>
-                  Profile
                 </span>
               </li>
             </Link>

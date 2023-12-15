@@ -4,7 +4,7 @@ import Widget from "./widget";
 import Featured from "./Feachured";
 import Chart from "./Chart";
 import "./css/Dashboard.css";
-import Table from "../(useful)/orders/page";
+import Table from "../(user)/message/page";
 import {
   getAllDelivery,
   getAllOrders,
@@ -94,7 +94,7 @@ const page = () => {
             />
           </div>
           <div className="listContainer">
-            <div className="listTitle">Latest Transactions</div>
+            <div className="listTitle">Latest Messages</div>
             <Table />
           </div>
         </div>

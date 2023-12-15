@@ -1,11 +1,10 @@
 import React from "react";
-import Table from "./Table";
 
 const page = () => {
   return (
-    <>
-      <Table />
-    </>
+    <div>
+      <div>Gaurab</div>
+    </div>
   );
 };
 
