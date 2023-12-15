@@ -207,7 +207,7 @@ const BottomNav = () => {
       {scrollCount > 600 && (
         <Card
           isPressable
-          className="h-[30px] w-[30px] rounded-sm fixed right-10 bottom-[35vh] z-[100] bg-blue-500 flex justify-center item-center"
+          className="h-[30px] w-[30px] rounded-sm fixed right-4 scale-80 md:scale-100 md:right-10 bottom-[35vh] z-[100] bg-blue-500 flex justify-center item-center"
           style={{ alignItems: "center" }}
           radius="none"
           onClick={scrollUp}

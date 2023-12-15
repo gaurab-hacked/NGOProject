@@ -60,8 +60,8 @@ export default function AccordianFun() {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
   return (
-    <div className="max-w-[65%] m-auto my-20">
-      <h3 className="text-center text-2xl font-semibold mb-5 underline">
+    <div className="w-[95%] md:max-w-[65%] m-auto my-20">
+      <h3 className="text-center text-lg md:text-2xl font-semibold mb-5 underline">
         Key Focus Areas
       </h3>
       <Accordion
@@ -75,7 +75,7 @@ export default function AccordianFun() {
               aria-label={e.title}
               title={`${e.title}`}
               startContent={e.icon}
-              className="text-justify"
+              className="text-justify text-sm md:text-base"
             >
               {e.des}
             </AccordionItem>

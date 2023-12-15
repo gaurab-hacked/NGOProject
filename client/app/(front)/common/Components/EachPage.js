@@ -14,7 +14,7 @@ const EachPage = () => {
 
   return (
     // <div className="h-[500px] relative w-full bg-black mt-7">
-    <div className="h-[500px] relative w-full bg-black">
+    <div className="md:h-[500px] h-[400px] relative w-full bg-black">
       <Image
         className="position-absolute w-full h-full opacity-80"
         src={HeroImage}

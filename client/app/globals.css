@@ -110,3 +110,8 @@ body {
   font-size: 25px !important;
   text-transform: none !important;
 }
+@media screen and (max-width: 768px) {
+  .text-foreground {
+    font-size: 15px !important;
+  }
+}

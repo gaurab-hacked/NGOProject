@@ -18,10 +18,10 @@ const Herosection = () => {
         alt="hero"
       />
       <div className="z-20 mb-5 relative flex justify-center items-center flex-col gap-3">
-        <h1 className="text-white text-2xl font-serif font-semibold tracking-wider">
+        <h1 className="text-white text-lg md:text-2xl text-center font-serif font-semibold tracking-wider">
           Digital Empowerment Society
         </h1>
-        <h3 className="text-white text-3xl font-serif scale-125 font-semibold tracking-wider">
+        <h3 className="text-white md:text-3xl text-xl font-serif text-center scale-125 font-semibold tracking-wider">
           What We Do
         </h3>
       </div>

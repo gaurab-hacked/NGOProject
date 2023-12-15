@@ -10,7 +10,7 @@ const page = () => {
       <div className="h-[60vh] overflow-hidden w-full">
         <Herosection />
       </div>
-      <div className="w-[90%] m-auto my-10">
+      <div className="md:w-[90%] w-[96%] m-auto my-10">
         <Breadcrumb category={"Home"} subcategory={"What-We-Do"} />
         <AccordianFun />
       </div>

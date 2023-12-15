@@ -55,7 +55,7 @@ export default function AccordianFun() {
               aria-label={e.title}
               title={`${e.title}`}
               startContent={e.icon}
-              className="text-justify"
+              className="text-justify text-sm md:text-base"
             >
               {e.des}
             </AccordionItem>

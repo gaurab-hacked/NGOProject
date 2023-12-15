@@ -129,7 +129,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className={`w-full flex justify-center items-center`}>
-          <p className="pt-2 pb-4 font-semibold text-sm text-slate-700 tracking-wide">
+          <p className="pt-2 pb-4 text-center font-semibold text-sm text-slate-700 tracking-wide">
             Copyright © {date.getFullYear()} Digital Empowerment Society. All
             rights reserved.
           </p>
