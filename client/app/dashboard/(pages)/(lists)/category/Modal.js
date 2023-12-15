@@ -27,7 +27,6 @@ export default function ModalApp(props) {
   const [categoryData, setCategoryData] = useState({
     categoryName: "",
     displayOrder: "",
-    image: null,
     active: true,
   });
 
@@ -48,7 +47,6 @@ export default function ModalApp(props) {
     setCategoryData({
       categoryName: "",
       displayOrder: "",
-      image: null,
       active: true,
     });
     setUpdateData({ status: false, data: {} });
@@ -61,8 +59,6 @@ export default function ModalApp(props) {
   const categoryDataChange = (e) => {
     if (e.target.name === "active") {
       setCategoryData({ ...categoryData, active: e.target.checked });
-    } else if (e.target.name === "image") {
-      setCategoryData({ ...categoryData, image: e.target.files[0] });
     } else {
       setCategoryData({ ...categoryData, [e.target.name]: e.target.value });
     }
@@ -172,17 +168,6 @@ export default function ModalApp(props) {
                   </div>
                 )}
 
-                <Input
-                  type="file"
-                  variant="underlined"
-                  label="Product Image"
-                  placeholder="E"
-                  radius="none"
-                  className="!p-0 paddintyzero"
-                  accept=".jpg, .jpeg, .png, .gif, .bmp, .webp"
-                  name="image"
-                  onChange={categoryDataChange}
-                />
                 {updateData.status ? (
                   <Checkbox
                     defaultSelected={updateData.data.active}

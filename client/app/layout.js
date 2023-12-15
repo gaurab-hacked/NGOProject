@@ -1,5 +1,4 @@
 import "./globals.css";
-import ThemeProviders from "./theme/providers";
 import Provider from "@/redux/provider";
 import Navigation from "./(front)/common/Navigation/Navigation";
 import Footer from "./(front)/common/Navigation/Footer";
@@ -26,11 +25,9 @@ export default function RootLayout({ children }) {
             speed={200}
             shadow="0 0 10px #FAAF2C,0 0 5px #FAAF2C"
           />
-          <ThemeProviders>
-            <Navigation />
-            {children}
-            <Footer />
-          </ThemeProviders>
+          <Navigation />
+          {children}
+          <Footer />
         </Provider>
       </body>
     </html>

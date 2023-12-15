@@ -32,9 +32,9 @@ const INITIAL_VISIBLE_COLUMNS = [
   "sn",
   "categoryName",
   "displayOrder",
-  "image",
   "active",
   "actions",
+  "date",
 ];
 const columns = [
   { name: "SN", uid: "sn" },
@@ -42,7 +42,6 @@ const columns = [
   { name: "NAME", uid: "categoryName", sortable: true },
   { name: "DISPLAY ORDER", uid: "displayOrder", sortable: true },
   { name: "ACTIVE", uid: "active" },
-  { name: "IMAGE", uid: "image" },
   { name: "DATE", uid: "date" },
   { name: "ACTIONS", uid: "actions" },
 ];
@@ -132,12 +131,6 @@ export default function TablePage(props) {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
-      case "image":
-        return (
-          <User avatarProps={{ radius: "lg", src: user.image }}>
-            {user.categoryName}
-          </User>
-        );
       case "date":
         return <div>{dateConverter(user.date)}</div>;
       case "active":

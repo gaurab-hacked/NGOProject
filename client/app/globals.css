@@ -136,3 +136,6 @@ body {
 
   grid-gap: 10px;
 }
+.fileInput label {
+  margin-bottom: 7px !important;
+}
