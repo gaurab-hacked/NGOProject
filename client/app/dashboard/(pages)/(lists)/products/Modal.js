@@ -277,7 +277,7 @@ export default function modalApp(props) {
           {(onClose) => (
             <div id="ProductModal">
               <form onSubmit={formsubmit} method="post">
-                <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 dark:text-slate-200">
+                <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 black:text-slate-200">
                   Add Product
                 </ModalHeader>
                 <ModalBody>

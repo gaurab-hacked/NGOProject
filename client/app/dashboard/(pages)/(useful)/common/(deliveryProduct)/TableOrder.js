@@ -289,7 +289,7 @@ export default function TableOrder(props) {
                 ? "delivery"
                 : "finished"}
             </span>
-            <span className="tracking-wide font-semibold text-slate-600 dark:text-slate-300">
+            <span className="tracking-wide font-semibold text-slate-600 black:text-slate-300">
               Dashboard/
               {pageFrom.toLowerCase() === "order"
                 ? "orders"

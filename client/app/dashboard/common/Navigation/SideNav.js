@@ -23,11 +23,11 @@ const SideNav = (props) => {
 
   return (
     <div
-      className={`h-screen z-50 duration-100 fixed top-[55px] shadow dark:shadow-slate-600 ${
+      className={`h-screen z-50 duration-100 fixed top-[55px] shadow black:shadow-slate-600 ${
         !hamClick ? "left-0 w-[180px]" : "-left-[0px] w-[50px]"
       }`}
     >
-      <div className="w-full h-full sidebar dark:!bg-[#121212] !z-50 !bg-white">
+      <div className="w-full h-full sidebar black:!bg-[#121212] !z-50 !bg-white">
         <div className="center">
           <ul
             className={`!mb-2  ${
@@ -43,7 +43,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc === "/dashboard"
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -62,7 +62,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/message")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -78,7 +78,7 @@ const SideNav = (props) => {
             >
               <li
                 className={
-                  loc.includes("/dashboard/notification") ? `dark:!bg-[#363636]  !bg-[#dcd4ff]` : ""
+                  loc.includes("/dashboard/notification") ? `black:!bg-[#363636]  !bg-[#dcd4ff]` : ""
                 }
               >
                 <NotificationsNoneIcon className="icon" />
@@ -92,7 +92,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/orders")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -106,7 +106,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/delivery")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -120,7 +120,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/finished")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -140,7 +140,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/category")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -157,7 +157,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/subcategory")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -171,7 +171,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/banner")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -185,7 +185,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/products")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -207,7 +207,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/filledchart")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -224,7 +224,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/linechart")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -238,7 +238,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/barchart")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -257,7 +257,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/users")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >
@@ -271,7 +271,7 @@ const SideNav = (props) => {
               <li
                 className={
                   loc.includes("/dashboard/profile")
-                    ? `dark:!bg-[#363636]  !bg-[#dcd4ff]`
+                    ? `black:!bg-[#363636]  !bg-[#dcd4ff]`
                     : ""
                 }
               >

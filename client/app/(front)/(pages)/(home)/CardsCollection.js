@@ -28,7 +28,7 @@ export default function CardCollection() {
             className="z-0 w-full !opacity-70 h-full object-cover"
             src="https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
           />
-          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 black:border-default-100">
             <div className="flex flex-grow gap-2 items-center">
               <div className="flex flex-col">
                 <p className="text-white/80 text-base">Category Name</p>
@@ -64,7 +64,7 @@ export default function CardCollection() {
             className="z-0 w-full !opacity-70 h-full object-cover"
             src="https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
           />
-          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 black:border-default-100">
             <div className="flex flex-grow gap-2 items-center">
               <div className="flex flex-col">
                 <p className="text-white/80 text-base">Category Name</p>
@@ -99,7 +99,7 @@ export default function CardCollection() {
             className="z-0 w-full !opacity-70 h-full object-cover"
             src="https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
           />
-          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 black:border-default-100">
             <div className="flex flex-grow gap-2 items-center">
               <div className="flex flex-col">
                 <p className="text-white/80 text-base">Category Name</p>
@@ -134,7 +134,7 @@ export default function CardCollection() {
             className="z-0 w-full !opacity-70 h-full object-cover"
             src="https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
           />
-          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 black:border-default-100">
             <div className="flex flex-grow gap-2 items-center">
               <div className="flex flex-col">
                 <p className="text-white/80 text-base">Category Name</p>
@@ -169,7 +169,7 @@ export default function CardCollection() {
             className="z-0 w-full h-full !opacity-70 object-cover"
             src="https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
           />
-          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 dark:border-default-100">
+          <CardFooter className=" absolute bg-black/40 bottom-0 z-[1] border-t-1 border-default-600 black:border-default-100">
             <div className="flex flex-grow gap-2 items-center">
               <div className="flex flex-col">
                 <p className="text-white/80 text-base">Category Name</p>

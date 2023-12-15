@@ -22,7 +22,7 @@ const TopNavContent = (props) => {
   }, []);
   return (
     <>
-      <div className="h-[55px] uppercase font-semibold dark:text-slate-300 border-b absolute left-0 tracking-wide text-[#5f5296] w-[180px] flex justify-center items-center border-r dark:border-slate-800">
+      <div className="h-[55px] uppercase font-semibold black:text-slate-300 border-b absolute left-0 tracking-wide text-[#5f5296] w-[180px] flex justify-center items-center border-r black:border-slate-800">
         Dashboard
       </div>
       <div className="w-full  flex justify-between items-center h-full ml-[180px]">
@@ -33,19 +33,19 @@ const TopNavContent = (props) => {
               onClick={() => setHamClick((p) => !p)}
             >
               <div
-                className={`  duration-100 rounded-[2px]  bg-[#5f5296] dark:bg-slate-300 ${
+                className={`  duration-100 rounded-[2px]  bg-[#5f5296] black:bg-slate-300 ${
                   hamClick
                     ? "w-[25px] h-[.25rem] rotate-45 absolute bottom-3 -left-1"
                     : "w-[27px] h-[.3rem]"
                 }`}
               ></div>
               <div
-                className={` h-[.3rem] duration-100 rounded-[2px] bg-[#5f5296] dark:bg-slate-300 ${
+                className={` h-[.3rem] duration-100 rounded-[2px] bg-[#5f5296] black:bg-slate-300 ${
                   hamClick ? "hidden" : "w-[13px]"
                 }`}
               ></div>
               <div
-                className={` duration-100 rounded-[2px] bg-[#5f5296] dark:bg-slate-300 ${
+                className={` duration-100 rounded-[2px] bg-[#5f5296] black:bg-slate-300 ${
                   hamClick
                     ? "w-[25px] h-[.25rem]  -rotate-45 absolute bottom-3 -left-1"
                     : "w-[18px] h-[.3rem] "
@@ -53,7 +53,7 @@ const TopNavContent = (props) => {
               ></div>
             </div>
           </div>
-          <div className="font-semibold text-lg ml-10 text-slate-700 tracking-wide dark:text-slate-300">
+          <div className="font-semibold text-lg ml-10 text-slate-700 tracking-wide black:text-slate-300">
             Hello Admin, {greeting}
           </div>
         </div>

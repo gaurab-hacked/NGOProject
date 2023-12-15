@@ -135,7 +135,7 @@ export default function ModalApp(props) {
         <ModalContent>
           {(onClose) => (
             <form method="post" onSubmit={subCategoryDataSubmit}>
-              <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 dark:text-slate-200">
+              <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 black:text-slate-200">
                 Add Subcategory
               </ModalHeader>
               <ModalBody>

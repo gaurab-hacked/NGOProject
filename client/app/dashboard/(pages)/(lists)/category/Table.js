@@ -248,7 +248,7 @@ export default function TablePage(props) {
             <span className="text-default-400 text-small">
               Total {categoryData.length} categories
             </span>
-            <span className="tracking-wide font-semibold text-slate-600 dark:text-slate-300">
+            <span className="tracking-wide font-semibold text-slate-600 black:text-slate-300">
               Dashboard/Categories
             </span>
           </div>

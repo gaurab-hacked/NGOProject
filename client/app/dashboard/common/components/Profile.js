@@ -82,7 +82,7 @@ export default function Profile(props) {
               <ListboxItem
                 key="account"
                 startContent={
-                  <PersonIcon className="text-slate-600 relative text-xl ml-[3px] dark:text-slate-200" />
+                  <PersonIcon className="text-slate-600 relative text-xl ml-[3px] black:text-slate-200" />
                 }
                 textValue="My Account"
                 onClick={linkClick}
@@ -92,7 +92,7 @@ export default function Profile(props) {
               <ListboxItem
                 key="gohome"
                 startContent={
-                  <HomeIcon className="text-slate-600 text-lg ml-[5px] dark:text-slate-200" />
+                  <HomeIcon className="text-slate-600 text-lg ml-[5px] black:text-slate-200" />
                 }
                 textValue="Go Home"
                 onClick={goHomeClick}
@@ -102,7 +102,7 @@ export default function Profile(props) {
               <ListboxItem
                 key="switch account"
                 startContent={
-                  <SwitchAccountIcon className="text-slate-600 text-lg ml-[5px] dark:text-slate-200" />
+                  <SwitchAccountIcon className="text-slate-600 text-lg ml-[5px] black:text-slate-200" />
                 }
                 textValue="switch account"
                 onClick={switchAccountClick}

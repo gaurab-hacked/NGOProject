@@ -30,7 +30,7 @@ export default function Message(props) {
               shape="circle"
               className="text-xs h-[20px] pb-[2px] w-[20px]"
             >
-              <EmailIcon className="scale-95 cursor-pointer text-slate-600 dark:text-slate-200" />
+              <EmailIcon className="scale-95 cursor-pointer text-slate-600 black:text-slate-200" />
             </Badge>
           </Button>
         </PopoverTrigger>
@@ -40,7 +40,7 @@ export default function Message(props) {
               return (
                 <Link
                   key={e._id}
-                  className=" py-2 hover:bg-[#e7e7e7] dark:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
+                  className=" py-2 hover:bg-[#e7e7e7] black:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
                   href={`/dashboard/message/${e._id}`}
                   onClick={() => btnref.current.click()}
                 >

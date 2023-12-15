@@ -28,27 +28,27 @@ export default function Notification() {
               shape="circle"
               className="text-xs h-[20px] pb-[2px] w-[20px]"
             >
-              <NotificationsIcon className="cursor-pointer text-slate-600 dark:text-slate-200" />
+              <NotificationsIcon className="cursor-pointer text-slate-600 black:text-slate-200" />
             </Badge>
           </Button>
         </PopoverTrigger>
         <PopoverContent className="!rounded-[3px] !px-0">
           <div
-            className=" py-2 hover:bg-[#e2dcff] dark:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
+            className=" py-2 hover:bg-[#e2dcff] black:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
             onClick={() => router.push("/dashboard/notification")}
           >
             <div className="text-small font-bold">Popover Content</div>
             <div className="text-tiny">This is the popover content</div>
           </div>
           <div
-            className=" py-2 hover:bg-[#e2dcff] dark:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
+            className=" py-2 hover:bg-[#e2dcff] black:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
             onClick={() => router.push("/dashboard/notification")}
           >
             <div className="text-small font-bold">Popover Content</div>
             <div className="text-tiny">This is the popover content</div>
           </div>
           <div
-            className=" py-2 hover:bg-[#e2dcff] dark:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
+            className=" py-2 hover:bg-[#e2dcff] black:hover:bg-[#2d2a3d] w-full px-4 select-none cursor-pointer"
             onClick={() => router.push("/dashboard/notification")}
           >
             <div className="text-small font-bold">Popover Content</div>

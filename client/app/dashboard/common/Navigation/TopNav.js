@@ -66,7 +66,7 @@ const TopNav = (props) => {
 
   return isDashboard ? (
     <nav className="w-full overflow-auto h-[55px] ">
-      <div className="w-full h-[55px] flex shadow dark:shadow-slate-600 bg-white dark:bg-[#121212] z-50 fixed top-0 left-0 right-0">
+      <div className="w-full h-[55px] flex shadow  bg-white z-50 fixed top-0 left-0 right-0">
         <TopNavContent
           loginData={isLogin}
           setHamClick={setHamClick}
