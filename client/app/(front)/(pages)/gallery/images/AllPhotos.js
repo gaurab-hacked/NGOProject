@@ -54,21 +54,23 @@ export default function Albums() {
 
   return (
     <>
-      <div className="gap-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <div className="gap-5 gridcontainer">
         {list.map((item, index) => (
           <Card
             shadow="sm"
             key={index}
             isPressable
             onPress={() => btnref.current.click()}
+            radius="none"
+            className="rounded-sm overflow-hidden"
           >
-            <CardBody className="overflow-visible p-0">
+            <CardBody className="overflow-visible p-1">
               <Image
                 shadow="sm"
                 radius="lg"
                 width="100%"
                 alt={item.title}
-                className="w-full !min-w-[250px] object-cover h-[200px]"
+                className="w-full rounded-sm object-cover hover:scale-105 duration-200 h-[200px]"
                 src={item.img}
               />
             </CardBody>

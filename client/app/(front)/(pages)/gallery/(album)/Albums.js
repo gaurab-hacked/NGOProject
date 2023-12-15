@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Image from "next/image";
 import image1 from "@/public/hero.jpg";
+import Link from "next/link";
 
 export default function Albums() {
   const list = [
@@ -44,28 +45,24 @@ export default function Albums() {
   const router = useRouter();
 
   return (
-    <div className="gap-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+    <div className="gap-5 gridcontainer">
       {list.map((item, index) => (
-        <Card
-          shadow="sm"
-          key={index}
-          isPressable
-          onPress={() => router.push("/gallery/images")}
-        >
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              alt={item.title}
-              className="w-full object-cover h-[140px]"
-              src={item.img}
-            />
-          </CardBody>
-          <CardFooter className="text-small justify-between">
-            <b>{item.title}</b>
-          </CardFooter>
-        </Card>
+        <Link href="gallery/images" className="max-w-[300px]" key={index}>
+          <Card className="py-4 pt-1">
+            <CardBody className="overflow-visible py-2">
+              <Image
+                alt="Card background"
+                className="object-cover rounded-xl"
+                src={image1}
+                width={270}
+              />
+            </CardBody>
+            <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">
+              <p className="text-tiny uppercase font-bold">Daily Mix</p>
+              <h4 className="font-bold text-large">Ecommerce Site</h4>
+            </CardFooter>
+          </Card>
+        </Link>
       ))}
     </div>
   );

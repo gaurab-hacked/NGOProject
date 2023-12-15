@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function EachProjects() {
   return (
-    <Link href="/">
-      <Card className="py-4 !max-w-[300px]">
+    <Link href="/" className="max-w-[300px]">
+      <Card className="py-4">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">Daily Mix</p>
           {/* <small className="text-default-500">begineer</small> */}

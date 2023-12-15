@@ -10,12 +10,15 @@ const newsAndEventsData = [
       "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. ",
   },
   { title: "Event 1", content: "Consectetur adipiscing elit." },
+  { title: "Event 1", content: "Consectetur adipiscing elit." },
+  { title: "Event 1", content: "Consectetur adipiscing elit." },
+  { title: "Event 1", content: "Consectetur adipiscing elit." },
 ];
 
 const Projects = () => {
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5">
+      <div className="grid gap-4 gridcontainer">
         {newsAndEventsData.map((item, index) => (
           <EachProjects key={index} />
         ))}
