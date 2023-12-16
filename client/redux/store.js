@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import categoryReducer from "./slices/categorySlice";
 import subcategoryReducer from "./slices/subCategorySlice";
 import carouselReducer from "./slices/carouselSlice";
-import productReducer from "./slices/productSlice";
+import blogReducer from "./slices/blogSlice";
 import authReducer from "./slices/authSlice";
 import messageReducer from "./slices/messageSlice";
 import orderReducer from "./slices/orderSlice";
@@ -19,7 +19,7 @@ export function makeStore() {
       categoryReducer,
       subcategoryReducer,
       carouselReducer,
-      productReducer,
+      blogReducer,
       messageReducer,
       orderReducer,
       userDetailReducer,

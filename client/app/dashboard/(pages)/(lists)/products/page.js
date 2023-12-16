@@ -7,14 +7,14 @@ import {
   getproducts,
   deleteproduct,
   updateproduct,
-} from "@/redux/slices/productSlice";
+} from "@/redux/slices/blogSlice";
 import { getsubcategorys } from "@/redux/slices/subCategorySlice";
 import { toast } from "sonner";
 import { getCategorys } from "@/redux/slices/categorySlice";
 import {
   // percentCompletedValue,
   setOnProgressChangeCallback,
-} from "@/redux/slices/productSlice";
+} from "@/redux/slices/blogSlice";
 
 const page = () => {
   const [postUpload, setPostUpload] = useState(0);

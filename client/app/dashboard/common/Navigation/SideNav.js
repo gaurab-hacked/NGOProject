@@ -150,7 +150,9 @@ const SideNav = (props) => {
               </li>
             </Link>
             <p
-              className={`${hamClick ? "hidden" : "block"} title tracking-wide`}
+              className={`${
+                hamClick ? "hidden" : "block"
+              } title uppercase tracking-wide`}
             >
               Gallery
             </p>

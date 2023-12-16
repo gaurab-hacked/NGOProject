@@ -5,7 +5,7 @@ import Footer from "./(front)/common/Navigation/Footer";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata = {
-  title: "DES site",
+  title: "DES (Digital Empowerment Society)",
   description: "Creating DES site",
 };
 
