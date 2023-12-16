@@ -5,7 +5,6 @@ require("dotenv").config();
 const upload = require("../middleware/uploadInBlog");
 const fs = require("fs");
 const { default: mongoose } = require("mongoose");
-// const CheckSuperAdmin = require("../middleware/CheckSuperAdmin");
 const Category = require("../models/Category");
 const Subcategory = require("../models/Subcategory");
 const checkPrivilege = require("../middleware/checkPrivilege");
@@ -39,41 +38,6 @@ route.get("/blog/:id", async (req, res) => {
   }
 });
 
-// get by metal [GET: http://localhost:8000/api/post/blog/filter/:metal]  (register not required)
-route.get("/blog/filter/:metal", async (req, res) => {
-  try {
-    const metal = req.params.metal;
-    const norevdata = await Blog.find({ metal });
-    const data = norevdata;
-    res.json(data);
-  } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
-  }
-});
-// get by category [GET: http://localhost:8000/api/post/blog/category/filter/:category]  (register not required)
-route.get("/blog/category/filter/:category", async (req, res) => {
-  try {
-    const categoryId = req.params.category;
-    const norevdata = await Blog.find({ categoryId });
-    const data = norevdata;
-    res.json(data);
-  } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
-  }
-});
-
-// get by subcategory [GET: http://localhost:8000/api/post/blog/subcategory/filter/:subcategory]  (register not required)
-route.get("/blog/subcategory/filter/:subcategory", async (req, res) => {
-  try {
-    const subcategoryId = req.params.subcategory;
-    const norevdata = await Blog.find({ subcategoryId });
-    const data = norevdata;
-    res.json(data);
-  } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
-  }
-});
-
 // Post Blogs [POST: http://localhost:8000/api/post/blogs] (register required)
 route.post(
   "/blogs",
@@ -81,22 +45,8 @@ route.post(
   upload.array("image", 4),
   async (req, res) => {
     try {
-      const {
-        categoryId,
-        subcategoryId,
-        title,
-        description,
-        like,
-        price,
-        maxQuantity,
-        rating,
-        address,
-        phNumber,
-        metal,
-        weight,
-        westage,
-        discount,
-      } = req.body;
+      const { categoryId, subcategoryId, title, subtitle, description } =
+        req.body;
 
       // check if file is uploaded or not
       if (!req.files.length > 0)
@@ -129,21 +79,11 @@ route.post(
 
       const blog = new Blog({
         title,
+        subtitle,
         description,
-        like,
-        price,
-        maxQuantity,
-        rating,
-        address,
-        phNumber,
         categoryId,
         subcategoryId: subcategoryId === "" ? null : subcategoryId,
-        metal,
-        weight,
-        westage,
-        discount,
         image: images,
-        likeId: String(like).toLowerCase() === "true" ? likeId : [],
       });
 
       if (!blog) {
@@ -152,7 +92,7 @@ route.post(
       }
 
       await blog.save();
-      res.json({ success: "Blog Added", product: blog });
+      res.json({ success: "Blog Added", blog: blog });
     } catch (e) {
       if (req.files.length > 0) {
         deleteImage(req.files);
@@ -206,38 +146,11 @@ route.patch(
         return res.status(404).json({ error: "Blog Not Found" });
       }
 
-      const {
-        categoryId,
-        subcategoryId,
-        title,
-        description,
-        like,
-        price,
-        maxQuantity,
-        rating,
-        address,
-        phNumber,
-        metal,
-        weight,
-        westage,
-        discount,
-      } = req.body;
+      const { categoryId, subcategoryId, title, subtitle, description } =
+        req.body;
 
       // Initialize variables for image handling
       let newImages = oldBlog.image;
-      const likeId = req.user.id;
-
-      // Handle like updates
-      const isLiked = String(like).toLowerCase() === "true";
-      const hasUserLiked = oldBlog.likeId.includes(likeId);
-
-      if (isLiked && !hasUserLiked) {
-        newImages = req.files.map((file) => file.path);
-        oldBlog.likeId.push(likeId);
-      } else if (!isLiked && hasUserLiked) {
-        const userIndex = oldBlog.likeId.indexOf(likeId);
-        oldBlog.likeId.splice(userIndex, 1);
-      }
 
       // Handle image updates
       if (req.files.length > 0) {
@@ -261,17 +174,8 @@ route.patch(
         categoryId,
         subcategoryId,
         title,
+        subtitle,
         description,
-        like: isLiked,
-        price,
-        maxQuantity,
-        rating,
-        address,
-        phNumber,
-        metal,
-        weight,
-        westage,
-        discount,
         image: newImages,
       };
 
@@ -288,6 +192,8 @@ route.patch(
         if (subcategory) {
           updatedBlog.subcategoryId = subcategoryId;
         }
+      } else {
+        updatedBlog.subcategoryId = null;
       }
 
       const blog = await Blog.findByIdAndUpdate(
@@ -296,7 +202,7 @@ route.patch(
         { new: true }
       );
       await blog.save();
-      res.json({ success: "Blog Update Success", product: blog });
+      res.json({ success: "Blog Update Success", blog: blog });
     } catch (e) {
       if (req.files.length > 0) {
         deleteImage(req.files);
