@@ -26,6 +26,7 @@ import { DeleteIcon } from "@/app/dashboard/common/components/Tables/Icons/Delet
 import ModalApp from "./Modal";
 import ConFirm from "@/app/dashboard/common/components/ConFirm";
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
+import BreadcrumbsFun from "@/app/dashboard/common/components/Breadcrumbs";
 
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
@@ -240,13 +241,12 @@ export default function TablePage(props) {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <div className="flex gap-8 items-center justify-center">
+          <div className="flex gap-5 items-center justify-center">
             <span className="text-default-400 text-small">
               Total {catouselData.length} Banners
             </span>
-            <span className="tracking-wide font-semibold text-slate-600 black:text-slate-300">
-              Dashboard/Banners
-            </span>
+            <div className="h-[20px] w-[1px] bg-gray-500 z-10"></div>
+            <BreadcrumbsFun category={"Dashboard"} subcategory={"Banner"} />
           </div>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:

@@ -16,8 +16,8 @@ import {
   Chip,
   Pagination,
   Tooltip,
-  Avatar,
   User,
+  Divider,
 } from "@nextui-org/react";
 import { SearchIcon } from "@/app/dashboard/common/components/Tables/Icons/SearchIcon";
 import { ChevronDownIcon } from "@/app/dashboard/common/components/Tables/Icons/ChevronDownIcon";
@@ -31,30 +31,28 @@ import BreadcrumbsFun from "@/app/dashboard/common/components/Breadcrumbs";
 
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
-  "categoryName",
-  "displayOrder",
+  "title",
+  "description",
+  "category",
+  "image",
   "active",
   "actions",
-  "date",
 ];
 const columns = [
   { name: "SN", uid: "sn" },
   { name: "ID", uid: "_id", sortable: true },
-  { name: "NAME", uid: "categoryName", sortable: true },
-  { name: "DISPLAY ORDER", uid: "displayOrder", sortable: true },
+  { name: "TITLE", uid: "title", sortable: true },
+  { name: "DESCRIPTION", uid: "description", sortable: true },
+  { name: "CATEGORY", uid: "category", sortable: true },
   { name: "ACTIVE", uid: "active" },
+  { name: "IMAGE", uid: "image" },
   { name: "DATE", uid: "date" },
   { name: "ACTIONS", uid: "actions" },
 ];
 
 export default function TablePage(props) {
-  const {
-    handelPostCategory,
-    categoryData,
-    handelDelete,
-    handelUpdate,
-    postUpload,
-  } = props;
+  const { handelPost, catouselData, handelDelete, handelUpdate, postUpload } =
+    props;
   const [filterValue, setFilterValue] = React.useState("");
   const [visibleColumns, setVisibleColumns] = React.useState(
     new Set(INITIAL_VISIBLE_COLUMNS)
@@ -91,15 +89,15 @@ export default function TablePage(props) {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredUsers = [...categoryData];
+    let filteredUsers = [...catouselData];
 
     if (hasSearchFilter) {
       filteredUsers = filteredUsers.filter((user) =>
-        user.categoryName.toLowerCase().includes(filterValue.toLowerCase())
+        user.title.toLowerCase().includes(filterValue.toLowerCase())
       );
     }
     return filteredUsers;
-  }, [categoryData, filterValue]);
+  }, [catouselData, filterValue]);
 
   // const pages = Math.ceil(filteredItems.length / rowsPerPage);
   let pages = 1;
@@ -132,6 +130,12 @@ export default function TablePage(props) {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
+      case "image":
+        return (
+          <User avatarProps={{ radius: "lg", src: user.image }}>
+            {user.title}
+          </User>
+        );
       case "date":
         return <div>{dateConverter(user.date)}</div>;
       case "active":
@@ -194,7 +198,7 @@ export default function TablePage(props) {
             isClearable
             radius="sm"
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by category name..."
+            placeholder="Search by news and events title..."
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
@@ -239,12 +243,16 @@ export default function TablePage(props) {
         </div>
         <div className="flex justify-between items-center">
           <div className="flex gap-5 items-center justify-center">
-            <span className="text-default-400 text-small">
-              Total {categoryData.length} categories
+            <span className="text-default-400 h-[20px] text-small">
+              Total {catouselData.length} news & events
             </span>
             <div className="h-[20px] w-[1px] bg-gray-500 z-10"></div>
-            <BreadcrumbsFun category={"Dashboard"} subcategory={"Category"} />
+            <BreadcrumbsFun
+              category={"Dashboard"}
+              subcategory={"News & Events"}
+            />
           </div>
+
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
             <select
@@ -263,7 +271,7 @@ export default function TablePage(props) {
     filterValue,
     visibleColumns,
     onRowsPerPageChange,
-    categoryData.length,
+    catouselData.length,
     onSearchChange,
     hasSearchFilter,
   ]);
@@ -316,7 +324,7 @@ export default function TablePage(props) {
             </TableColumn>
           )}
         </TableHeader>
-        <TableBody emptyContent={"No Category found"} items={sortedItems}>
+        <TableBody emptyContent={"No newsEvents found"} items={sortedItems}>
           {(item) => (
             <TableRow key={item._id}>
               {(columnKey) => (
@@ -332,7 +340,7 @@ export default function TablePage(props) {
         deleteId={deleteId}
       />
       <ModalApp
-        handelPostCategory={handelPostCategory}
+        handelPost={handelPost}
         handelUpdate={handelUpdate}
         updateBtnRef={updateBtnRef}
         updateData={updateData}

@@ -29,6 +29,7 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ConFirmAddadmin from "./ConFirmAddadmin";
 import { VerifiedUser } from "@mui/icons-material";
+import BreadcrumbsFun from "@/app/dashboard/common/components/Breadcrumbs";
 
 const statusOptions = [
   { name: "Superadmin", uid: 2 },
@@ -328,13 +329,12 @@ export default function TablePage(props) {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <div className="flex gap-8 items-center justify-center">
+          <div className="flex gap-5 items-center justify-center">
             <span className="text-default-400 text-small">
               Total {contentData.length} users
             </span>
-            <span className="tracking-wide font-semibold text-slate-600 black:text-slate-300">
-              Dashboard/Users
-            </span>
+            <div className="h-[20px] w-[1px] bg-gray-500 z-10"></div>
+            <BreadcrumbsFun category={"Dashboard"} subcategory={"Users"} />
           </div>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
