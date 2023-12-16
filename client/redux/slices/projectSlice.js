@@ -11,7 +11,7 @@ export let percentCompletedValue = 0;
 export const getprojects = createAsyncThunk("get/projects", async () => {
   const config = { headers: {} };
   const response = await axios.get(
-    `${API_BASE_URL}/api/project/projectes`,
+    `${API_BASE_URL}/api/project/projects`,
     config
   );
   return response.data;

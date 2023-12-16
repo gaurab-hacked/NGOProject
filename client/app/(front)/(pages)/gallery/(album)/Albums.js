@@ -59,7 +59,7 @@ export default function Albums() {
             </CardBody>
             <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">
               <p className="text-tiny uppercase font-bold">Daily Mix</p>
-              <h4 className="font-bold text-large">Ecommerce Site</h4>
+              <h4 className="font-bold text-large">DES Site</h4>
             </CardFooter>
           </Card>
         </Link>

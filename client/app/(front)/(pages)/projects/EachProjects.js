@@ -11,7 +11,7 @@ export default function EachProjects() {
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">Daily Mix</p>
           {/* <small className="text-default-500">begineer</small> */}
-          <h4 className="font-bold text-large">Ecommerce Site</h4>
+          <h4 className="font-bold text-large">DES Site</h4>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
           <Image

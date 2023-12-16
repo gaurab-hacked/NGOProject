@@ -5,8 +5,8 @@ import Footer from "./(front)/common/Navigation/Footer";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata = {
-  title: "Ecommerce site",
-  description: "Creating ecommerce site",
+  title: "DES site",
+  description: "Creating DES site",
 };
 
 export default function RootLayout({ children }) {
