@@ -41,6 +41,7 @@ const columns = [
   { name: "ID", uid: "_id", sortable: true },
   { name: "TITLE", uid: "title", sortable: true },
   { name: "CATEGORY", uid: "category", sortable: true },
+  { name: "URL", uid: "url", sortable: true },
   { name: "ACTIVE", uid: "active" },
   { name: "IMAGE", uid: "image" },
   { name: "DATE", uid: "date" },

@@ -23,6 +23,7 @@ export const postproject = createAsyncThunk(
     const formData = new FormData();
     formData.append("title", post.projectTitle);
     formData.append("image", post.projectImage);
+    formData.append("url", post.projectURL);
     formData.append("active", post.projectActive);
     formData.append("category", post.projectCategoryId);
 
@@ -60,6 +61,7 @@ export const updateproject = createAsyncThunk(
     try {
       const formData = new FormData();
       formData.append("title", updatedPost.projectTitle);
+      formData.append("url", updatedPost.projectURL);
       formData.append("image", updatedPost.projectImage);
       formData.append("active", updatedPost.projectActive);
       formData.append("category", updatedPost.projectCategoryId);

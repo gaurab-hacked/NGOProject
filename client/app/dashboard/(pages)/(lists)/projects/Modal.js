@@ -38,6 +38,7 @@ export default function ModalApp(props) {
 
   const [projectData, setprojectData] = useState({
     projectTitle: "",
+    projectURL: "",
     projectCategoryId: "",
     projectCategoryName: "",
     projectActive: true,
@@ -52,6 +53,7 @@ export default function ModalApp(props) {
   useEffect(() => {
     setprojectData({
       projectTitle: updateData.status ? updateData.data.title : "",
+      projectURL: updateData.status ? updateData.data.url : "",
       projectCategoryId: updateData.status ? updateData.data.category : "",
       projectActive: updateData.status ? updateData.data.active : true,
       projectImage: updateData.status ? updateData.data.image : null,
@@ -84,6 +86,7 @@ export default function ModalApp(props) {
   const clearprojectData = () => {
     setprojectData({
       projectTitle: "",
+      projectURL: "",
       projectCategoryId: "",
       projectCategoryName: "",
       projectActive: true,
@@ -105,17 +108,17 @@ export default function ModalApp(props) {
     };
 
     if (!projectData.projectTitle.trim()) {
-      newValidationErrors.projectTitle = "project Title is required";
+      newValidationErrors.projectTitle = "Project Title is required";
       isValid = false;
     }
 
     if (!projectData.projectImage) {
-      newValidationErrors.projectImage = "project Image is required";
+      newValidationErrors.projectImage = "Project Image is required";
       isValid = false;
     }
 
     if (projectData.projectCategoryId.length < 1) {
-      newValidationErrors.projectCategoryId = "project Category is required";
+      newValidationErrors.projectCategoryId = "Project Category is required";
       isValid = false;
     }
 
@@ -175,7 +178,7 @@ export default function ModalApp(props) {
               <ModalBody>
                 <Input
                   type="text"
-                  label="project Title"
+                  label="Project Title"
                   radius="sm"
                   size="sm"
                   variant="underlined"
@@ -183,18 +186,29 @@ export default function ModalApp(props) {
                   value={projectData.projectTitle}
                   onChange={projectDataChange}
                 />
+
                 {validationErrors.projectTitle && (
                   <div className="text-red-500 errorFront">
                     {validationErrors.projectTitle}
                   </div>
                 )}
+                <Input
+                  type="text"
+                  label="Project URL"
+                  radius="sm"
+                  size="sm"
+                  variant="underlined"
+                  name="projectURL"
+                  value={projectData.projectURL}
+                  onChange={projectDataChange}
+                />
 
                 <div className="flex gap-3 w-full">
                   <div className="flex flex-col w-1/2">
                     {updateData.status ? (
                       <Select
                         variant="underlined"
-                        label="project Cateogry"
+                        label="Project Cateogry"
                         className="w-full"
                         radius="sm"
                         name="projectCategoryId"
@@ -211,7 +225,7 @@ export default function ModalApp(props) {
                     ) : (
                       <Select
                         variant="underlined"
-                        label="project Cateogry"
+                        label="Project Cateogry"
                         className="w-full"
                         radius="sm"
                         name="projectCategoryId"
@@ -235,7 +249,7 @@ export default function ModalApp(props) {
                     <Input
                       type="file"
                       variant="underlined"
-                      label="project Image"
+                      label="Project Image"
                       placeholder="E"
                       radius="none"
                       className="!p-0 paddintyzero"
@@ -260,7 +274,7 @@ export default function ModalApp(props) {
                     value={projectData.projectActive}
                     onChange={projectDataChange}
                   >
-                    Active project
+                    Active Project
                   </Checkbox>
                 ) : (
                   <Checkbox
@@ -271,7 +285,7 @@ export default function ModalApp(props) {
                     value={projectData.projectActive}
                     onChange={projectDataChange}
                   >
-                    Active project
+                    Active Project
                   </Checkbox>
                 )}
                 {postUpload > 0 && (
