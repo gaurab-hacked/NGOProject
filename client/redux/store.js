@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import categoryReducer from "./slices/categorySlice";
+import albumReducer from "./slices/albumSlice";
 import subcategoryReducer from "./slices/subCategorySlice";
 import carouselReducer from "./slices/carouselSlice";
 import blogReducer from "./slices/blogSlice";
@@ -27,6 +28,7 @@ export function makeStore() {
       targetReducer,
       projectReducer,
       newsEventsReducer,
+      albumReducer,
     },
   });
 }
