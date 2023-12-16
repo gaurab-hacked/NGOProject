@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const project = mongoose.Schema({
   title: String,
+  url: String,
   description: String,
   active: Boolean,
   category: String,

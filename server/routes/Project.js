@@ -45,7 +45,7 @@ route.post(
   upload.single("image"),
   async (req, res) => {
     try {
-      const { title, active, category } = req.body;
+      const { title, active, category, url } = req.body;
       const findTitle = await Project.findOne({ title });
       if (findTitle) {
         deleteImage(req.file.path);
@@ -60,6 +60,7 @@ route.post(
 
       const projectItem = {
         title,
+        url,
         image: imagePath,
         active,
         category,
@@ -101,7 +102,7 @@ route.patch(
   upload.single("image"),
   async (req, res) => {
     try {
-      const { title, active, category } = req.body;
+      const { title, active, category, url } = req.body;
       const projectId = req.params.id;
       const checkProject = await Project.findById(projectId);
       if (!checkProject) {
@@ -110,6 +111,7 @@ route.patch(
 
       let updateProject = {};
       if (title) updateProject.title = title;
+      if (url) updateProject.url = url;
       if (active) updateProject.active = active;
       if (category) updateProject.category = category;
       let imagePath = checkProject.image;
