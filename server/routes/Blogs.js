@@ -9,7 +9,7 @@ const Category = require("../models/Category");
 const Subcategory = require("../models/Subcategory");
 const checkPrivilege = require("../middleware/checkPrivilege");
 
-// delete image if some error accuired
+// delete image if some error occurred
 const deleteImage = (array) => {
   array.forEach((e) => {
     fs.unlinkSync(e.path);
@@ -20,10 +20,9 @@ const deleteImage = (array) => {
 route.get("/blogs", async (req, res) => {
   try {
     const norevdata = await Blog.find();
-    // const data = await norevdata.reverse();
     res.json(norevdata);
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
+    res.status(500).json({ error: "Internal Server Error " + e });
   }
 });
 
@@ -34,7 +33,7 @@ route.get("/blog/:id", async (req, res) => {
     const data = await Blog.findById(blogId);
     res.json(data);
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
+    res.status(500).json({ error: "Internal Server Error " + e });
   }
 });
 
@@ -60,13 +59,13 @@ route.post(
       }
 
       // check subcategory
-      if (subcategoryId !== "") {
-        const subcategory = await Subcategory.findById(subcategoryId);
-        if (!subcategory) {
-          deleteImage(req.files);
-          return res.status(400).json({ error: "Sorry Subategory Not Found" });
-        }
-      }
+      // if (subcategoryId !== "" || subcategoryId !== "") {
+      //   const subcategory = await Subcategory.findById(subcategoryId);
+      //   if (!subcategory) {
+      //     deleteImage(req.files);
+      //     return res.status(400).json({ error: "Sorry Subcategory Not Found" });
+      //   }
+      // }
 
       let images = [];
       const likeId = req.user.id;
@@ -82,13 +81,13 @@ route.post(
         subtitle,
         description,
         categoryId,
-        subcategoryId: subcategoryId === "" ? null : subcategoryId,
+        subcategoryId: subcategoryId ? subcategoryId : "",
         image: images,
       });
 
       if (!blog) {
         deleteImage(req.files);
-        return res.json({ error: "Unable To Add Category" });
+        return res.json({ error: "Unable To Add Blog" });
       }
 
       await blog.save();
@@ -172,7 +171,7 @@ route.patch(
 
       const updatedBlog = {
         categoryId,
-        subcategoryId,
+        subcategoryId: subcategoryId ? subcategoryId : "",
         title,
         subtitle,
         description,
@@ -183,18 +182,11 @@ route.patch(
       if (categoryId) {
         const category = await Category.findById(categoryId);
         if (category) {
-          updatedBlog.subcategoryId = null;
+          updatedBlog.subcategoryId = "";
         }
       }
 
-      if (subcategoryId) {
-        const subcategory = await Subcategory.findById(subcategoryId);
-        if (subcategory) {
-          updatedBlog.subcategoryId = subcategoryId;
-        }
-      } else {
-        updatedBlog.subcategoryId = null;
-      }
+      // ...
 
       const blog = await Blog.findByIdAndUpdate(
         blogId,
@@ -222,7 +214,7 @@ route.patch("/blogs/like/:id", fetchuser, async (req, res) => {
     }
     const likeId = req.user.id;
 
-    // to increse/decreasing like
+    // to increase/decreasing like
     const reso = oldBlog.likeId.filter((e) => String(e) === String(likeId));
     if (reso.length <= 0) {
       Blog.updateOne(
@@ -233,9 +225,9 @@ route.patch("/blogs/like/:id", fetchuser, async (req, res) => {
       res.json({ success: "Like Success" });
     } else {
       Blog.updateOne(
-        { _id: oldBlog.id }, // filter to match all documents
-        { $pull: { likeId: likeId } }, // remove userIdToRemove from userIds array
-        { returnOriginal: false }, // return the updated document
+        { _id: oldBlog.id },
+        { $pull: { likeId: likeId } },
+        { returnOriginal: false },
         (err, result) => {
           if (err) {
             console.error("Failed to remove userId:", err);
@@ -246,7 +238,7 @@ route.patch("/blogs/like/:id", fetchuser, async (req, res) => {
       res.json({ success: "Dislike success" });
     }
   } catch (e) {
-    res.status(500).json({ error: "Enternal Server Error " + e });
+    res.status(500).json({ error: "Internal Server Error " + e });
   }
 });
 
