@@ -17,6 +17,7 @@ app.use("/uploads", express.static("uploads"));
 // making api routes
 app.use("/api/auth", require("./routes/Auth.js"));
 app.use("/api/category", require("./routes/Category"));
+app.use("/api/album", require("./routes/Album"));
 app.use("/api/subcategory", require("./routes/Subcategory"));
 app.use("/api/post", require("./routes/Blogs"));
 app.use("/api/carousel", require("./routes/Carousel"));
