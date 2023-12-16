@@ -50,82 +50,107 @@ const Featured = ({ data, targetData }) => {
                 : null
             }
           >
-            {forDailyRevenue && "See "}Total Revenue
+            {forDailyRevenue && "See "}Total Projects and Events
             {forDailyRevenue && " Daily"}
           </h1>
-          <Chip
-            size="sm"
-            radius="full"
-            as={"button"}
-            variant="faded"
-            color="success"
-            className="!text-xs"
-            onClick={() => btnRef.current.click()}
-          >
-            Add target
-          </Chip>
         </div>
-        <div className="bottom !shadow-none !my-5">
-          <div className="featuredChart">
-            <CircularProgressbar
-              value={getPercentage(bigShowRevenue, bigTargetRevenue)}
-              text={`${getPercentage(bigShowRevenue, bigTargetRevenue)}%`}
-              strokeWidth={5}
-            />
+        <div className="bottom  !shadow-none !my-5">
+          <div className="flex !flex-row w-full justify-between">
+            <div className="w-1/2 flex justify-center items-center flex-col">
+              <div className="featuredChart">
+                <CircularProgressbar
+                  value={getPercentage(bigShowRevenue, bigTargetRevenue)}
+                  text={`${getPercentage(bigShowRevenue, bigTargetRevenue)}%`}
+                  strokeWidth={5}
+                />
+              </div>
+              <p className="title !mt-2">Total Projects </p>
+              <div className="summary !gap-3 !mt-5 !flex-col">
+                <div className="item !text-center w-full ">
+                  <div className="itemTitle">
+                    All Time {convertToK(Number(data.all))}
+                  </div>
+                </div>
+                <div className="item !text-center w-full">
+                  <div
+                    className="itemTitle cursor-pointer"
+                    onClick={() =>
+                      btnclick(
+                        data.oneWeek,
+                        targetData[0] ? targetData[0].weekly : 1,
+                        "weekly"
+                      )
+                    }
+                  >
+                    Last Week {convertToK(Number(data.oneWeek))}
+                  </div>
+                </div>
+                <div className="item !text-center w-full">
+                  <div
+                    className="itemTitle cursor-pointer"
+                    onClick={() =>
+                      btnclick(
+                        data.oneMonth,
+                        targetData[0] ? targetData[0].monthly : 1,
+                        "monthly"
+                      )
+                    }
+                  >
+                    Last Month {convertToK(Number(data.oneMonth))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/2 flex justify-center items-center flex-col">
+              <div className="featuredChart">
+                <CircularProgressbar
+                  value={getPercentage(bigShowRevenue, bigTargetRevenue)}
+                  text={`${getPercentage(bigShowRevenue, bigTargetRevenue)}%`}
+                  strokeWidth={5}
+                />
+              </div>
+              <p className="title !mt-2">Total News-Events </p>
+              <div className="summary !gap-3 !mt-5 !flex-col">
+                <div className="item !text-center w-full ">
+                  <div className="itemTitle">
+                    All Time {convertToK(Number(data.all))}
+                  </div>
+                </div>
+                <div className="item !text-center w-full">
+                  <div
+                    className="itemTitle cursor-pointer"
+                    onClick={() =>
+                      btnclick(
+                        data.oneWeek,
+                        targetData[0] ? targetData[0].weekly : 1,
+                        "weekly"
+                      )
+                    }
+                  >
+                    Last Week {convertToK(Number(data.oneWeek))}
+                  </div>
+                </div>
+                <div className="item !text-center w-full">
+                  <div
+                    className="itemTitle cursor-pointer"
+                    onClick={() =>
+                      btnclick(
+                        data.oneMonth,
+                        targetData[0] ? targetData[0].monthly : 1,
+                        "monthly"
+                      )
+                    }
+                  >
+                    Last Month {convertToK(Number(data.oneMonth))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="title !mt-2">Total revenue made {title}</p>
-          <p className="amount !my-2">Rs {convertToK(bigShowRevenue)}</p>
-          <p className="desc !mt-2 !mb-3">
-            Previous transactions processing. Last payments may not be included.
+          <p className="desc !mt-4 !mb-3">
+            {/* Previous transactions processing. Last payments may not be included. */}
+            Thank you for using this dashboard.
           </p>
-          <div className="summary">
-            <div className="item">
-              <div className="itemTitle">All Time</div>
-              <div className="itemResult positive">
-                <div className="resultAmount">
-                  Rs {convertToK(Number(data.all))}
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div
-                className="itemTitle cursor-pointer"
-                onClick={() =>
-                  btnclick(
-                    data.oneWeek,
-                    targetData[0] ? targetData[0].weekly : 1,
-                    "weekly"
-                  )
-                }
-              >
-                Last Week
-              </div>
-              <div className="itemResult positive">
-                <div className="resultAmount">
-                  Rs {convertToK(Number(data.oneWeek))}
-                </div>
-              </div>
-            </div>
-            <div className="item">
-              <div
-                className="itemTitle cursor-pointer"
-                onClick={() =>
-                  btnclick(
-                    data.oneMonth,
-                    targetData[0] ? targetData[0].monthly : 1,
-                    "monthly"
-                  )
-                }
-              >
-                Last Month
-              </div>
-              <div className="itemResult positive">
-                <div className="resultAmount">
-                  Rs {convertToK(Number(data.oneMonth))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <Target btnRef={btnRef} targetDataProp={targetData} />

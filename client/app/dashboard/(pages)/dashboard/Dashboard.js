@@ -65,15 +65,15 @@ const page = () => {
               dataBack={{ all: allUsers, oneMonth: oneMonthUsers }}
             />
             <Widget
-              type="order"
+              type="Categories"
               dataBack={{ all: allOrders, oneMonth: oneMonthOrders }}
             />
             <Widget
-              type="delivery"
+              type="Projects"
               dataBack={{ all: allDelivery, oneMonth: oneMonthDelivery }}
             />
             <Widget
-              type="earning"
+              type="News & Events"
               dataBack={{ all: allRevenue, oneMonth: oneMonthRevenue }}
             />
           </div>
@@ -88,7 +88,7 @@ const page = () => {
               targetData={targetData}
             />
             <Chart
-              title="Last 6 Months (Revenue)"
+              title="Last 6 Months (Projects)"
               aspect={2 / 1}
               data={sixMonthData}
             />

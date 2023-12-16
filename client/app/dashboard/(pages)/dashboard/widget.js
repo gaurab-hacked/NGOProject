@@ -28,11 +28,11 @@ const Widget = ({ type, dataBack }) => {
         ),
       };
       break;
-    case "order":
+    case "Categories":
       data = {
-        title: "ORDERS",
+        title: "Categories",
         isMoney: false,
-        link: "View all orders",
+        link: "View all Categories",
         hrefLink: "/dashboard/orders",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
@@ -47,14 +47,14 @@ const Widget = ({ type, dataBack }) => {
         ),
       };
       break;
-    case "earning":
+    case "Projects":
       data = {
-        title: "EARNINGS",
+        title: "Projects",
         hrefLink: "/dashboard/finished",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
         isMoney: true,
-        link: "View net earnings",
+        link: "View all Projects",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon p-1 rounded"
@@ -63,11 +63,11 @@ const Widget = ({ type, dataBack }) => {
         ),
       };
       break;
-    case "delivery":
+    case "News & Events":
       data = {
-        title: "DELIVERY",
+        title: "News & Events",
         isMoney: false,
-        link: "See details",
+        link: "View all News and Events",
         hrefLink: "/dashboard/delivery",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
