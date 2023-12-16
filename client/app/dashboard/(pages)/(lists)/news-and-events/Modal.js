@@ -186,12 +186,12 @@ export default function ModalApp(props) {
           {(onClose) => (
             <form method="post" onSubmit={newsEventsDataSubmit}>
               <ModalHeader className="flex flex-col gap-1 uppercase text-slate-600 black:text-slate-200">
-                Add newsEvents
+                Add News and Events
               </ModalHeader>
               <ModalBody>
                 <Input
                   type="text"
-                  label="newsEvents Title"
+                  label="News & Events Title"
                   radius="sm"
                   size="sm"
                   variant="underlined"
@@ -210,7 +210,7 @@ export default function ModalApp(props) {
                     {updateData.status ? (
                       <Select
                         variant="underlined"
-                        label="newsEvents Cateogry"
+                        label="News & Events Cateogry"
                         className="w-full"
                         radius="sm"
                         name="newsEventsCategoryId"
@@ -227,7 +227,7 @@ export default function ModalApp(props) {
                     ) : (
                       <Select
                         variant="underlined"
-                        label="newsEvents Cateogry"
+                        label="News & Events Cateogry"
                         className="w-full"
                         radius="sm"
                         name="newsEventsCategoryId"
@@ -251,7 +251,7 @@ export default function ModalApp(props) {
                     <Input
                       type="file"
                       variant="underlined"
-                      label="newsEvents Image"
+                      label="News & Events Image"
                       placeholder="E"
                       radius="none"
                       className="!p-0 paddintyzero"
@@ -268,7 +268,7 @@ export default function ModalApp(props) {
                 </div>
                 <Textarea
                   variant="underlined"
-                  label="newsEvents Description"
+                  label="News & Events Description"
                   name="newsEventsDescription"
                   value={newsEventsData.newsEventsDescription}
                   onChange={newsEventsDataChange}
@@ -288,7 +288,7 @@ export default function ModalApp(props) {
                     value={newsEventsData.newsEventsActive}
                     onChange={newsEventsDataChange}
                   >
-                    Active newsEvents
+                    Active News & Events
                   </Checkbox>
                 ) : (
                   <Checkbox
@@ -299,7 +299,7 @@ export default function ModalApp(props) {
                     value={newsEventsData.newsEventsActive}
                     onChange={newsEventsDataChange}
                   >
-                    Active newsEvents
+                    Active News & Events
                   </Checkbox>
                 )}
                 {postUpload > 0 && (

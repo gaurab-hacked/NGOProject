@@ -324,7 +324,7 @@ export default function TablePage(props) {
             </TableColumn>
           )}
         </TableHeader>
-        <TableBody emptyContent={"No newsEvents found"} items={sortedItems}>
+        <TableBody emptyContent={"No news & events found"} items={sortedItems}>
           {(item) => (
             <TableRow key={item._id}>
               {(columnKey) => (

@@ -21,6 +21,7 @@ app.use("/api/subcategory", require("./routes/Subcategory"));
 app.use("/api/post", require("./routes/Blogs"));
 app.use("/api/carousel", require("./routes/Carousel"));
 app.use("/api/project", require("./routes/Project"));
+app.use("/api/newsEvents", require("./routes/NewsEvents"));
 app.use("/api/contact", require("./routes/Contact"));
 app.use("/api/target", require("./routes/Target"));
 
