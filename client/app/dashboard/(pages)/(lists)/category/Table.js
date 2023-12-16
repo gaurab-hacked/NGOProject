@@ -193,7 +193,8 @@ export default function TablePage(props) {
           <Input
             isClearable
             radius="sm"
-            className="w-full sm:max-w-[44%]"
+            size="sm"
+            className="w-full sm:max-w-[30%]"
             placeholder="Search by category name..."
             startContent={<SearchIcon />}
             value={filterValue}
