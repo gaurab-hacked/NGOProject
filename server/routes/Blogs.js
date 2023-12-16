@@ -81,7 +81,7 @@ route.post(
         subtitle,
         description,
         categoryId,
-        subcategoryId: subcategoryId ? subcategoryId : "",
+        subcategoryId: subcategoryId ? subcategoryId : null,
         image: images,
       });
 
@@ -171,7 +171,7 @@ route.patch(
 
       const updatedBlog = {
         categoryId,
-        subcategoryId: subcategoryId ? subcategoryId : "",
+        subcategoryId: subcategoryId ? subcategoryId : null,
         title,
         subtitle,
         description,
@@ -182,11 +182,9 @@ route.patch(
       if (categoryId) {
         const category = await Category.findById(categoryId);
         if (category) {
-          updatedBlog.subcategoryId = "";
+          updatedBlog.categoryId = categoryId;
         }
       }
-
-      // ...
 
       const blog = await Blog.findByIdAndUpdate(
         blogId,
