@@ -31,7 +31,7 @@ import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIco
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
   "albumName",
-  "date",
+  "albumDate",
   "image",
   "active",
   "actions",
@@ -40,7 +40,7 @@ const columns = [
   { name: "SN", uid: "sn" },
   { name: "ID", uid: "_id", sortable: true },
   { name: "NAME", uid: "albumName", sortable: true },
-  { name: "Album Date", uid: "albumDate", sortable: true },
+  { name: "ALBUM DATE", uid: "albumDate", sortable: true },
   { name: "ACTIVE", uid: "active" },
   { name: "IMAGE", uid: "image" },
   { name: "DATE", uid: "date" },
