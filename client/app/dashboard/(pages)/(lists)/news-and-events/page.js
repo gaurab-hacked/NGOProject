@@ -51,7 +51,7 @@ const page = () => {
     try {
       const response = await dispatch(postnewsEvents(data));
       if (response.payload?.success) {
-        toast.success("newsEvents added successfully");
+        toast.success("News & Events added successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -66,7 +66,7 @@ const page = () => {
     try {
       const response = await dispatch(deletenewsEvents(data));
       if (response.meta?.requestStatus === "fulfilled") {
-        toast.warning("newsEvents deleted successfully");
+        toast.warning("News & Events deleted successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -81,7 +81,7 @@ const page = () => {
     try {
       const response = await dispatch(updatenewsEvents(data));
       if (response.payload?.success) {
-        toast.success("newsEvents updated successfully");
+        toast.success("News & Events updated successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {

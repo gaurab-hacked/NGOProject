@@ -51,7 +51,7 @@ const page = () => {
     try {
       const response = await dispatch(postproject(data));
       if (response.payload?.success) {
-        toast.success("project added successfully");
+        toast.success("Project added successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -66,7 +66,7 @@ const page = () => {
     try {
       const response = await dispatch(deleteproject(data));
       if (response.meta?.requestStatus === "fulfilled") {
-        toast.warning("project deleted successfully");
+        toast.warning("Project deleted successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -81,7 +81,7 @@ const page = () => {
     try {
       const response = await dispatch(updateproject(data));
       if (response.payload?.success) {
-        toast.success("project updated successfully");
+        toast.success("Project updated successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {

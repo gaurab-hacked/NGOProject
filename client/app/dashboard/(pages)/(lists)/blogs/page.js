@@ -71,7 +71,7 @@ const page = () => {
     try {
       const response = await dispatch(postblog(data));
       if (response.payload?.success) {
-        toast.success("blog added successfully");
+        toast.success("Blog added successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -86,7 +86,7 @@ const page = () => {
     try {
       const response = await dispatch(deleteblog(data));
       if (response.meta?.requestStatus === "fulfilled") {
-        toast.warning("blog deleted successfully");
+        toast.warning("Blog deleted successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
@@ -101,7 +101,7 @@ const page = () => {
     try {
       const response = await dispatch(updateblog(data));
       if (response.payload?.success) {
-        toast.success("blog updated successfully");
+        toast.success("Blog updated successfully");
       } else if (response.payload?.error) {
         toast.error(response.payload?.error);
       } else {
