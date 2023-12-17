@@ -93,6 +93,27 @@ export const updateimage = createAsyncThunk(
     }
   }
 );
+export const updateimageDel = createAsyncThunk(
+  "update/image",
+  async (imageDataForm, thunkApi) => {
+    try {
+      const config = {
+        headers: {
+          "auth-token": JSON.parse(localStorage.getItem("token")),
+        },
+      };
+      const response = await axios.patch(
+        `${API_BASE_URL}/api/gallery/images/remove-url/${imageDataForm.id}`,
+        imageDataForm,
+        config
+      );
+
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
 
 export const deleteimage = createAsyncThunk(
   "delete/image",

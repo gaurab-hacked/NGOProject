@@ -7,6 +7,7 @@ import {
   getimages,
   deleteimage,
   updateimage,
+  updateimageDel,
 } from "@/redux/slices/imageSlice";
 import { toast } from "sonner";
 import { getalbums } from "@/redux/slices/albumSlice";
@@ -101,6 +102,20 @@ const page = () => {
       toast.error("Some error occurred");
     }
   };
+  const handelUpdateDel = async (data) => {
+    try {
+      const response = await dispatch(updateimageDel(data));
+      if (response.payload?.success) {
+        toast.success("Image deleted successfully");
+      } else if (response.payload?.error) {
+        toast.error(response.payload?.error);
+      } else {
+        toast.error("Cannot delete image");
+      }
+    } catch (error) {
+      toast.error("Some error occurred");
+    }
+  };
   setOnProgressChangeCallback((newValue) => {
     setPostUpload(newValue);
   });
@@ -112,6 +127,7 @@ const page = () => {
         handelpostimage={handelpostimage}
         handelDelete={handelDelete}
         handelUpdate={handelUpdate}
+        handelUpdateDel={handelUpdateDel}
         categoryDataDropdown={data}
         postUpload={postUpload}
       />

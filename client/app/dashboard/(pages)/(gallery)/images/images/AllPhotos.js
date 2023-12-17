@@ -4,9 +4,9 @@ import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import { Delete } from "@mui/icons-material";
 
-export default function Albums({ list }) {
+export default function Albums({ list, handelUpdateDel, id }) {
   const deleteBtnClk = (e) => {
-    console.log(e);
+    handelUpdateDel({ id, imageURL: e });
   };
   return (
     <>

@@ -10,7 +10,11 @@ import {
 } from "@nextui-org/react";
 import AllPhotos from "./images/AllPhotos";
 
-export default function AllImageModal({ btnref, updateImages }) {
+export default function AllImageModal({
+  btnref,
+  updateImages,
+  handelUpdateDel,
+}) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -28,7 +32,11 @@ export default function AllImageModal({ btnref, updateImages }) {
           {(onClose) => (
             <>
               <ModalBody>
-                <AllPhotos list={updateImages} />
+                <AllPhotos
+                  id={updateImages._id}
+                  list={updateImages.image}
+                  handelUpdateDel={handelUpdateDel}
+                />
               </ModalBody>
             </>
           )}

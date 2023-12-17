@@ -172,5 +172,55 @@ route.patch("/images/like/:id", fetchuser, async (req, res) => {
     res.status(500).json({ error: "Internal Server Error " + error.message });
   }
 });
+// Remove image URL from the array [PATCH: http://localhost:8000/api/gallery/images/remove-url/:id] (register required)
+route.patch("/images/remove-url/:id", checkPrivilege, async (req, res) => {
+  try {
+    const imageId = req.params.id;
+    const imageURL = String(req.body.imageURL).trim(); // Assuming you send the URL in the request body
+
+    // Extract the filename from the URL
+    const filenameFromURL = imageURL.split("/").pop();
+
+    // Check if the image exists
+    const foundImage = await imageModel.findById(imageId);
+    if (!foundImage) {
+      return res.status(404).json({ error: "Image Not Found" });
+    }
+
+    // Check if the provided filename is in the image array
+    const filenameIndex = foundImage.image.findIndex((url) => {
+      const filenameFromArray = url.split("/").pop();
+      return filenameFromArray === filenameFromURL;
+    });
+
+    if (filenameIndex !== -1) {
+      // Remove the filename from the array
+      foundImage.image.splice(filenameIndex, 1);
+
+      // If there are no more images in the array, delete the entire image
+      if (foundImage.image.length === 0) {
+        await imageModel.findByIdAndDelete(imageId);
+        return res.json({
+          success: "Filename removed successfully",
+          id: imageId,
+        });
+      }
+
+      // Save the updated image
+      const updatedImage = await foundImage.save();
+
+      return res.json({
+        success: "Filename removed successfully",
+        image: updatedImage,
+      });
+    } else {
+      return res
+        .status(404)
+        .json({ error: "Filename not found in image array" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error " + error.message });
+  }
+});
 
 module.exports = route;

@@ -52,6 +52,7 @@ export default function TablePage(props) {
     imageData,
     handelDelete,
     handelUpdate,
+    handelUpdateDel,
     categoryDataDropdown,
     postUpload,
   } = props;
@@ -74,7 +75,7 @@ export default function TablePage(props) {
     btnRef.current.click();
   };
 
-  const [updateImages, setUpdateImages] = useState([]);
+  const [updateImages, setUpdateImages] = useState({});
   const btnrefview = useRef();
   const viewClick = (content) => {
     btnrefview.current.click();
@@ -177,7 +178,7 @@ export default function TablePage(props) {
           <div className="relative flex items-center gap-2">
             <Tooltip content="View Images">
               <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                <EyeIcon onClick={() => viewClick(user.image)} />
+                <EyeIcon onClick={() => viewClick(user)} />
               </span>
             </Tooltip>
             <Tooltip content="Edit Images">
@@ -371,7 +372,11 @@ export default function TablePage(props) {
         categoryDataDropdown={categoryDataDropdown}
         postUpload={postUpload}
       />
-      <AllImageModal btnref={btnrefview} updateImages={updateImages} />
+      <AllImageModal
+        btnref={btnrefview}
+        updateImages={updateImages}
+        handelUpdateDel={handelUpdateDel}
+      />
     </>
   );
 }
