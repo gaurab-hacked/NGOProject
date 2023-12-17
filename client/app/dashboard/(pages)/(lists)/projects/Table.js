@@ -152,12 +152,12 @@ export default function TablePage(props) {
       case "actions":
         return (
           <div className="relative flex items-center gap-2">
-            <Tooltip content="Edit user">
+            <Tooltip content="Edit Project">
               <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
                 <EditIcon onClick={() => updateBtnClk(user)} />
               </span>
             </Tooltip>
-            <Tooltip color="danger" content="Delete user">
+            <Tooltip color="danger" content="Delete Project">
               <span className="text-lg text-danger cursor-pointer active:opacity-50">
                 <DeleteIcon onClick={() => deleteBtnClk(user._id)} />
               </span>
