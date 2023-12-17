@@ -17,7 +17,7 @@ const Herosection = () => {
         className="h-full absolute inset-0 w-full opacity-30 object-cover"
         alt="hero"
       />
-      <div className="z-20 mb-5 relative flex justify-center items-center flex-col gap-3">
+      <div className="z-[5] mb-5 relative flex justify-center items-center flex-col gap-3">
         <h1 className="text-white text-lg md:text-2xl text-center font-serif font-semibold tracking-wider">
           Digital Empowerment Society
         </h1>
