@@ -26,6 +26,8 @@ import ModalApp from "./Modal";
 import ConFirm from "@/app/dashboard/common/components/ConFirm";
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
 import BreadcrumbsFun from "@/app/dashboard/common/components/Breadcrumbs";
+import { EyeIcon } from "@/app/dashboard/common/components/Tables/Icons/EyeIcon";
+import AllImageModal from "./AllImageModal";
 
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
@@ -70,6 +72,13 @@ export default function TablePage(props) {
   const deleteBtnClk = (id) => {
     setDeleteId(id);
     btnRef.current.click();
+  };
+
+  const [updateImages, setUpdateImages] = useState([]);
+  const btnrefview = useRef();
+  const viewClick = (content) => {
+    btnrefview.current.click();
+    setUpdateImages(content);
   };
 
   const updateBtnRef = useRef();
@@ -166,6 +175,11 @@ export default function TablePage(props) {
       case "actions":
         return (
           <div className="relative flex items-center gap-2">
+            <Tooltip content="View Images">
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+                <EyeIcon onClick={() => viewClick(user.image)} />
+              </span>
+            </Tooltip>
             <Tooltip content="Edit Images">
               <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
                 <EditIcon onClick={() => updateBtnClk(user)} />
@@ -357,6 +371,7 @@ export default function TablePage(props) {
         categoryDataDropdown={categoryDataDropdown}
         postUpload={postUpload}
       />
+      <AllImageModal btnref={btnrefview} updateImages={updateImages} />
     </>
   );
 }
