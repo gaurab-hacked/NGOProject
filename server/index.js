@@ -20,6 +20,7 @@ app.use("/api/category", require("./routes/Category"));
 app.use("/api/album", require("./routes/Album"));
 app.use("/api/subcategory", require("./routes/Subcategory"));
 app.use("/api/post", require("./routes/Blogs"));
+app.use("/api/gallery", require("./routes/Images"));
 app.use("/api/carousel", require("./routes/Carousel"));
 app.use("/api/project", require("./routes/Project"));
 app.use("/api/newsEvents", require("./routes/NewsEvents"));
