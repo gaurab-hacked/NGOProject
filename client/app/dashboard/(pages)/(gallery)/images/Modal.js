@@ -84,14 +84,14 @@ export default function modalApp(props) {
 
     // Validate Category ID
     if (!imageData.categoryId) {
-      newValidationErrors.categoryId = "Category is required";
+      newValidationErrors.categoryId = "Album name is required";
       isValid = false;
     }
 
     if (Array.isArray(imageData.imageImage)) {
       // Validate image Image
       if (imageData.imageImage.length < 1) {
-        newValidationErrors.imageImage = "image Image is required";
+        newValidationErrors.imageImage = "Image Image is required";
         isValid = false;
       }
     }
@@ -196,7 +196,7 @@ export default function modalApp(props) {
                     <Input
                       type="file"
                       variant="underlined"
-                      label="image Image"
+                      label="Choose Images"
                       placeholder="E"
                       radius="sm"
                       className="!p-0 paddintyzero"

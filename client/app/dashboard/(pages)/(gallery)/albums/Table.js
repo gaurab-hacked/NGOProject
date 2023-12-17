@@ -27,6 +27,7 @@ import { DeleteIcon } from "@/app/dashboard/common/components/Tables/Icons/Delet
 import ModalApp from "./Modal";
 import ConFirm from "@/app/dashboard/common/components/ConFirm";
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
+import BreadcrumbsFun from "@/app/dashboard/common/components/Breadcrumbs";
 
 const INITIAL_VISIBLE_COLUMNS = [
   "sn",
@@ -194,7 +195,8 @@ export default function TablePage(props) {
           <Input
             isClearable
             radius="sm"
-            className="w-full sm:max-w-[44%]"
+            size="sm"
+            className="w-full sm:max-w-[30%]"
             placeholder="Search by album name..."
             startContent={<SearchIcon />}
             value={filterValue}
@@ -239,13 +241,12 @@ export default function TablePage(props) {
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <div className="flex gap-8 items-center justify-center">
+          <div className="flex gap-5 items-center justify-center">
             <span className="text-default-400 text-small">
-              Total {albumData.length} categories
+              Total {albumData.length} Images
             </span>
-            <span className="tracking-wide font-semibold text-slate-600 dark:text-slate-300">
-              Dashboard/Categories
-            </span>
+            <div className="h-[20px] w-[1px] bg-gray-500 z-10"></div>
+            <BreadcrumbsFun category={"Dashboard"} subcategory={"Albums"} />
           </div>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:

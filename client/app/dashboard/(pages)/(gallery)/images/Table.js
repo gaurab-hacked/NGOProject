@@ -272,10 +272,10 @@ export default function TablePage(props) {
         <div className="flex justify-between items-center">
           <div className="flex gap-5 items-center justify-center">
             <span className="text-default-400 text-small">
-              Total {imageData.length} images
+              Total {imageData.length} Images
             </span>
             <div className="h-[20px] w-[1px] bg-gray-500 z-10"></div>
-            <BreadcrumbsFun category={"Dashboard"} subcategory={"images"} />
+            <BreadcrumbsFun category={"Dashboard"} subcategory={"Images"} />
           </div>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
