@@ -12,6 +12,7 @@ import statisticsReducer from "./slices/statisticsSlice";
 import targetReducer from "./slices/targetSlice";
 import projectReducer from "./slices/projectSlice";
 import newsEventsReducer from "./slices/newsEventsSlice";
+import imageReducer from "./slices/imageSlice";
 
 export function makeStore() {
   return configureStore({
@@ -29,6 +30,7 @@ export function makeStore() {
       projectReducer,
       newsEventsReducer,
       albumReducer,
+      imageReducer,
     },
   });
 }
