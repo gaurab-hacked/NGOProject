@@ -110,7 +110,7 @@ const BottomNav = () => {
                   )}
                 </li>
 
-                <li
+                {/* <li
                   className={`relative h-full py-1 ${
                     hamburgerOpen ? "!text-white !h-[35px]" : ""
                   }`}
@@ -123,6 +123,22 @@ const BottomNav = () => {
                     What We Do
                   </Link>
                   {pathname === "/what-we-do" && (
+                    <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+                  )}
+                </li> */}
+                <li
+                  className={`relative h-full py-1 ${
+                    hamburgerOpen ? "!text-white !h-[35px]" : ""
+                  }`}
+                >
+                  <Link
+                    onClick={() => setHamburgerOpen(false)}
+                    className="p-1"
+                    href={"/our-mission"}
+                  >
+                    Our Mission
+                  </Link>
+                  {pathname === "/our-mission" && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>

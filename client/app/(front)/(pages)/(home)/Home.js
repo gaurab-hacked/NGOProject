@@ -12,7 +12,7 @@ const pageData = {
   },
   challange: {
     title: "Join Us in Empowering Change",
-    des: "Whether you’re an individual looking to enhance your digital skills, a community organization seeking to collaborate, or a supporter of our mission, there are numerous ways to get involved. Together, we can build a digitally inclusive society that paves the way for a brighter future. Thank you for visiting the Digital Empowerment Society. Join us in our journey of digital transformation and empowerment. Contact us to learn more or contribute to our cause.",
+    des: "Join the movement to empower change through digital literacy. Our investment in underdeveloped countries is a commitment to building a brighter future, one click at a time. Be a catalyst for progress, bridging the technological gap and fostering global participation to create a more equitable and prosperous world. Your involvement is key to shaping a limitless future through empowerment. Join us on this transformative journey.",
   },
 };
 
@@ -24,9 +24,9 @@ const Home = () => {
       <Vision data={pageData.vision} />
       <AccordianFun />
       <hr />
-      <Pathers />
       <Vision data={pageData.challange} />
-      <CardCollection />
+      <Pathers />
+      {/* <CardCollection /> */}
     </div>
   );
 };

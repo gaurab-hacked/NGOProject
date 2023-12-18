@@ -22,7 +22,7 @@ const Herosection = () => {
           Digital Empowerment Society
         </h1>
         <h3 className="text-white md:text-3xl text-xl font-serif text-center scale-125 font-semibold tracking-wider">
-          What We Do
+          Our Mission
         </h3>
       </div>
       <Image

@@ -11,33 +11,38 @@ const Introduction = () => {
             Welcome to the Digital Empowerment Society!
           </h2>
           <p className="text-justify text-gray-600 text-sm md:text-base">
-            Nepal, no doubt, has been seen phenomenal growth in the Information
-            and Communication Technology (ICT) sector. There is only a
-            significant upsurge in the adoption of ICT-related tools (like
-            mobile sets, computers, laptops, tablets, etc.,) but also a huge
-            augmentation in the internet connectivity. Nevertheless, disparities
-            continue to exist between different groups across the country in the
-            digital domain. For instance, the number of women using the internet
-            is lower than that of men. Likewise, the rural communities are far
-            behind compared to the urban ones in terms of possessing ICT-related
-            tools/devices.
+            In the rapidly advancing landscape of technology, our nonprofit
+            organization is at the forefront of bridging gaps through digital
+            literacy initiatives, particularly in underdeveloped countries. As a
+            dedicated NGO, our mission revolves around providing a
+            transformative path to progress by making digital literacy a
+            cornerstone for individuals in regions facing socio-economic
+            challenges.
           </p>
           <p className="text-justify text-gray-600 text-sm md:text-base">
-            There is a palpable need to bridge this digital divide by promoting
-            digital literacy among underserved communities. In this light,
-            Digital Empowerment Society (DES) as a non-governmental organization
-            (NGO) was founded in 2023 to help fulfill the very need. It is
-            committed to leveraging information and communication technologies
-            to enable people to gain access to better healthcare, education,
-            skills, and livelihood opportunities. For us, digital literacy is
-            not just a skill but a gateway to empowerment. We also firmly
-            believe that every Nepali should enjoy his/her digital rights for
-            his/her greater socio-economic well-being.
+            Within underdeveloped countries, our nonprofit endeavors to act as a
+            catalyst for positive change. Digital literacy, seen as an
+            invaluable passport to progress, becomes a tool for empowerment,
+            equipping individuals to navigate the digital era and overcome
+            obstacles. Our commitment extends beyond imparting technical skills;
+            we aim to foster a comprehensive development that enhances personal
+            capabilities and contributes to the collective advancement of
+            communities.
           </p>
           <p className="text-justify text-gray-600 text-sm md:text-base">
-            Our efforts are directed at providing comprehensive digital
-            education programs that enable individuals to navigate the
-            complexities of the digital landscape.
+            Acknowledging the digital divide's potential to exacerbate
+            inequalities, our nonprofit prioritizes targeted digital literacy
+            programs to narrow this gap. By doing so, we empower individuals to
+            meaningfully participate in the global digital economy, thereby
+            addressing socio-economic disparities.
+          </p>
+          <p className="text-justify text-gray-600 text-sm md:text-base">
+            As a nonprofit organization, our vision encompasses a future where
+            every individual, regardless of location or socio-economic status,
+            can leverage digital technology for personal and collective growth.
+            Through collaborative efforts and a focus on digital literacy, we
+            are dedicated to creating a more inclusive, connected, and digitally
+            empowered world.
           </p>
         </Card>
       </div>

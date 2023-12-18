@@ -1,41 +1,41 @@
 import React from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { FaLaptopCode } from "react-icons/fa";
-import { FaUsersGear } from "react-icons/fa6";
-import { TbPlugConnected } from "react-icons/tb";
 import { LuServerCrash } from "react-icons/lu";
-import { FaServer } from "react-icons/fa6";
+import { RiHealthBookFill } from "react-icons/ri";
+import { RiMoneyDollarBoxFill } from "react-icons/ri";
+import { IoIosPeople } from "react-icons/io";
+import { FaLaptopCode } from "react-icons/fa";
 
 const data = [
   {
     id: 1,
-    title: "Digital Literacy Programs",
-    des: "Embark on a transformative journey with our comprehensive digital literacy programs, designed for individuals of all ages and backgrounds. Dive into engaging workshops that go beyond the basics, covering fundamental computer skills, navigating social media intricacies, and mastering online safety. Join us in embracing the digital era with confidence and competence, as we guide you through the ever-evolving landscape of digital knowledge. Ignite your curiosity and empower yourself with the skills essential for thriving in the digital age. Welcome to a world where digital literacy opens doors to limitless possibilities.",
-    icon: <FaLaptopCode />,
+    title: "Economic Empowerment",
+    des: "Digital literacy opens doors to new job markets. From remote work and online entrepreneurship to e-commerce and digital agriculture, individuals can gain valuable skills and income opportunities previously inaccessible. Participation in the global digital economy fuels local economies and fosters sustainable development.",
+    icon: <RiMoneyDollarBoxFill />,
   },
   {
     id: 2,
-    title: "Community Outreach",
-    des: "At the heart of our mission lies a deep belief in the strength of communities. Our dedicated team actively engages with local communities, striving to understand their unique needs and challenges. Through close collaboration, we ensure that our initiatives are not just impactful but also tailor-made to address specific requirements. Join hands with us as we forge bonds and build bridges within communities, fostering a spirit of unity and shared progress. Together, let's create lasting change by working hand in hand with those we serve.",
-    icon: <FaUsersGear />,
+    title: "Educational Advancement",
+    des: "Access to online learning platforms and educational resources empowers individuals to break free from geographical and financial limitations. Digital literacy enables self-directed learning, upskilling, and access to higher education, fueling a more educated and competitive workforce.",
+    icon: <FaLaptopCode />,
   },
   {
     id: 3,
-    title: "Skill Development",
-    des: "Beyond the mere utilization of digital tools, we place a strong emphasis on skill development for the digital age. Our training programs go above and beyond, encompassing a diverse array of essential skills such as coding, graphic design, digital marketing, and more. Step into the future with newfound capabilities, unlocking doors to exciting career growth opportunities. Join us on a journey of continuous learning and skill enhancement, where each lesson learned is a stepping stone toward a brighter, digitally empowered future.",
-    icon: <TbPlugConnected />,
+    title: "Improved Healthcare",
+    des: "Telemedicine offers remote consultations and access to medical information, bridging healthcare gaps in underserved areas. Digitally empowered communities can participate in health awareness campaigns and disease prevention initiatives, leading to healthier populations.",
+    icon: <RiHealthBookFill />,
   },
   {
     id: 4,
-    title: "Empowerment for Marginalized Groups",
-    des: "Our unwavering commitment extends to ensuring that the digital revolution leaves no one behind. We focus on empowering marginalized groups, including women, rural populations, and underserved youth, by providing specialized training and resources. Through targeted initiatives, we strive to bridge the digital divide and create pathways for inclusive participation in the digital realm. Join us in championing diversity and inclusion as we empower individuals from all walks of life to harness the full potential of the digital age.",
+    title: "Civic Engagement and Empowerment",
+    des: "Digital tools facilitate communication and information sharing, fostering transparency and accountability in governance. Social media platforms enable communities to voice concerns, advocate for change, and hold leaders accountable.",
     icon: <LuServerCrash />,
   },
   {
     id: 5,
-    title: "Technology for Social Impact",
-    des: "Harness the transformative power of technology for social good with our initiatives geared towards creating a positive impact. From spearheading awareness campaigns to actively supporting local social initiatives, we leverage digital platforms to amplify the influence of meaningful causes. Join us in utilizing technology as a force for positive change, making a tangible difference in the lives of individuals and communities. In a world increasingly connected by digital threads, let's weave a tapestry of social impact, where technology becomes a tool for building a better and more equitable society.",
-    icon: <FaServer />,
+    title: "Social Inclusion and Bridging the Divide",
+    des: "Digital literacy empowers marginalized groups, including women, minorities, and rural communities, to connect, share their stories, and advocate for their rights. It breaks down geographical barriers and fosters cultural understanding, promoting a more inclusive and connected society.",
+    icon: <IoIosPeople className="scale-125" />,
   },
 ];
 

@@ -16,7 +16,7 @@ const EachPage = () => {
     // <div className="h-[500px] relative w-full bg-black mt-7">
     <div className="md:h-[500px] h-[400px] relative w-full bg-black">
       <Image
-        className="position-absolute w-full h-full opacity-80"
+        className="position-absolute w-full h-full opacity-20"
         src={HeroImage}
         style={{ objectFit: "cover" }}
         alt="something"
@@ -25,21 +25,22 @@ const EachPage = () => {
         <div className="carousel-caption flex flex-col h-full items-center justify-center">
           <div
             className="p-3 flex justify-center items-center flex-col gap-5"
-            style={{ maxWidth: "700px" }}
+            style={{ maxWidth: "740px" }}
           >
-            {/* <h2 className="font-bold text-3xl text-white tracking-wider opacity-90">
-              Gold Tilahari{" "}
-              <span
-                id="text-stroke"
-                className="text-3xl text-white tracking-widest font-serif"
-              >
-                (Get Now)
-              </span>
-            </h2>
+            <h1 className="font-bold text-3xl text-white tracking-wider">
+              Digital Empowerment Society <br />
+            </h1>
+            <span
+              id="text-stroke"
+              className="text-2xl text-white tracking-widest font-serif"
+            >
+              (Non-Profit Organization)
+            </span>
             <p className="w-full lg:w-[70%] text-slate-100 text-center text-lg tracking-wide">
-              Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet
-              amet amet ndiam elitr ipsum diam
+              Connecting Underserved Communities and Underdeveloped Countries
+              for a Digitally Inclusive Future.
             </p>
+            {/* 
             <div className="flex gap-5">
               <Button
                 size="sm"

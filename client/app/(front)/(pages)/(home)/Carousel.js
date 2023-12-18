@@ -35,12 +35,12 @@ const Carousel = () => {
                 <SwiperSlide>
                   <EachPage />
                 </SwiperSlide>
-                <SwiperSlide>
+                {/* <SwiperSlide>
                   <EachPage />
                 </SwiperSlide>
                 <SwiperSlide>
                   <EachPage />
-                </SwiperSlide>
+                </SwiperSlide> */}
               </Swiper>
             </div>
           </div>

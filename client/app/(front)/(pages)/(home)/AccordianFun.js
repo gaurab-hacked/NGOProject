@@ -1,55 +1,41 @@
 import React from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { FaLaptopCode } from "react-icons/fa";
-import { FaUsersGear } from "react-icons/fa6";
-import { TbPlugConnected } from "react-icons/tb";
 import { LuServerCrash } from "react-icons/lu";
-import { RiGovernmentFill } from "react-icons/ri";
-import { FaServer } from "react-icons/fa6";
-import { GrTechnology } from "react-icons/gr";
+import { RiHealthBookFill } from "react-icons/ri";
+import { RiMoneyDollarBoxFill } from "react-icons/ri";
+import { IoIosPeople } from "react-icons/io";
+import { FaLaptopCode } from "react-icons/fa";
 
 const data = [
   {
     id: 1,
-    title: "Digital Literacy Programs",
-    des: "DES designs and implements digital literacy programs to equip individuals with the skills needed to navigate the digital world. These programs cover basic computer skills, internet usage, online safety, and digital communication. Additionally, such programs include intense, hands-on training focused on producing IT professionals such as IT support specialists, cloud specialists, cyber security specialists, etc. as per the demand of the job market. Remarkably, the related trainees will receive certifications from globally recognised organizations like Cisco, Microsoft ComTIA, AWS, and more.",
-    icon: <FaLaptopCode />,
+    title: "Economic Empowerment",
+    des: "Digital literacy opens doors to new job markets. From remote work and online entrepreneurship to e-commerce and digital agriculture, individuals can gain valuable skills and income opportunities previously inaccessible. Participation in the global digital economy fuels local economies and fosters sustainable development.",
+    icon: <RiMoneyDollarBoxFill />,
   },
   {
     id: 2,
-    title: "Community Outreach",
-    des: "The organization believes in the principle of community-driven development. DES collaborates with local communities to understand their specific needs and tailors digital literacy initiatives accordingly.",
-    icon: <FaUsersGear />,
+    title: "Educational Advancement",
+    des: "Access to online learning platforms and educational resources empowers individuals to break free from geographical and financial limitations. Digital literacy enables self-directed learning, upskilling, and access to higher education, fueling a more educated and competitive workforce.",
+    icon: <FaLaptopCode />,
   },
   {
     id: 3,
-    title: "Rural Connectivity",
-    des: "Recognizing the importance of connectivity, DES works on initiatives to bring internet access to remote and rural areas. This includes setting up community networks and advocating for policies that promote affordable and accessible internet services.",
-    icon: <TbPlugConnected />,
+    title: "Improved Healthcare",
+    des: "Telemedicine offers remote consultations and access to medical information, bridging healthcare gaps in underserved areas. Digitally empowered communities can participate in health awareness campaigns and disease prevention initiatives, leading to healthier populations.",
+    icon: <RiHealthBookFill />,
   },
   {
     id: 4,
-    title: "Youth Engagement",
-    des: "DES places a strong emphasis on empowering the youth. Specialized programs engage young individuals in learning digital skills, coding, and entrepreneurship, preparing them for opportunities in the digital economy.",
+    title: "Civic Engagement and Empowerment",
+    des: "Digital tools facilitate communication and information sharing, fostering transparency and accountability in governance. Social media platforms enable communities to voice concerns, advocate for change, and hold leaders accountable.",
     icon: <LuServerCrash />,
   },
   {
     id: 5,
-    title: "Digital Inclusion for Marginalized Groups",
-    des: "DES is dedicated to ensuring that marginalized groups, including women, people with disabilities, and those from low-income backgrounds, are not left behind in the digital age. Specialized training programs are designed to address the unique needs of these groups.",
-    icon: <FaServer />,
-  },
-  {
-    id: 6,
-    title: "E-Governance Advocacy",
-    des: "DES works with local governments to advocate for the implementation of digital solutions for better governance. This includes supporting the development of digital platforms for public service delivery and citizen engagement.",
-    icon: <RiGovernmentFill />,
-  },
-  {
-    id: 7,
-    title: "Green technology research for combating climate change",
-    des: "Information and Communication Technology (ICT) plays a crucial role in mitigating climate change by providing tools and solutions that enhance monitoring, management, and decision-making processes. Some of the major ways in which ICT contributes to climate change mitigation are circular economy implementation, climate modeling, waste management, and carbon footprint tracking. In this context, DES aims to conduct research based on the above-mentioned ways in the Nepali context on a priority basis. For instance, the issue of e-waste management may be prioritised since Nepal has lately been suffering the swelling volume of electronic waste. (This type of waste has a negative recycling value and contains hazardous materials like mercury, lead, and lithium) Such a move is also expected to help achieve net-zero status by 2045 through its Nationally Determined Contribution (NDC).",
-    icon: <GrTechnology />,
+    title: "Social Inclusion and Bridging the Divide",
+    des: "Digital literacy empowers marginalized groups, including women, minorities, and rural communities, to connect, share their stories, and advocate for their rights. It breaks down geographical barriers and fosters cultural understanding, promoting a more inclusive and connected society.",
+    icon: <IoIosPeople className="scale-125" />,
   },
 ];
 

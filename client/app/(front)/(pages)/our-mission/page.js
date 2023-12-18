@@ -2,7 +2,7 @@
 import React from "react";
 import Breadcrumb from "../../common/Components/Breadcrumb";
 import Herosection from "../../common/Components/Herosection";
-import AccordianFun from "./AccordianFun";
+import Missionpage from "./Missionpage";
 
 const page = () => {
   return (
@@ -11,8 +11,8 @@ const page = () => {
         <Herosection />
       </div>
       <div className="md:w-[90%] w-[96%] m-auto my-10">
-        <Breadcrumb category={"Home"} subcategory={"What-We-Do"} />
-        <AccordianFun />
+        <Breadcrumb category={"Home"} subcategory={"Our Mission"} />
+        <Missionpage />
       </div>
     </>
   );
