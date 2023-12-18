@@ -57,7 +57,7 @@ export default function TablePage() {
     const end = start + rowsPerPage;
 
     return users.slice(start, end);
-  }, [page, rowsPerPage]);
+  }, [page]);
 
   const sortedItems = React.useMemo(() => {
     return [...items].sort((a, b) => {

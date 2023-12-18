@@ -268,6 +268,7 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     onSearchChange,
     onClear,
+    albumData.length,
   ]);
 
   const bottomContent = React.useMemo(() => {
@@ -285,7 +286,7 @@ export default function TablePage(props) {
         />
       </div>
     );
-  }, [items.length, page, pages]);
+  }, [page, pages]);
 
   return (
     <>

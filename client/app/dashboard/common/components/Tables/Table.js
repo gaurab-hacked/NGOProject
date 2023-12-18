@@ -288,7 +288,6 @@ export default function TablePage(props) {
     statusFilter,
     visibleColumns,
     onRowsPerPageChange,
-    users.length,
     onSearchChange,
     addIcon,
     onClear,
