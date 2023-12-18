@@ -3,11 +3,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import Link from "next/link";
 import { AiFillFacebook } from "react-icons/ai";
-import {
-  FaInstagramSquare,
-  FaLinkedin,
-  FaPinterestSquare,
-} from "react-icons/fa";
+import { FaInstagramSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
 import { ImLocation } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
 import { AiTwotonePhone } from "react-icons/ai";
@@ -36,10 +32,35 @@ const Footer = () => {
                   Follow Us:
                 </h6>
                 <div className="flex space-x-3 -mt-2 ml-1">
-                  <AiFillFacebook className="text-xl text-primary cursor-pointer" />
-                  <FaInstagramSquare className="text-xl text-primary cursor-pointer" />
-                  <FaPinterestSquare className="text-xl text-primary cursor-pointer" />
-                  <FaLinkedin className="text-xl text-primary cursor-pointer" />
+                  <Link
+                    href={
+                      "https://www.facebook.com/profile.php?id=61554100722430"
+                    }
+                    target="blank"
+                  >
+                    <AiFillFacebook className="text-xl text-primary cursor-pointer" />
+                  </Link>
+
+                  <Link
+                    href={"https://www.instagram.com/desnepal2080/"}
+                    target="blank"
+                  >
+                    <FaInstagramSquare className="text-xl text-primary cursor-pointer" />
+                  </Link>
+                  <Link
+                    href={"https://www.youtube.com/@DESNepal."}
+                    target="blank"
+                  >
+                    <FaYoutubeSquare className="text-xl text-primary cursor-pointer" />
+                  </Link>
+                  <Link
+                    href={
+                      "https://www.linkedin.com/in/des-nepal-undefined-3a73642a5/"
+                    }
+                    target="blank"
+                  >
+                    <FaLinkedin className="text-xl text-primary cursor-pointer" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -51,21 +72,21 @@ const Footer = () => {
                   </h5>
                   <div className="flex flex-col">
                     <Link
-                      href="#"
+                      href="/our-mission"
                       className={`flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
                       Our Initiatives
                     </Link>
                     <Link
-                      href="#"
+                      href="/news-and-events"
                       className={`flex  w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs  mr-1" />
                       Digital Programs
                     </Link>
                     <Link
-                      href="#"
+                      href="/projects"
                       className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
@@ -79,25 +100,25 @@ const Footer = () => {
                   </h5>
                   <div className="flex flex-col">
                     <Link
-                      href="#"
+                      href="/contact"
                       className={`flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
                       Contact Us
                     </Link>
                     <Link
-                      href="#"
+                      href="/leadership"
                       className={` flex w-[200px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Community Engagement
+                      Leadership
                     </Link>
                     <Link
-                      href="#"
+                      href="/news-and-events"
                       className={` flex w-[160px] text-sm font-semibold text-slate-600 items-center`}
                     >
                       <ArrowForwardIosIcon className="!text-xs mr-1" />
-                      Get Involved
+                      News and Events
                     </Link>
                   </div>
                 </div>
@@ -108,7 +129,7 @@ const Footer = () => {
                   <div className="flex flex-col space-y-1 ml-1 mt-1">
                     <p className=" flex  text-sm font-semibold text-slate-600 items-center">
                       <MdEmail className="text-primary mr-3" />
-                      desnepal@gmail.com
+                      info@des.org.np
                     </p>
                     <p className="mb-0 flex text-sm font-semibold text-slate-600 items-center">
                       <AiTwotonePhone className="text-primary mr-3" />

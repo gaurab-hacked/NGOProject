@@ -9,6 +9,7 @@ import {
   FaInstagramSquare,
   FaPinterestSquare,
   FaLinkedin,
+  FaYoutubeSquare,
 } from "react-icons/fa";
 import { postContacts } from "@/redux/slices/messageSlice";
 import { useDispatch } from "react-redux";
@@ -114,7 +115,7 @@ const page = () => {
           <div className="flex flex-col space-y-3 ml-7 !mt-4 mb-5">
             <p className=" flex  text-base font-semibold text-slate-600 items-center">
               <MdEmail className="text-primary mr-3" />
-              desnepal@gmail.com
+              info@des.org.np
             </p>
             <p className="mb-0 flex text-base font-semibold text-slate-600 items-center">
               <AiTwotonePhone className="text-primary mr-3" />
@@ -132,10 +133,30 @@ const page = () => {
             Follow Us:
           </h3>
           <div className=" flex gap-4 mt-4 ml-7">
-            <AiFillFacebook className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
-            <FaInstagramSquare className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
-            <FaPinterestSquare className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
-            <FaLinkedin className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
+            <Link
+              href={"https://www.facebook.com/profile.php?id=61554100722430"}
+              target="blank"
+            >
+              <AiFillFacebook className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
+            </Link>
+
+            <Link
+              href={"https://www.instagram.com/desnepal2080/"}
+              target="blank"
+            >
+              <FaInstagramSquare className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
+            </Link>
+            <Link href={"https://www.youtube.com/@DESNepal."} target="blank">
+              <FaYoutubeSquare className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
+            </Link>
+            <Link
+              href={
+                "https://www.linkedin.com/in/des-nepal-undefined-3a73642a5/"
+              }
+              target="blank"
+            >
+              <FaLinkedin className="text-2xl text-blue-900 scale-110 hover:text-slate-900 cursor-pointer" />
+            </Link>
           </div>
         </div>
         <Divider orientation="vertical" />
