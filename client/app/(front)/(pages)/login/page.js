@@ -9,7 +9,7 @@ import { loginUser } from "@/redux/slices/authSlice";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
 
-export default function login() {
+export default function Page() {
   const router = useRouter();
   const [isVisible, setIsVisible] = React.useState(false);
   const dispatch = useDispatch();

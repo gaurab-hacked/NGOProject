@@ -3,7 +3,7 @@ import React from "react";
 import Pagesab from "../page";
 import { useParams } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
   return (
     <div>
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -27,6 +27,7 @@ const Events = () => {
           {data.slice(0, 5).map((e) => {
             return (
               <Link
+                key={e._id}
                 href={`/news-and-events/item-${e._id}`}
                 className="h-[100px] flex gap-2 overflow-hidden p-2 shadow bg-white"
               >

@@ -21,7 +21,7 @@ const TopNav = (props) => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
 
   // !==========================================
 
@@ -63,7 +63,7 @@ const TopNav = (props) => {
     if (!isLogin) {
       router.push("/");
     }
-  }, [isLogin, userData]);
+  }, [isLogin, userData, router]);
 
   // !==========================================
 

@@ -95,7 +95,7 @@ export default function TablePage(props) {
       );
     }
     return filteredUsers;
-  }, [albumData, filterValue]);
+  }, [albumData, filterValue, hasSearchFilter]);
 
   // const pages = Math.ceil(filteredItems.length / rowsPerPage);
   let pages = 1;
@@ -269,6 +269,7 @@ export default function TablePage(props) {
     albumData.length,
     onSearchChange,
     hasSearchFilter,
+    onClear,
   ]);
 
   const bottomContent = React.useMemo(() => {
@@ -286,7 +287,7 @@ export default function TablePage(props) {
         />
       </div>
     );
-  }, [items.length, page, pages, hasSearchFilter]);
+  }, [items.length, page, pages]);
 
   return (
     <>

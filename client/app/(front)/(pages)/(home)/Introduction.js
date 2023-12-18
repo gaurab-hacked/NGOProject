@@ -30,7 +30,7 @@ const Introduction = () => {
             communities.
           </p>
           <p className="text-justify text-gray-600 text-sm md:text-base">
-            Acknowledging the digital divide's potential to exacerbate
+            Acknowledging the digital divide&apos;s potential to exacerbate
             inequalities, our nonprofit prioritizes targeted digital literacy
             programs to narrow this gap. By doing so, we empower individuals to
             meaningfully participate in the global digital economy, thereby

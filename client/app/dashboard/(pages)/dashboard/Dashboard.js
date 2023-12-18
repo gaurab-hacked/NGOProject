@@ -18,7 +18,7 @@ import {
 } from "@/redux/slices/statisticsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getTarget } from "@/redux/slices/targetSlice";
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch();
   const {
     allUsers,
@@ -53,7 +53,7 @@ const page = () => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -103,4 +103,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

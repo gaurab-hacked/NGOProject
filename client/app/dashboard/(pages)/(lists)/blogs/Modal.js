@@ -16,7 +16,7 @@ import {
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
 import { CKEditor } from "ckeditor4-react";
 
-export default function modalApp(props) {
+export default function ModalApp(props) {
   const {
     handelpostblog,
     handelUpdate,

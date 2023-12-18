@@ -14,7 +14,7 @@ import {
 } from "@/redux/slices/albumSlice";
 import { toast } from "sonner";
 
-const page = () => {
+const Page = () => {
   const [postUpload, setPostUpload] = useState(0);
   const dispatch = useDispatch();
   const userRef = useRef(false);
@@ -107,4 +107,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

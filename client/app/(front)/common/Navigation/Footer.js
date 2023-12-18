@@ -24,8 +24,8 @@ const Footer = () => {
                 Get In Touch
               </h5>
               <p className="mb-1 text-sm font-semibold text-slate-600 w-[80%]">
-                Have questions or feedback? We're here to help! Contact us using
-                the info below or our contact form. We'll respond promptly.
+                Have questions or feedback? We&apos;re here to help! Contact us
+                using the info below or our contact form. Well respond promptly.
               </p>
               <div>
                 <h6 className="text-slate-900 font-semibold text-uppercase mt-2 mb-3">

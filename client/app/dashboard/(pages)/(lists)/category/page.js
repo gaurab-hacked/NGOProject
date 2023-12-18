@@ -14,7 +14,7 @@ import {
 } from "@/redux/slices/categorySlice";
 import { toast } from "sonner";
 
-const page = () => {
+const Page = () => {
   const [postUpload, setPostUpload] = useState(0);
   const dispatch = useDispatch();
   const userRef = useRef(false);
@@ -30,7 +30,7 @@ const page = () => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (postUpload >= 100) {
@@ -109,4 +109,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

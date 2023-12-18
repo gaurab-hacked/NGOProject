@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import { PlusIcon } from "@/app/dashboard/common/components/Tables/Icons/PlusIcon";
 
-export default function modalApp(props) {
+export default function ModalApp(props) {
   const {
     handelpostimage,
     handelUpdate,

@@ -10,7 +10,7 @@ import {
 } from "@/redux/slices/authSlice";
 import { toast } from "sonner";
 
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch();
   const userRef = useRef(false);
   const [finalData, setFinalData] = useState([]);
@@ -25,7 +25,7 @@ const page = () => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     let finalCategoryData = allUserData.map((item, index) => ({
@@ -90,4 +90,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

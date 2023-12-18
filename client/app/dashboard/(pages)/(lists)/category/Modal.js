@@ -41,7 +41,12 @@ export default function ModalApp(props) {
       displayOrder: updateData.status ? updateData.data.displayOrder : "",
       active: updateData.status ? updateData.data.active : true,
     });
-  }, [updateData.status]);
+  }, [
+    updateData.status,
+    updateData.data.active,
+    updateData.data.categoryName,
+    updateData.data.displayOrder,
+  ]);
 
   const clearCategoryData = () => {
     setCategoryData({

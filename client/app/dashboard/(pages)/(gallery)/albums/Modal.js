@@ -38,12 +38,19 @@ export default function ModalApp(props) {
   });
 
   useEffect(() => {
-    setalbumData({
-      albumName: updateData.status ? updateData.data.albumName : "",
-      date: updateData.status ? updateData.data.date : "",
-      active: updateData.status ? updateData.data.active : true,
-    });
-  }, [updateData.status]);
+    if (updateData.status) {
+      setalbumData({
+        albumName: updateData.data.albumName || "",
+        date: updateData.data.date || "",
+        active: updateData.data.active || true,
+      });
+    }
+  }, [
+    updateData.status,
+    updateData.data.albumName,
+    updateData.data.date,
+    updateData.data.active,
+  ]);
 
   const clearalbumData = () => {
     setalbumData({

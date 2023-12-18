@@ -108,7 +108,7 @@ export default function TablePage(props) {
       );
     }
     return filteredUsers;
-  }, [imageData, filterValue]);
+  }, [imageData, filterValue, hasSearchFilter]);
   let pages = 1;
   pages = Math.ceil(filteredItems.length / rowsPerPage);
   pages = pages > 0 ? pages : 1;
@@ -292,6 +292,7 @@ export default function TablePage(props) {
       </div>
     );
   }, [
+    onClear,
     filterValue,
     visibleColumns,
     onRowsPerPageChange,
@@ -315,7 +316,7 @@ export default function TablePage(props) {
         />
       </div>
     );
-  }, [items.length, page, pages, hasSearchFilter]);
+  }, [page, pages]);
 
   return (
     <>

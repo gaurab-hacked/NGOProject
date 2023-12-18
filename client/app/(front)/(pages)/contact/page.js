@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { Toaster, toast } from "sonner";
 import Breadcrumb from "../../common/Components/Breadcrumb";
 
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch();
   const [contactData, setContactData] = useState({
     name: "",
@@ -262,4 +262,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

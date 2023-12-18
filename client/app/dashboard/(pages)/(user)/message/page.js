@@ -10,9 +10,8 @@ import {
   getUnreadMsg,
 } from "@/redux/slices/messageSlice";
 import { getUsers } from "@/redux/slices/authSlice";
-import { tToasteroast } from "sonner";
 
-const page = (props) => {
+const Page = (props) => {
   const { MsgId } = props;
   const dispatch = useDispatch();
   const userRef = useRef(false);
@@ -106,4 +105,4 @@ const page = (props) => {
   );
 };
 
-export default page;
+export default Page;

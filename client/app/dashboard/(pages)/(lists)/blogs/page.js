@@ -16,7 +16,7 @@ import {
   setOnProgressChangeCallback,
 } from "@/redux/slices/blogSlice";
 
-const page = () => {
+const Page = () => {
   const [postUpload, setPostUpload] = useState(0);
   const dispatch = useDispatch();
   const userRef = useRef(false);
@@ -50,7 +50,7 @@ const page = () => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     if (postUpload >= 100) {
       setTimeout(() => {
@@ -130,4 +130,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
