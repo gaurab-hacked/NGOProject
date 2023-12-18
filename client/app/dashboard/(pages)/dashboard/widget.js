@@ -1,9 +1,9 @@
 import "./css/widget.css";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import Final from "./Final";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { RiMessage3Fill } from "react-icons/ri";
+import { AiFillProject } from "react-icons/ai";
+import { FaNewspaper } from "react-icons/fa6";
 
 const Widget = ({ type, dataBack }) => {
   let data;
@@ -28,17 +28,17 @@ const Widget = ({ type, dataBack }) => {
         ),
       };
       break;
-    case "Categories":
+    case "message":
       data = {
-        title: "Categories",
+        title: "MESSAGES",
         isMoney: false,
-        link: "View all Categories",
+        link: "View all messages",
         hrefLink: "/dashboard/orders",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
         icon: (
-          <ShoppingCartOutlinedIcon
-            className="icon p-1 rounded"
+          <RiMessage3Fill
+            className="icon p-1 rounded text-2xl scale-110"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
               color: "goldenrod",
@@ -47,17 +47,17 @@ const Widget = ({ type, dataBack }) => {
         ),
       };
       break;
-    case "Projects":
+    case "projects":
       data = {
-        title: "Projects",
+        title: "PROJECTS",
         hrefLink: "/dashboard/finished",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
         isMoney: true,
         link: "View all Projects",
         icon: (
-          <MonetizationOnOutlinedIcon
-            className="icon p-1 rounded"
+          <AiFillProject
+            className="icon p-1 rounded text-2xl"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
         ),
@@ -65,15 +65,15 @@ const Widget = ({ type, dataBack }) => {
       break;
     case "News & Events":
       data = {
-        title: "News & Events",
+        title: "NEWS & EVENTS",
         isMoney: false,
         link: "View all News and Events",
         hrefLink: "/dashboard/delivery",
         oneMonth: dataBack.oneMonth,
         all: dataBack.all,
         icon: (
-          <LocalShippingIcon
-            className="icon p-1 rounded"
+          <FaNewspaper
+            className="icon p-1 rounded text-2xl"
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
               color: "purple",

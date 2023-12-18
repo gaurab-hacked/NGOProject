@@ -65,11 +65,11 @@ const page = () => {
               dataBack={{ all: allUsers, oneMonth: oneMonthUsers }}
             />
             <Widget
-              type="Categories"
+              type="message"
               dataBack={{ all: allOrders, oneMonth: oneMonthOrders }}
             />
             <Widget
-              type="Projects"
+              type="projects"
               dataBack={{ all: allDelivery, oneMonth: oneMonthDelivery }}
             />
             <Widget
@@ -88,7 +88,7 @@ const page = () => {
               targetData={targetData}
             />
             <Chart
-              title="Last 6 Months (Projects)"
+              title="Last 6 Months (Messages)"
               aspect={2 / 1}
               data={sixMonthData}
             />

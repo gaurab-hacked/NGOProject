@@ -60,6 +60,9 @@ const TopNav = (props) => {
     if (Number(isLogin.data.privilege) < 1) {
       router.push("/");
     }
+    if (!isLogin) {
+      router.push("/");
+    }
   }, [isLogin, userData]);
 
   // !==========================================

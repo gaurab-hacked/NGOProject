@@ -103,11 +103,11 @@ export default function login() {
     }
   }, [dataLocalstorage, userData]);
 
-  useEffect(() => {
-    if (Number(isLogin.data.privilege) < 1) {
-      router.push("/");
-    }
-  }, [isLogin, userData]);
+  // useEffect(() => {
+  //   if (Number(isLogin.data.privilege) < 1) {
+  //     router.push("/");
+  //   }
+  // }, [isLogin, userData]);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
