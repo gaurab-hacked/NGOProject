@@ -18,7 +18,7 @@ const data = [
 
 const Events = () => {
   return (
-    <Card className="absolute max-h-[570px] min-h-[200px] -top-[250px] lg:block hidden  rounded overflow-hidden bg-blue-50 right-12 w-[360px] z-[1] ">
+    <Card className="absolute max-h-[570px] min-h-[200px] -top-[250px] lg:block hidden  rounded overflow-hidden bg-blue-50 right-7 w-[380px] z-[1] ">
       <div>
         <h3 className="bg-[#08bee3bc] capitalize tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
           News & Events
@@ -34,7 +34,7 @@ const Events = () => {
                   src={e.image}
                   height={100}
                   width={100}
-                  className="object-cover h-[85px] rounded-sm w-[80px]"
+                  className="object-cover h-[85px] rounded-sm w-[90px]"
                   alt="news-and-events"
                 />
                 <div>

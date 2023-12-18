@@ -44,6 +44,7 @@ const BottomNav = () => {
   }, [hamburgerOpen]);
 
   let isShow = pathname.includes("/dashboard") ? false : true;
+
   return (
     <>
       {isShow && (
@@ -139,7 +140,7 @@ const BottomNav = () => {
                   >
                     Our Mission
                   </Link>
-                  {pathname === "/our-mission" && (
+                  {pathname.includes("/our-mission") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
@@ -155,7 +156,7 @@ const BottomNav = () => {
                   >
                     News & Events
                   </Link>
-                  {pathname === "/news-and-events" && (
+                  {pathname.includes("/news-and-events") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
@@ -171,7 +172,7 @@ const BottomNav = () => {
                   >
                     Projects
                   </Link>
-                  {pathname === "/projects" && (
+                  {pathname.includes("/projects") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
@@ -187,7 +188,7 @@ const BottomNav = () => {
                   >
                     Leadership
                   </Link>
-                  {pathname === "/leadership" && (
+                  {pathname.includes("/leadership") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
@@ -203,7 +204,7 @@ const BottomNav = () => {
                   >
                     Gallery
                   </Link>
-                  {pathname === "/gallery" && (
+                  {pathname.includes("/gallery") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
@@ -220,7 +221,7 @@ const BottomNav = () => {
                   >
                     Contact
                   </Link>
-                  {pathname === "/contact" && (
+                  {pathname.includes("/contact") && (
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
