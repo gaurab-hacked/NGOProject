@@ -34,7 +34,7 @@ export default async function PostPage({ params }) {
           width={500}
           height={500}
           alt={final[0].title}
-          className="float-left pr-3"
+          className="float-left pr-3 rounded-sm"
         />
         <p className="text-base text-justify text-gray-600 md:text-lg">
           {final[0].des}

@@ -85,7 +85,7 @@ const BottomNav = () => {
                 } `}
               ></div>
             </div>
-            <div className="w-[60%] lg:static lg:right-2 absolute -right-[100%]">
+            <div className="w-[80%] lg:static lg:right-2 absolute -right-[100%]">
               <ul
                 className={`flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between ${
                   hamburgerOpen
@@ -126,6 +126,7 @@ const BottomNav = () => {
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li> */}
+
                 <li
                   className={`relative h-full py-1 ${
                     hamburgerOpen ? "!text-white !h-[35px]" : ""
@@ -182,6 +183,22 @@ const BottomNav = () => {
                   <Link
                     onClick={() => setHamburgerOpen(false)}
                     className="p-1"
+                    href={"/leadership"}
+                  >
+                    Leadership
+                  </Link>
+                  {pathname === "/leadership" && (
+                    <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
+                  )}
+                </li>
+                <li
+                  className={`relative h-full py-1 ${
+                    hamburgerOpen ? "!text-white !h-[35px]" : ""
+                  }`}
+                >
+                  <Link
+                    onClick={() => setHamburgerOpen(false)}
+                    className="p-1"
                     href={"/gallery"}
                   >
                     Gallery
@@ -190,6 +207,7 @@ const BottomNav = () => {
                     <div className="w-full absolute bottom-0 rounded-md bg-slate-700 h-[3px]"></div>
                   )}
                 </li>
+
                 <li
                   className={`relative h-full py-1 ${
                     hamburgerOpen ? "!text-white !h-[35px]" : ""

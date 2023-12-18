@@ -5,14 +5,15 @@ import EachProjects from "./EachProjects";
 
 const newsAndEventsData = [
   {
-    title: "News 1",
-    content:
-      "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. ",
+    _id: 1,
+    title: "GDES's Global IT Empowerment",
+    des: "GDES's Global IT initiative bridges the digital divide in underdeveloped countries by equipping individuals with hands-on IT skills for greater empowerment and opportunity.",
   },
-  { title: "Event 1", content: "Consectetur adipiscing elit." },
-  { title: "Event 1", content: "Consectetur adipiscing elit." },
-  { title: "Event 1", content: "Consectetur adipiscing elit." },
-  { title: "Event 1", content: "Consectetur adipiscing elit." },
+  {
+    _id: 2,
+    title: "Rural IT Empowerment Initiative",
+    des: "GDES is leading the charge in rural areas through its Global IT initiative, offering hands-on IT skills training to empower communities and unlock their potential.",
+  },
 ];
 
 const Projects = () => {
@@ -20,7 +21,7 @@ const Projects = () => {
     <>
       <div className="grid gap-4 gridcontainer">
         {newsAndEventsData.map((item, index) => (
-          <EachProjects key={index} />
+          <EachProjects key={index} data={item} />
         ))}
       </div>
     </>
