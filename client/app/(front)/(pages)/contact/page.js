@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { postContacts } from "@/redux/slices/messageSlice";
 import { useDispatch } from "react-redux";
+import { Toaster, toast } from "sonner";
 import Breadcrumb from "../../common/Components/Breadcrumb";
 
 const page = () => {
@@ -28,13 +29,70 @@ const page = () => {
   const handelpost = async (data) => {
     try {
       const response = await dispatch(postContacts(data));
-      // console.log(response);
+      if (response.payload.success) {
+        toast.success("Thank you for contacting us");
+      } else if (response.payload.error) {
+        toast.warning(response.payload.error);
+      } else {
+        toast.error("Some error accuired");
+      }
     } catch (error) {
-      console.error("Error creating post:", error);
+      toast.error("Some error accuired");
     }
   };
+
+  const [errMsg, setErrMsg] = useState({
+    name: "",
+    email: "",
+    title: "",
+    msg: "",
+  });
+
+  const validateForm = () => {
+    let isValid = true;
+    const newValidationErrors = {
+      name: "",
+      email: "",
+      title: "",
+      msg: "",
+    };
+
+    if (!contactData.name.trim()) {
+      newValidationErrors.name = "Please enter your name";
+      isValid = false;
+    }
+
+    if (!contactData.email.trim() || !isValidEmail(contactData.email)) {
+      newValidationErrors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    if (!contactData.title.trim()) {
+      newValidationErrors.title = "Please enter message title";
+      isValid = false;
+    }
+
+    if (!contactData.msg.trim()) {
+      newValidationErrors.msg = "Please enter message description";
+      isValid = false;
+    }
+
+    setErrMsg(newValidationErrors);
+
+    return isValid;
+  };
+
+  const isValidEmail = (email) => {
+    // Basic email validation regex, you can use a library for more robust validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handelSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     handelpost(contactData);
     setContactData({ name: "", email: "", title: "", msg: "" });
   };
@@ -86,7 +144,6 @@ const page = () => {
             Contact From:
           </h3>
           <form
-            action="#"
             onSubmit={handelSubmit}
             method="post"
             className="flex flex-col px-2 gap-3 "
@@ -98,6 +155,7 @@ const page = () => {
               value={contactData.name}
               onChange={handelContactData}
               placeholder="Enter your name"
+              errorMessage={errMsg.name ? errMsg.name : ""}
             />
             <Input
               variant="underlined"
@@ -106,6 +164,7 @@ const page = () => {
               value={contactData.email}
               onChange={handelContactData}
               placeholder="Enter your email"
+              errorMessage={errMsg.email ? errMsg.email : ""}
             />
             <Input
               variant="underlined"
@@ -114,6 +173,7 @@ const page = () => {
               value={contactData.title}
               onChange={handelContactData}
               placeholder="Enter message title"
+              errorMessage={errMsg.title ? errMsg.title : ""}
             />
             <Textarea
               variant="underlined"
@@ -123,6 +183,7 @@ const page = () => {
               onChange={handelContactData}
               placeholder="Enter message description"
               height={300}
+              errorMessage={errMsg.msg ? errMsg.msg : ""}
             />
             <Button
               radius="none"
@@ -175,6 +236,7 @@ const page = () => {
           ></iframe>
         </div>
       </div>
+      <Toaster richColors position="top-right" closeButton />
     </div>
   );
 };

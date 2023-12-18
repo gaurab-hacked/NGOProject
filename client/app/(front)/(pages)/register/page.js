@@ -4,16 +4,23 @@ import { Input, Link, Button, Card, CardBody } from "@nextui-org/react";
 import { EyeFilledIcon } from "../login/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../login/EyeSlashFilledIcon";
 import { MailIcon } from "../login/MailIcon";
-import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "@/redux/slices/authSlice";
 import { IoMdImage } from "react-icons/io";
 import { BiSolidUserRectangle } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "@/redux/slices/authSlice";
 import { useRouter } from "next/navigation";
+import { Toaster, toast } from "sonner";
 
-export default function register() {
+export default function Register() {
   const dispatch = useDispatch();
   const router = useRouter();
   const [isVisible, setIsVisible] = React.useState(false);
+  const [formErrors, setFormErrors] = useState({
+    email: "",
+    password: "",
+    name: "",
+    image: "",
+  });
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -21,7 +28,6 @@ export default function register() {
     email: "",
     password: "",
     name: "",
-    image: "",
   });
 
   const formInputFieldChange = (e) => {
@@ -38,100 +44,123 @@ export default function register() {
   const handelLogin = async (data) => {
     try {
       const response = await dispatch(registerUser(data));
-      if (response.payload.token) {
+      if (response.payload?.token) {
         router.push("/");
+        toast.success("Thank you for registering");
+        setFormRegisterData({
+          email: "",
+          password: "",
+          name: "",
+        });
+      } else if (
+        response.error.message === "Request failed with status code 400"
+      ) {
+        toast.warning("User already registered");
+      } else if (response.payload?.error) {
+        toast.warning(response.payload.error);
+      } else {
+        toast.error("Some error occurred");
       }
     } catch (error) {
-      console.error("Error creating post:", error);
+      toast.error("Some error occurred during registration");
     }
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    let errors = { email: "", password: "", name: "", image: "" };
+
+    // Validate email
+    if (!formRegisterData.email) {
+      errors.email = "Email is required";
+      isValid = false;
+    } else if (!isValidEmail(formRegisterData.email)) {
+      errors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    // Validate password
+    if (!formRegisterData.password) {
+      errors.password = "Password is required";
+      isValid = false;
+    } else if (formRegisterData.password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+      isValid = false;
+    }
+
+    // Validate name
+    if (!formRegisterData.name) {
+      errors.name = "Name is required";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const formSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     handelLogin(formRegisterData);
   };
 
-  const [isLogin, setIsLogin] = useState({ data: "", isLogged: false });
-  const { userData, authToken, loading } = useSelector(
-    (state) => state.authReducer
-  );
-
-  useEffect(() => {
-    if (userData !== null && authToken !== null) {
-      localStorage.setItem("userData", JSON.stringify(userData));
-      localStorage.setItem("token", JSON.stringify(authToken));
-    }
-  }, [userData, authToken]);
-
-  let dataLocalstorage = "";
-
-  if (typeof window !== "undefined" && window.localStorage) {
-    const userDataItem = window.localStorage.getItem("userData");
-    if (userDataItem) {
-      dataLocalstorage = userDataItem;
-    }
-  }
-
-  useEffect(() => {
-    const storedUserData = localStorage.getItem("userData");
-    if (storedUserData) {
-      setIsLogin({
-        data: JSON.parse(storedUserData),
-        isLogged: true,
-      });
-    }
-  }, [dataLocalstorage, userData]);
-
-  useEffect(() => {
-    if (Number(isLogin.data.privilege) < 1) {
-      router.push("/");
-    }
-  }, [isLogin, userData]);
   return (
-    <div className="flex flex-col w-full min-h-[75vh]  justify-center items-center">
+    <div className="flex flex-col w-full min-h-[75vh] !py-10  justify-center items-center">
       <Card
         radius="none"
-        className="rounded-sm max-w-full w-[340px] overflow-visible h-full relative"
+        className="rounded-sm max-w-full !py-5 !px-5 w-[400px] overflow-visible h-full relative"
       >
         <CardBody className="overflow-hidden">
           <h4 className="uppercase text-slate-600  mb-2 font-semibold tracking-wide text-base">
             Register:
           </h4>
-          <form className="flex flex-col gap-4 h-[370px]" onSubmit={formSubmit}>
+          <form
+            className="flex flex-col gap-4 min-h-[370px]"
+            onSubmit={formSubmit}
+          >
             <Input
               radius="sm"
-              isRequired
               label="Name"
               placeholder="Enter your name"
               type="name"
               name="name"
               value={formRegisterData.name}
               onChange={formInputFieldChange}
+              errorMessage={formErrors.name}
               endContent={
                 <BiSolidUserRectangle className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
               }
             />
             <Input
               radius="sm"
-              isRequired
               label="Email"
               name="email"
               value={formRegisterData.email}
               onChange={formInputFieldChange}
               placeholder="Enter your email"
-              type="email"
+              type="text"
+              errorMessage={formErrors.email}
               endContent={
                 <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
               }
             />
             <Input
               label="Password"
-              isRequired
               radius="sm"
               name="password"
               value={formRegisterData.password}
               onChange={formInputFieldChange}
               placeholder="Enter your password"
+              errorMessage={formErrors.password}
               endContent={
                 <button
                   className="focus:outline-none"
@@ -146,7 +175,7 @@ export default function register() {
                 </button>
               }
               type={isVisible ? "text" : "password"}
-              className="max-w-xs"
+              className="w-full"
             />
             <div className="fileInput">
               <Input
@@ -163,7 +192,6 @@ export default function register() {
             </div>
             <p className="text-start text-small">
               Already have an account?{" "}
-              <Link size="sm" href="/login" className="cursor-pointer"></Link>
               <span
                 className="cursor-pointer text-sm text-blue-700"
                 onClick={() => router.push("/login")}
@@ -185,6 +213,7 @@ export default function register() {
           </form>
         </CardBody>
       </Card>
+      <Toaster richColors position="top-right" closeButton />
     </div>
   );
 }
