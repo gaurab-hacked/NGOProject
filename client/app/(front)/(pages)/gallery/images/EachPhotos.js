@@ -5,14 +5,16 @@ import {
   ModalBody,
   Button,
   useDisclosure,
-  Image,
 } from "@nextui-org/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import Image from "next/image";
+// import image1 from "@/public/image1.jpg";
+// import image2 from "@/public/image2.jpg";
 
-export default function EachPhotos({ btnref }) {
+export default function EachPhotos({ btnref, data }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -34,18 +36,21 @@ export default function EachPhotos({ btnref }) {
                   modules={[Navigation]}
                   className="mySwiper h-full !m-0 flex"
                 >
-                  <SwiperSlide>
-                    <div className="h-[80vh] w-full flex items-center justify-center max-h-[600px]">
-                      <Image
-                        src={
-                          "https://miro.medium.com/v2/resize:fit:1000/1*cFfa3LOIy4Kr8qadDGK1Lg.png"
-                        }
-                        alt="image1"
-                        className="max-h-[600px] w-full"
-                      />
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>Slide 2</SwiperSlide>
+                  {data.map((e, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div className="h-[80vh] w-full flex items-center justify-center max-h-[600px]">
+                          <Image
+                            height={600}
+                            width={600}
+                            src={e.image}
+                            alt="image1"
+                            className="max-h-[600px] w-full"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
                 </Swiper>
               </ModalBody>
             </>

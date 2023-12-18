@@ -1,49 +1,20 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Image from "next/image";
-import image1 from "@/public/hero.jpg";
+import image1 from "@/public/image1.jpg";
 import Link from "next/link";
 
+const list = [
+  {
+    _id: 1,
+    title: "भूकम्प प्रभावितलाई सहयोग",
+    image: image1,
+    date: "13-08-2080",
+  },
+];
+
 export default function Albums() {
-  const list = [
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-    {
-      title: "Event1",
-      img: image1,
-    },
-  ];
-
-  const router = useRouter();
-
   return (
     <div className="gap-5 gridcontainer">
       {list.map((item, index) => (
@@ -53,13 +24,15 @@ export default function Albums() {
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src={image1}
+                src={item.image}
                 width={270}
               />
             </CardBody>
             <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">
-              <p className="text-tiny uppercase font-bold">Daily Mix</p>
-              <h4 className="font-bold text-large">DES Site</h4>
+              <p className="text-tiny uppercase font-bold text-gray-500">
+                Date: {item.date}
+              </p>
+              <h4 className="font-bold text-large">{item.title}</h4>
             </CardFooter>
           </Card>
         </Link>

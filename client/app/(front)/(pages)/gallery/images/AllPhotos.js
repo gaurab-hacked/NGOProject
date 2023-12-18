@@ -3,53 +3,21 @@ import React, { useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import EachPhotos from "./EachPhotos";
-import image1 from "@/public/hero.jpg";
+import image1 from "@/public/image1.jpg";
+import image2 from "@/public/image2.jpg";
 import Image from "next/image";
 
 export default function Albums() {
   const list = [
     {
-      title: "Orange",
-      img: image1,
-      price: "$5.50",
+      title: "image1",
+      image: image1,
     },
     {
-      title: "Tangerine",
-      img: image1,
-      price: "$3.00",
-    },
-    {
-      title: "Raspberry",
-      img: image1,
-      price: "$10.00",
-    },
-    {
-      title: "Lemon",
-      img: image1,
-      price: "$5.30",
-    },
-    {
-      title: "Avocado",
-      img: image1,
-      price: "$15.70",
-    },
-    {
-      title: "Lemon 2",
-      img: image1,
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: image1,
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: image1,
-      price: "$12.20",
+      title: "image2",
+      image: image2,
     },
   ];
-  const router = useRouter();
   const btnref = useRef();
 
   return (
@@ -62,7 +30,7 @@ export default function Albums() {
             isPressable
             onPress={() => btnref.current.click()}
             radius="none"
-            className="rounded-sm overflow-hidden"
+            className="rounded-sm overflow-hidden max-w-[350px]"
           >
             <CardBody className="overflow-visible p-1">
               <Image
@@ -71,13 +39,13 @@ export default function Albums() {
                 width="100%"
                 alt={item.title}
                 className="w-full rounded-sm object-cover hover:scale-105 duration-200 h-[200px]"
-                src={item.img}
+                src={item.image}
               />
             </CardBody>
           </Card>
         ))}
       </div>
-      <EachPhotos btnref={btnref} />
+      <EachPhotos btnref={btnref} data={list} />
     </>
   );
 }
