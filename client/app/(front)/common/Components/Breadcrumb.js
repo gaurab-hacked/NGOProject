@@ -27,7 +27,7 @@ const Breadcrumb = ({ category, subcategory, subsubcategory, showSearch }) => {
               radius="sm"
               variant="underlined"
               size="sm"
-              placeholder="Search Images..."
+              placeholder="Search..."
               className="mb-2"
             />
           </div>
