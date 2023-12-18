@@ -315,7 +315,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     contentData.length,
     onSearchChange,
-    hasSearchFilter,
     onClear,
   ]);
 

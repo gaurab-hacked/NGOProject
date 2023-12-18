@@ -44,7 +44,7 @@ const Page = (props) => {
     return () => {
       userRef.current = true;
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     let finalCategoryData = contactData.map((item, index) => ({

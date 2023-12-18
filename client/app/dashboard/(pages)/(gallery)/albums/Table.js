@@ -266,9 +266,7 @@ export default function TablePage(props) {
     filterValue,
     visibleColumns,
     onRowsPerPageChange,
-    albumData.length,
     onSearchChange,
-    hasSearchFilter,
     onClear,
   ]);
 

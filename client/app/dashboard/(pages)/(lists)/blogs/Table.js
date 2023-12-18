@@ -290,7 +290,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     blogData.length,
     onSearchChange,
-    hasSearchFilter,
     onClear,
   ]);
 

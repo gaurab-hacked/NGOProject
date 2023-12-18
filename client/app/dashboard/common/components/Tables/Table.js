@@ -77,7 +77,7 @@ export default function TablePage(props) {
     }
 
     return filteredUsers;
-  }, [users, filterValue, statusFilter, hasSearchFilter]);
+  }, [filterValue, statusFilter, hasSearchFilter]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -290,7 +290,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     users.length,
     onSearchChange,
-    hasSearchFilter,
     addIcon,
     onClear,
     statusVisible,

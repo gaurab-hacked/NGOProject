@@ -266,7 +266,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     categoryData.length,
     onSearchChange,
-    hasSearchFilter,
     onClear,
   ]);
 

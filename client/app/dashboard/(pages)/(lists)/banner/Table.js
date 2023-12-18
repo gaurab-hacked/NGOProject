@@ -270,7 +270,6 @@ export default function TablePage(props) {
     catouselData.length,
     onSearchChange,
     onClear,
-    hasSearchFilter,
   ]);
 
   const bottomContent = React.useMemo(() => {

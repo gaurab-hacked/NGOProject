@@ -274,7 +274,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     catouselData.length,
     onSearchChange,
-    hasSearchFilter,
     onClear,
   ]);
 

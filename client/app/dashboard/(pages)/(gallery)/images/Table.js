@@ -298,7 +298,6 @@ export default function TablePage(props) {
     onRowsPerPageChange,
     imageData.length,
     onSearchChange,
-    hasSearchFilter,
   ]);
 
   const bottomContent = React.useMemo(() => {
