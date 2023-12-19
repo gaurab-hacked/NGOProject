@@ -81,7 +81,7 @@ route.patch("/subcategory/:id", checkPrivilege, async (req, res) => {
     // check subcategory is exist or not
     const subcategory = await Subcategory.findById(req.params.id);
     if (!subcategory) {
-      return res.status(400).json({ error: "SubCategory Doesn't Exist" });
+      return res.status(400).json({ error: "SubCategory Does not Exist" });
     }
 
     // Set update details in a new variable

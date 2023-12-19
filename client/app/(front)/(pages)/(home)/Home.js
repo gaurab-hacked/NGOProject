@@ -25,7 +25,7 @@ const Home = () => {
       <AccordianFun />
       <hr />
       <Vision data={pageData.challange} />
-      <Pathers />
+      {/* <Pathers /> */}
       {/* <CardCollection /> */}
     </div>
   );

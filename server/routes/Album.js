@@ -74,7 +74,7 @@ route.patch(
       // Check if the album exists
       const currentAlbum = await Album.findById(req.params.id);
       if (!currentAlbum) {
-        return res.status(400).json({ error: "Album doesn't exist" });
+        return res.status(400).json({ error: "Album does not exist" });
       }
 
       // Set update details in a new variable

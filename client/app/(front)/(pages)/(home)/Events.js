@@ -20,16 +20,16 @@ const Events = () => {
   return (
     <Card className="absolute max-h-[570px] min-h-[200px] -top-[250px] lg:block hidden  rounded overflow-hidden bg-blue-50 right-7 w-[380px] z-[1] ">
       <div>
-        <h3 className="bg-[#08bee3bc] capitalize tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
+        <h3 className="bg-[#2463C1] text-white capitalize tracking-wider shadow-md p-2 py-3 text-xl font-semibold">
           News & Events
         </h3>
-        <div className="flex gap-2 mt-4 flex-col m-2">
+        <div className="flex gap-2 mt-4 flex-col m-2 px-1">
           {data.slice(0, 5).map((e) => {
             return (
               <Link
                 key={e._id}
                 href={`/news-and-events/item-${e._id}`}
-                className="h-[100px] flex gap-2 overflow-hidden p-2 shadow bg-white"
+                className="h-[100px] flex gap-2 overflow-hidden p-2 shadow bg-white hover:bg-gray-100 duration-200"
               >
                 <Image
                   src={e.image}
