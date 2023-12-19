@@ -14,14 +14,14 @@ const Herosection = () => {
     <div className="h-full flex justify-center items-center relative bg-black w-full">
       <Image
         src={HeroImage}
-        className="h-full absolute inset-0 w-full opacity-30 object-cover"
+        className="h-full absolute blur-sm inset-0 w-full opacity-40 object-cover"
         alt="hero"
       />
-      <div className="z-[5] mb-5 relative flex justify-center items-center flex-col gap-3">
-        <h1 className="text-white text-lg md:text-2xl text-center font-serif font-semibold tracking-wider">
+      <div className="z-[5] mb-5  font-mono relative flex justify-center items-center flex-col gap-3">
+        <h1 className="text-white text-lg md:text-3xl text-center  font-semibold">
           Digital Empowerment Society
         </h1>
-        <h3 className="text-white md:text-3xl text-xl font-serif text-center scale-125 font-semibold tracking-wider">
+        <h3 className="text-white md:text-3xl text-[3rem]  text-center scale-125 font-semibold">
           Our Mission
         </h3>
       </div>

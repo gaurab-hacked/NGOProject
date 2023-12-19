@@ -1,34 +1,34 @@
-import Image from "next/image";
+"use client";
 import React from "react";
-import image from "@/public/mission.png";
-import { Card } from "@nextui-org/react";
+import Lottie from "lottie-react";
 
-const Missionpage = () => {
+import Mission from "@/assets/mission.json";
+
+const MissionPage = () => {
   return (
-    <div>
-      <Card className="xl:w-[65%] w-[90%] mx-auto flex flex-col lg:flex-row gap-10 p-5 md:p-10 my-10">
-        <Image src={image} alt="our mission" width={380} height={250} />
-        <div>
-          <h2 className="text-xl md:text-2xl font-semibold w-divide mb-1">
-            Our Mission
-          </h2>
-          <p className="text-justify text-gray-600 text-sm md:text-base">
-            Our mission is to empower individuals in underdeveloped communities
-            by providing them with the essential skills and knowledge necessary
-            to unlock their full potential. We passionately envision vibrant
-            societies where every individual possesses the tools to secure
-            meaningful employment, contribute meaningfully to their communities,
-            and lead profoundly fulfilling lives. Through comprehensive
-            education, targeted training programs, and unwavering community
-            support, we actively bridge the digital divide. Our goal is to
-            empower individuals to become architects of their own success,
-            fostering positive change and sustainable development that resonates
-            across generations.
-          </p>
-        </div>
-      </Card>
+    <div className="w-full flex max-w-[100%] gap-5 mx-auto items-center justify-center h-full min-h-[100px]">
+      <div data-aos="fade-right" className="w-[60%]">
+        <h2 className="font-semibold text-center text-lg font-mono md:text-3xl mb-2">
+          Our Mission
+        </h2>
+        <p className="text-sm md:text-lg text-center font-mono text-gray-800">
+          Our mission is to empower individuals in underdeveloped communities by
+          providing them with the essential skills and knowledge necessary to
+          unlock their full potential. We passionately envision vibrant
+          societies where every individual possesses the tools to secure
+          meaningful employment, contribute meaningfully to their communities,
+          and lead profoundly fulfilling lives. Through comprehensive education,
+          targeted training programs, and unwavering community support, we
+          actively bridge the digital divide. Our goal is to empower individuals
+          to become architects of their own success, fostering positive change
+          and sustainable development that resonates across generations.
+        </p>
+      </div>
+      <div data-aos="fade-left" className="w-1/3 max-w-[400px]">
+        <Lottie animationData={Mission} />
+      </div>
     </div>
   );
 };
 
-export default Missionpage;
+export default MissionPage;
