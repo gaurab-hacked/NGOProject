@@ -16,12 +16,12 @@ import "aos/dist/aos.css";
 const pageData = {
   vision: {
     title: "Our Vision",
-    des: "Our vision is a world where everyone possesses the skills, knowledge, and access needed to thrive in the digital age. We envision connected and informed communities equipped to tackle challenges using modern tools. By promoting inclusivity and equitable access, we aim to inspire active engagement with technology, fostering creativity and innovation. Our vision goes beyond technological proficiency, emphasizing the holistic development of individuals and communities for meaningful contributions in our dynamic era.",
+    des: "At GDES, we envision a world where every individual, irrespective of their background, possesses vital digital literacy and IT skills. Our vision is one of thriving societies, where technology bridges economic gaps, fosters educational growth, ensures improved healthcare, and promotes active civic engagement. Through digital empowerment, we strive to create a more interconnected, inclusive, and prosperous global community.",
     animation: technical,
   },
   challange: {
     title: "Join Us in Empowering Change",
-    des: "Join the movement to empower change through digital literacy. Our investment in underdeveloped countries is a commitment to building a brighter future, one click at a time. Be a catalyst for progress, bridging the technological gap and fostering global participation to create a more equitable and prosperous world. Your involvement is key to shaping a limitless future through empowerment. Join us on this transformative journey.",
+    des: "Join us at GDES to empower change. Together, we bridge the digital divide, empowering underserved communities globally. Your contribution, be it time, skills, or resources, makes a meaningful impact. Let's provide digital literacy and IT skills, unlocking opportunities for economic empowerment, education, healthcare, civic engagement, and social inclusion. Join GDES in shaping a brighter, equitable future—one where every individual thrives in the digital age.",
     animation: vision,
   },
 };

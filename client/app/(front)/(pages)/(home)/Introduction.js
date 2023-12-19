@@ -12,12 +12,14 @@ const Introduction = () => {
           Digital Empowerment Society
         </h2>
         <p className="text-sm md:text-lg text-center font-mono text-gray-800">
-          In the rapidly advancing landscape of technology, our nonprofit
-          organization is at the forefront of bridging gaps through digital
-          literacy initiatives, particularly in underdeveloped countries. As a
-          dedicated NGO, our mission revolves around providing a transformative
-          path to progress by making digital literacy a cornerstone for
-          individuals in regions facing socio-economic challenges.
+          Global Digital Empowerment Society (GDES) is a California non-profit
+          committed to bridging the global digital divide. We empower
+          underserved communities worldwide by providing essential digital
+          literacy and IT skills. Our mission aims to unlock economic
+          empowerment, educational advancement, improved healthcare, civic
+          engagement, and social inclusion. Join us on this transformative
+          journey toward a more equitable and prosperous global society, one
+          click at a time.
         </p>
       </div>
       <div data-aos="fade-left" className="w-1/3">

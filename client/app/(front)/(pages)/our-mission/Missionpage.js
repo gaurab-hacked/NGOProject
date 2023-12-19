@@ -15,16 +15,16 @@ const MissionPage = () => {
           Our Mission
         </h2>
         <p className="text-sm md:text-lg text-center font-mono text-gray-800">
-          Our mission is to empower individuals in underdeveloped communities by
-          providing them with the essential skills and knowledge necessary to
-          unlock their full potential. We passionately envision vibrant
-          societies where every individual possesses the tools to secure
-          meaningful employment, contribute meaningfully to their communities,
-          and lead profoundly fulfilling lives. Through comprehensive education,
-          targeted training programs, and unwavering community support, we
-          actively bridge the digital divide. Our goal is to empower individuals
-          to become architects of their own success, fostering positive change
-          and sustainable development that resonates across generations.
+          Our mission at Global Digital Empowerment Society (GDES) is clear: to
+          equip individuals in underdeveloped communities with essential digital
+          literacy and IT skills. We envision thriving societies where everyone
+          has the tools to secure meaningful employment, contribute
+          meaningfully, and lead fulfilling lives. Through education, training,
+          and community support, we bridge the digital divide, empowering
+          individuals to become architects of their own success and drive
+          positive change and sustainable development. Join us in this mission
+          to create a more equitable and prosperous world through the
+          transformative power of digital empowerment.
         </p>
       </div>
       <div data-aos="fade-left" className="w-1/3 max-w-[400px]">

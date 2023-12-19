@@ -5,6 +5,7 @@ import { RiHealthBookFill } from "react-icons/ri";
 import { RiMoneyDollarBoxFill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
 import { FaLaptopCode } from "react-icons/fa";
+import { MdEnergySavingsLeaf } from "react-icons/md";
 
 const data = [
   {
@@ -36,6 +37,12 @@ const data = [
     title: "Social Inclusion and Bridging the Divide",
     des: "Digital literacy empowers marginalized groups, including women, minorities, and rural communities, to connect, share their stories, and advocate for their rights. It breaks down geographical barriers and fosters cultural understanding, promoting a more inclusive and connected society.",
     icon: <IoIosPeople className="scale-125" />,
+  },
+  {
+    id: 6,
+    title: "Green Tech Research to Combat Climate Change",
+    des: "Global Digital Empowerment Society (DES) recognizes the pivotal role of Information and Communication Technology (ICT) in addressing climate change. With a focus on Nepal, DES prioritizes research in areas such as circular economy implementation, climate modeling, waste management, and e-waste issues. The emphasis on e-waste management aligns with Nepal's growing electronic waste challenge, containing hazardous materials. This initiative contributes to Nepal's goal of achieving net-zero status by 2045 as outlined in its Nationally Determined Contribution (NDC).",
+    icon: <MdEnergySavingsLeaf className="scale-125" />,
   },
 ];
 
