@@ -12,7 +12,7 @@ const Joinus = ({ data }) => {
           {data.des}
         </p>
       </div>
-      <div className="w-1/3 flex justify-center items-center  h-full max-w-[400px]">
+      <div className="w-1/3 flex justify-center text-gray-800 items-center  h-full max-w-[400px]">
         <Lottie animationData={data.animation} />
       </div>
     </div>

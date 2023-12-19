@@ -13,7 +13,7 @@ const Vision = ({ data }) => {
         <h2 className=" font-semibold text-center text-lg font-mono md:text-3xl mb-2">
           {data.title}
         </h2>
-        <p className="px-5 text-sm md:text-lg text-center font-mono">
+        <p className="px-5 text-sm md:text-lg text-gray-800 text-center font-mono">
           {data.des}
         </p>
       </div>

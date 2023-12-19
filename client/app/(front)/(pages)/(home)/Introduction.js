@@ -13,7 +13,7 @@ const Introduction = () => {
         <h2 className=" font-semibold text-center text-lg font-mono md:text-3xl mb-2">
           Digital Empowerment Society
         </h2>
-        <p className=" text-sm md:text-lg text-center font-mono">
+        <p className=" text-sm md:text-lg text-center font-mono text-gray-800">
           In the rapidly advancing landscape of technology, our nonprofit
           organization is at the forefront of bridging gaps through digital
           literacy initiatives, particularly in underdeveloped countries. As a

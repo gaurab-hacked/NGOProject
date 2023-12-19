@@ -24,7 +24,7 @@ const EachPage = ({ data }) => {
       />
       <div className="absolute z-50 inset-0">
         <div className="carousel-caption flex flex-col h-full items-center justify-center">
-          <div className="p-3 flex justify-center items-center flex-col max-w-[800px]">
+          <div className="p-3 flex justify-center items-center flex-col max-w-[800px] font-mono">
             <h1 className="font-bold joseFin text-[2.5rem] text-white tracking-wide">
               {data.title} <br />
             </h1>
