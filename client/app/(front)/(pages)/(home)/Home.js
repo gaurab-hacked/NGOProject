@@ -5,6 +5,7 @@ import Vision from "./Vision";
 import AccordianFun from "./AccordianFun";
 import Pathers from "./Patners";
 import CardCollection from "./CardsCollection";
+import Slogan from "./Slogan";
 const pageData = {
   vision: {
     title: "Our Vision",
@@ -20,6 +21,7 @@ const Home = () => {
   return (
     <div className="max-w-[1550px] m-auto">
       <Carousel />
+      <Slogan />
       <Introduction />
       <Vision data={pageData.vision} />
       <AccordianFun />
