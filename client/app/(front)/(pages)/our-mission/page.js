@@ -6,7 +6,7 @@ import Missionpage from "./Missionpage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
