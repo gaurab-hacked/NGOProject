@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, Divider } from "@nextui-org/react";
 import Link from "next/link";
 import { BiSolidDonateHeart } from "react-icons/bi";
-import LOGO from "./newlogo.jpg";
+import LOGO from "@/public/logo.svg";
 import { IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -50,16 +50,17 @@ const BottomNav = () => {
       {isShow && (
         <>
           <div
-            className={`w-full z-[10] overflow-hidden h-[60px] bg-white shadow-lg flex items-center justify-between ${
+            className={`w-full z-[10] overflow-hidden h-[70px] bg-white shadow-lg flex items-center justify-between ${
               scrollCount > 30 ? "fixed" : "sticky"
             } z-40 top-0`}
           >
             <div id="logo" className="w-[40%] flex">
               <Image
                 src={LOGO}
-                className="ml-10 h-[60px]"
+                className="ml-10 mt-2 h-[90px]"
                 alt="logo"
-                height={60}
+                height={90}
+                width={150}
               />
             </div>
             <div
@@ -88,7 +89,7 @@ const BottomNav = () => {
             </div>
             <div className="w-[80%] lg:static lg:right-2 absolute -right-[100%]">
               <ul
-                className={`flex h-full font-semibold text-slate-700 items-center w-[95%] justify-between ${
+                className={`flex h-full font-semibold text-slate-800 items-center w-[95%] justify-between ${
                   hamburgerOpen
                     ? "bg-[#0f92ad] fixed top-0 -right-[0] h-[100vh] w-full !z-[10000000] flex-col !justify-center gap-[20px] !align-center"
                     : "flex-row"
@@ -101,7 +102,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/"}
                   >
                     Home
@@ -118,7 +119,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/what-we-do"}
                   >
                     What We Do
@@ -135,7 +136,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/our-mission"}
                   >
                     Our Mission
@@ -151,7 +152,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/news-and-events"}
                   >
                     News & Events
@@ -167,7 +168,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/projects"}
                   >
                     Projects
@@ -183,7 +184,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/leadership"}
                   >
                     Leadership
@@ -199,7 +200,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/gallery"}
                   >
                     Gallery
@@ -216,7 +217,7 @@ const BottomNav = () => {
                 >
                   <Link
                     onClick={() => setHamburgerOpen(false)}
-                    className="p-1"
+                    className="p-1 hover:text-slate-500 duration-150"
                     href={"/contact"}
                   >
                     Contact

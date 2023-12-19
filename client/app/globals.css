@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,6 +18,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  /* font-family: "Josefin Sans", sans-serif; */
+}
+
+.joseFin {
+  font-family: "Josefin Sans", sans-serif !important;
 }
 
 input::-webkit-inner-spin-button,
@@ -85,14 +93,14 @@ body {
 }
 
 .swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
+  width: 10px !important;
+  height: 10px !important;
   background-color: white !important;
 }
 .swiper-pagination-bullet-active {
   transition: 0.3s !important;
   border-radius: 2px !important;
-  width: 23px !important;
+  width: 25px !important;
 }
 
 .swiper {
