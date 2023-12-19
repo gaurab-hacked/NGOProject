@@ -28,11 +28,11 @@ export default function Albums() {
                 width={270}
               />
             </CardBody>
-            <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">
-              <p className="text-tiny uppercase font-bold text-gray-500">
+            <CardFooter className="pb-0 font-mono pt-2 px-4 flex-col items-start">
+              <p className="text-tiny uppercase font-mono font-bold text-gray-500">
                 Date: {item.date}
               </p>
-              <h4 className="font-bold text-large">{item.title}</h4>
+              <h4 className="font-bold font-mono text-large">{item.title}</h4>
             </CardFooter>
           </Card>
         </Link>

@@ -26,7 +26,7 @@ const Leaderships = () => {
             key={index}
             className="max-w-[300px]"
           >
-            <Card className="py-4 min-h-[150px] overflow-hidden">
+            <Card className="pb-4 pt-2 min-h-[150px] overflow-hidden">
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
@@ -36,14 +36,14 @@ const Leaderships = () => {
                   height={220}
                 />
               </CardBody>
-              <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">
-                <h4 className="font-bold text-large">
+              <CardFooter className="pb-0 pt-1 px-4 flex-col items-start">
+                <h4 className="font-bold font-mono text-large">
                   {data.title.length > 23
                     ? data.title.slice(0, 23) + "..."
                     : data.title}
                 </h4>
                 <p className="text-tiny uppercase font-bold">{data.name}</p>
-                <small className="text-default-500 text-justify">
+                <small className="text-slate-700 text-justify">
                   {data.des.length > 120
                     ? data.des.slice(0, 120) + "..."
                     : data.des}

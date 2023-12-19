@@ -105,7 +105,7 @@ const Page = () => {
         showSearch={false}
       />
       <div className="min-h-[70vh] flex flex-col md:grid gap-x-3 grid-cols-11 py-10 px-2 max-w-[1500px] mx-auto">
-        <div className="col-span-5 hidden md:block">
+        <div className="col-span-5 hidden font-mono md:block">
           <h1 className="mb-10 text-3xl tracking-wide font-semibold">
             Digital Empowerment Society
           </h1>
@@ -161,13 +161,13 @@ const Page = () => {
         </div>
         <Divider orientation="vertical" />
         <div className="col-span-6">
-          <h3 className="uppercase font-semibold text-slate-700 tracking-wide text-lg mb-2">
+          <h3 className="uppercase font-mono font-semibold text-slate-700 tracking-wide text-lg mb-2">
             Contact From:
           </h3>
           <form
             onSubmit={handelSubmit}
             method="post"
-            className="flex flex-col px-2 gap-3 "
+            className="flex !font-mono flex-col px-2 gap-3 "
           >
             <Input
               variant="underlined"
