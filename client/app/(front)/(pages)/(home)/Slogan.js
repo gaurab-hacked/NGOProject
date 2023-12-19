@@ -8,7 +8,7 @@ import Events from "./Events";
 const Slogan = () => {
   return (
     <div className="relative w-full h-full">
-      <div className="mx-auto mb-20  max-w-[80%]">
+      <div className="mx-auto  max-w-[80%]">
         <div className="flex flex-col min-h-[250px]">
           <div className="flex justify-center items-center ">
             <div className="flex items-center m-6 mb-5">
@@ -17,13 +17,13 @@ const Slogan = () => {
                 <h2 className="text-[3rem] font-mono font-semibold">
                   #TechForAll
                 </h2>
-                <h3 className="font-semibold italic text-lg">
+                <h3 className="font-semibold font-mono italic text-lg">
                   Bridging Gaps, Empowering Lives
                 </h3>
               </div>
             </div>
           </div>
-          <p className="font-semibold italic text-center pb-3">
+          <p className="font-semibold italic text-center pb-3  max-w-[90%] mx-auto">
             DES: A non-profit bridging the digital divide, empowering
             underserved communities through transformative digital literacy for
             an inclusive future.

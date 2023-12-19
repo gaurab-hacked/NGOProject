@@ -146,3 +146,13 @@ body {
 .fileInput label {
   margin-bottom: 7px !important;
 }
+#accor .text-large {
+  font-size: 1.25rem !important;
+}
+#accor svg {
+  scale: 1.2;
+}
+#accor section {
+  padding-top: -10px !important;
+  font-size: 1.1rem !important;
+}

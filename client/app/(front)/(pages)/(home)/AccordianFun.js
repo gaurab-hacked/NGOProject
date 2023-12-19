@@ -47,10 +47,11 @@ export default function AccordianFun() {
 
   return (
     <div className="w-[95%] md:max-w-[65%] m-auto my-20">
-      <h3 className="text-center text-lg md:text-2xl font-semibold mb-5 underline">
+      <h2 className=" font-semibold text-center text-lg font-mono md:text-3xl mb-2">
         Key Focus Areas
-      </h3>
+      </h2>
       <Accordion
+        id="accor"
         selectedKeys={selectedKeys}
         onSelectionChange={setSelectedKeys}
       >
@@ -61,7 +62,7 @@ export default function AccordianFun() {
               aria-label={e.title}
               title={`${e.title}`}
               startContent={e.icon}
-              className="text-justify text-sm md:text-base"
+              className="text-justify text-sm md:text-base !font-mono"
             >
               {e.des}
             </AccordionItem>
