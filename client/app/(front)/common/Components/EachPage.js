@@ -1,27 +1,44 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import scrollImage from "@/public/scrollImage.gif";
 import { Button } from "@nextui-org/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+// import Lottie, { LottieRefCurrentProps } from "lottie-react";
+// import animation1 from "@/assets/herosection1.json";
+
 const EachPage = ({ data }) => {
   const scrollDown = () => {
     window.scrollTo({
-      top: 600,
+      top: 550,
       behavior: "smooth",
     });
   };
 
+  const animationRef = useRef();
+
   return (
-    <div className="md:h-[600px] h-[500px] relative w-full bg-black">
+    <div className="md:h-[550px] h-[550px] relative w-full bg-black custom-gradient">
       <Image
-        className="position-absolute w-full h-full opacity-50 blur-sm"
+        className="position-absolute w-full h-full opacity-40 blur-sm"
         src={data.image}
         style={{ objectFit: "cover" }}
         alt="something"
         height={600}
         width={1100}
       />
+      {/* <div className="absolute -rotate-45 w-[300px] z-[3] bottom-0 left-0">
+        <Lottie
+          // onComplete={() => {
+          //   animationRef.current?.setDirection(-1);
+          //   animationRef.current?.play();
+          // }}
+          lottieRef={animationRef}
+          animationData={animation1}
+          loop={false}
+        />
+      </div> */}
+
       <div className="absolute z-50 inset-0">
         <div className="carousel-caption flex flex-col h-full items-center justify-center">
           <div className="p-3 flex justify-center items-center flex-col max-w-[800px] font-mono">

@@ -157,3 +157,7 @@ body {
   font-size: 1.1rem !important;
   color: rgb(31 41 55 / 0.8) !important;
 }
+
+.custom-gradient {
+  background: linear-gradient(to top right, #000, #00385d);
+}
