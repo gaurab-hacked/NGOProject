@@ -15,6 +15,7 @@
     "@mui/material": "^5.15.0",
     "@nextui-org/react": "^2.2.9",
     "@reduxjs/toolkit": "^2.0.1",
+    "aos": "^2.3.4",
     "axios": "^1.6.2",
     "ckeditor4-react": "^4.1.0",
     "framer-motion": "^10.16.16",

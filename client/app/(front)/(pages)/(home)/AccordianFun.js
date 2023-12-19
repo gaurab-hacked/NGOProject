@@ -42,9 +42,6 @@ const data = [
 export default function AccordianFun() {
   const [selectedKeys, setSelectedKeys] = React.useState(new Set(["1"]));
 
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
   return (
     <div className="w-[95%] md:max-w-[65%] m-auto my-20">
       <h2 className=" font-semibold text-center text-lg font-mono md:text-3xl mb-2">
@@ -58,6 +55,7 @@ export default function AccordianFun() {
         {data.map((e, index) => {
           return (
             <AccordionItem
+              data-aos="fade-up"
               key={e.id}
               aria-label={e.title}
               title={`${e.title}`}

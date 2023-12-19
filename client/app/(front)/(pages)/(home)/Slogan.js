@@ -23,7 +23,10 @@ const Slogan = () => {
               </div>
             </div>
           </div>
-          <p className="font-semibold italic text-center pb-3  max-w-[90%] mx-auto">
+          <p
+            data-aos="fade-up"
+            className="font-semibold italic text-center pb-3  max-w-[90%] mx-auto"
+          >
             DES: A non-profit bridging the digital divide, empowering
             underserved communities through transformative digital literacy for
             an inclusive future.

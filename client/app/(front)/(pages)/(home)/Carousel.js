@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// import "./assets/CarouselStyles.css";
 import { Autoplay, Pagination } from "swiper/modules";
 import EachPage from "../../common/Components/EachPage";
 import image2 from "@/public/hero/image2.jpg";
@@ -35,6 +34,11 @@ const data = [
 ];
 
 const Carousel = () => {
+  const [activate, setActivate] = useState(0);
+  const handleSlideChange = (swiper) => {
+    setActivate(swiper.activeIndex);
+  };
+
   return (
     <>
       <div className="container-fluid mb-3">
@@ -49,7 +53,7 @@ const Carousel = () => {
                 spaceBetween={0}
                 centeredSlides={true}
                 autoplay={{
-                  delay: 5000,
+                  delay: 10000,
                   disableOnInteraction: false,
                 }}
                 slidesPerView={1}
@@ -58,11 +62,12 @@ const Carousel = () => {
                 }}
                 modules={[Autoplay, Pagination]}
                 className="mySwiper"
+                onSlideChange={handleSlideChange}
               >
-                {data.map((e) => {
+                {data.map((e, index) => {
                   return (
                     <SwiperSlide key={e._id}>
-                      <EachPage data={e} />
+                      <EachPage data={e} index={activate} />
                     </SwiperSlide>
                   );
                 })}

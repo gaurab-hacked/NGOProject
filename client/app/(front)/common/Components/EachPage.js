@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import scrollImage from "@/public/scrollImage.gif";
 import { Button } from "@nextui-org/react";
@@ -6,13 +7,12 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 const EachPage = ({ data }) => {
   const scrollDown = () => {
     window.scrollTo({
-      top: 700,
+      top: 600,
       behavior: "smooth",
     });
   };
 
   return (
-    // <div className="h-[500px] relative w-full bg-black mt-7">
     <div className="md:h-[600px] h-[500px] relative w-full bg-black">
       <Image
         className="position-absolute w-full h-full opacity-50 blur-sm"
@@ -25,13 +25,19 @@ const EachPage = ({ data }) => {
       <div className="absolute z-50 inset-0">
         <div className="carousel-caption flex flex-col h-full items-center justify-center">
           <div className="p-3 flex justify-center items-center flex-col max-w-[800px] font-mono">
-            <h1 className="font-bold joseFin text-[2.5rem] text-white tracking-wide">
+            <h1
+              data-aos="fade-down"
+              className="font-bold joseFin text-[2.5rem] text-white tracking-wide"
+            >
               {data.title} <br />
             </h1>
-            <p className="w-full lg:w-[80%] text-white text-center text-2xl">
+            <p
+              data-aos="flip-up"
+              className="w-full lg:w-[80%] text-white text-center text-2xl"
+            >
               {data.description}
             </p>
-            <div className="flex gap-5 mt-5 relative">
+            <div data-aos="fade-up" className="flex gap-5 mt-5 relative">
               <div className="absolute blur-xl inset-0"></div>
               <Button
                 size="sm"
@@ -42,13 +48,13 @@ const EachPage = ({ data }) => {
                 <IoArrowForwardCircleOutline className="-ml-1 text-xl mt-[1px]" />
               </Button>
             </div>
-            <div className="absolute bottom-10 ">
+            <div data-aos="fade-up" className="absolute bottom-14 ">
               <Image
                 src={scrollImage}
-                width={45}
-                height={45}
+                width={50}
+                height={50}
                 alt="scroll"
-                className="cursor-pointer !w-[45px] !h-[45px]"
+                className="cursor-pointer !w-[50px] !h-[50px]"
                 onClick={scrollDown}
               />
             </div>

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Carousel from "./Carousel";
 import Introduction from "./Introduction";
 import Vision from "./Vision";
@@ -9,6 +10,8 @@ import Slogan from "./Slogan";
 import technical from "@/assets/technical.json";
 import vision from "@/assets/joinus.json";
 import Joinus from "./Joinus";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const pageData = {
   vision: {
@@ -24,6 +27,12 @@ const pageData = {
 };
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
   return (
     <div className="max-w-[1550px] m-auto">
       <Carousel />
