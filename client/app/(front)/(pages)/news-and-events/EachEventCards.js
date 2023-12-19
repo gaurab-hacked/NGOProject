@@ -12,7 +12,7 @@ export default function EachEventCards({ data }) {
             alt="Card background"
             className="object-cover rounded-xl"
             src={data.image}
-            width={270}
+            width={300}
           />
         </CardBody>
         <CardFooter className="pb-0 pt-2 px-4 flex-col items-start">

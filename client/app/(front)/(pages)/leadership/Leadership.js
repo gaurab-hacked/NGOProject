@@ -26,13 +26,13 @@ const Leaderships = () => {
             key={index}
             className="max-w-[300px]"
           >
-            <Card className="pb-4 pt-2 min-h-[150px] overflow-hidden">
+            <Card className="pb-4 pt-1 min-h-[150px] overflow-hidden">
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
                   className="object-cover rounded-xl !max-h-[220px]"
                   src={data.image}
-                  width={270}
+                  width={300}
                   height={220}
                 />
               </CardBody>

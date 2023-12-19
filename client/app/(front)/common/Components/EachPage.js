@@ -2,8 +2,9 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import scrollImage from "@/public/scrollImage.gif";
-import { Button } from "@nextui-org/react";
+import { Button, Card } from "@nextui-org/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import Link from "next/link";
 // import Lottie, { LottieRefCurrentProps } from "lottie-react";
 // import animation1 from "@/assets/herosection1.json";
 
@@ -56,14 +57,18 @@ const EachPage = ({ data }) => {
             </p>
             <div data-aos="fade-up" className="flex gap-5 mt-5 relative">
               <div className="absolute blur-xl inset-0"></div>
-              <Button
-                size="sm"
-                variant="bordered"
-                className="!rounded-sm !tracking-wide border-blue-200  mt-1 text-base py-5 px-7 pr-6 font-bold bg-transparent text-white "
-              >
-                Explore
-                <IoArrowForwardCircleOutline className="-ml-1 text-xl mt-[1px]" />
-              </Button>
+              <Link href={"/our-mission"}>
+                <Card
+                  size="sm"
+                  variant="bordered"
+                  radius="none"
+                  isPressable
+                  className="!rounded-sm flex flex-row gap-1 border-2 hover:bg-blue-300 hover:text-black !tracking-wide border-blue-200  mt-1 text-base py-[.6rem] px-6 pr-6 font-bold bg-transparent text-white "
+                >
+                  Explore
+                  <IoArrowForwardCircleOutline className=" text-xl mt-[1px]" />
+                </Card>
+              </Link>
             </div>
             <div data-aos="fade-up" className="absolute bottom-14 ">
               <Image

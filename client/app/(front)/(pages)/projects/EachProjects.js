@@ -25,7 +25,7 @@ export default function EachProjects({ data }) {
               alt="Card background"
               className="object-cover rounded-xl"
               src={image1}
-              width={270}
+              width={300}
             />
           </CardBody>
         )}
