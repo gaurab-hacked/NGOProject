@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 import { AiFillFacebook } from "react-icons/ai";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaYoutubeSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import {
-  FaInstagramSquare,
-  FaLinkedin,
-  FaPinterestSquare,
-} from "react-icons/fa";
+import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const TopNav = () => {
   const pathName = usePathname();
@@ -21,24 +18,44 @@ const TopNav = () => {
           <div className="hidden sm:block">
             <div className="w-[1px] h-full bg-slate-300 mx-3"></div>
             <div className="flex space-x-3 ml-1 ">
-              <AiFillFacebook className="text-xl text-white cursor-pointer" />
-              <FaInstagramSquare className="text-xl text-white cursor-pointer" />
-              <FaPinterestSquare className="text-xl text-white cursor-pointer" />
-              <FaLinkedin className="text-xl text-white cursor-pointer" />
+              <Link
+                href={"https://www.facebook.com/profile.php?id=61554100722430"}
+                target="blank"
+              >
+                <AiFillFacebook className="text-xl text-white cursor-pointer" />
+              </Link>
+
+              <Link
+                href={"https://www.instagram.com/desnepal2080/"}
+                target="blank"
+              >
+                <FaInstagramSquare className="text-xl text-white cursor-pointer" />
+              </Link>
+              <Link href={"https://www.youtube.com/@DESNepal."} target="blank">
+                <FaYoutubeSquare className="text-xl text-white cursor-pointer" />
+              </Link>
+              <Link
+                href={
+                  "https://www.linkedin.com/in/des-nepal-undefined-3a73642a5/"
+                }
+                target="blank"
+              >
+                <FaLinkedin className="text-xl text-white cursor-pointer" />
+              </Link>
             </div>
           </div>
           <div className="w-[1px] h-full bg-slate-300 mx-1 sm:mx-3"></div>
           <div className="flex items-center gap-1">
             <FaPhoneAlt className="scale-90 text-white text-xs sm:text-base" />
             <p className=" text-white tracking-wide text-xs sm:text-base">
-              +9779810325922
+              +977-9767485800
             </p>
           </div>
           <div className="w-[1px] h-full bg-slate-300 mx-3"></div>
           <div className="flex items-center gap-1 ">
             <MdEmail className="scale-110 mt-1 text-xs sm:text-base text-white" />
             <p className=" text-white tracking-wide text-xs sm:text-base">
-              info@digitalempowerment.org
+              info@des.org.np
             </p>
           </div>
           <div className="w-[1px] h-full bg-slate-300 sm:mr-4 mx-1 sm:mx-3"></div>
