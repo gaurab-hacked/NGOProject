@@ -6,12 +6,12 @@ import Laptop from "@/assets/laptopfloating.json";
 
 const Introduction = () => {
   return (
-    <div className="w-full flex max-w-[85%] gap-5 mx-auto items-center justify-center h-full min-h-[200px]">
-      <div data-aos="fade-right" className="w-1/2">
-        <h2 className="font-semibold text-center text-lg font-mono md:text-3xl mb-2">
+    <div className="w-full flex max-w-[95%] my-4 md:my-1 lg:max-w-[85%] gap-5 mx-auto flex-col md:flex-row items-center justify-center h-full min-h-[200px]">
+      <div data-aos="fade-right" className="w-full md:w-1/2">
+        <h2 className="font-semibold text-center text-2xl font-mono md:text-3xl mb-2">
           Digital Empowerment Society
         </h2>
-        <p className="text-sm md:text-lg text-center font-mono text-gray-800">
+        <p className="text-base md:text-lg text-justify md:text-center font-mono text-gray-800">
           Global Digital Empowerment Society (GDES) is a California non-profit
           committed to bridging the global digital divide. We empower
           underserved communities worldwide by providing essential digital
@@ -22,7 +22,7 @@ const Introduction = () => {
           click at a time.
         </p>
       </div>
-      <div data-aos="fade-left" className="w-1/3">
+      <div data-aos="fade-left" className="w-full md:w-1/3">
         <Lottie animationData={Laptop} />
       </div>
     </div>

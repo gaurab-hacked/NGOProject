@@ -17,7 +17,7 @@ const newsAndEventsData = [
 const Projects = () => {
   return (
     <>
-      <div className="grid gap-4 gridcontainer">
+      <div className="grid gap-4 gridcontainer justify-center sm:justify-start">
         {newsAndEventsData.map((item, index) => (
           <EachEventCards key={item._id} data={item} />
         ))}

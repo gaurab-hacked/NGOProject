@@ -133,11 +133,7 @@ body {
   font-size: 25px !important;
   text-transform: none !important;
 }
-@media screen and (max-width: 768px) {
-  .text-foreground {
-    font-size: 15px !important;
-  }
-}
+
 .gridcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
@@ -160,4 +156,15 @@ body {
 
 .custom-gradient {
   background: linear-gradient(to top right, #000, #00385d);
+}
+@media screen and (max-width: 768px) {
+  .text-foreground {
+    font-size: 15px !important;
+  }
+  #accor .text-large {
+    font-size: 1.15rem !important;
+  }
+  #accor svg {
+    scale: 1rem !important;
+  }
 }

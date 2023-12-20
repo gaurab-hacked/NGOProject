@@ -8,13 +8,13 @@ const MissionPage = () => {
   return (
     <div
       id="mission"
-      className="w-full flex max-w-[100%] gap-5 mx-auto items-center justify-center h-full min-h-[100px]"
+      className="w-full md:flex-row flex-col flex max-w-[100%] gap-5 mx-auto items-center justify-center h-full min-h-[100px]"
     >
-      <div data-aos="fade-right" className="w-[60%]">
-        <h2 className="font-semibold text-center text-lg font-mono md:text-3xl mb-2">
+      <div data-aos="fade-right" className="w-full md:w-[60%]">
+        <h2 className="font-semibold text-center text-2xl font-mono md:text-3xl mb-2">
           Our Mission
         </h2>
-        <p className="text-sm md:text-lg text-center font-mono text-gray-800">
+        <p className="text-base md:text-lg text-justify md:text-center font-mono text-gray-800">
           Our mission at Global Digital Empowerment Society (GDES) is clear: to
           equip individuals in underdeveloped communities with essential digital
           literacy and IT skills. We envision thriving societies where everyone
@@ -27,7 +27,7 @@ const MissionPage = () => {
           transformative power of digital empowerment.
         </p>
       </div>
-      <div data-aos="fade-left" className="w-1/3 max-w-[400px]">
+      <div data-aos="fade-left" className="w-full md:w-1/3 max-w-[400px]">
         <Lottie animationData={Mission} />
       </div>
     </div>

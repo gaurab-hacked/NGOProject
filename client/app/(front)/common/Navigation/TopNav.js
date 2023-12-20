@@ -14,7 +14,7 @@ const TopNav = () => {
   return (
     <>
       {isShow && (
-        <div className="w-full bg-[#2463C1]  h-[30px] flex justify-center sm:justify-end items-center py-1">
+        <div className="w-full bg-[#2463C1]  h-[30px] flex justify-end items-center py-1">
           <div className="hidden sm:block">
             <div className="w-[1px] h-full bg-slate-300 mx-3"></div>
             <div className="flex space-x-3 ml-1 ">
@@ -44,17 +44,17 @@ const TopNav = () => {
               </Link>
             </div>
           </div>
-          <div className="w-[1px] h-full bg-slate-300 mx-1 sm:mx-3"></div>
+          <div className="w-[1px] h-full bg-slate-300 mx-1 mx-3"></div>
           <div className="flex items-center gap-1">
-            <FaPhoneAlt className="scale-90 text-white text-xs sm:text-base" />
-            <p className=" text-white tracking-wide text-xs sm:text-base">
+            <FaPhoneAlt className="scale-90 text-white text-sm sm:text-base" />
+            <p className=" text-white tracking-wide text-sm sm:text-base">
               +977-9767485800
             </p>
           </div>
           <div className="w-[1px] h-full bg-slate-300 mx-3"></div>
           <div className="flex items-center gap-1 ">
-            <MdEmail className="scale-110 mt-1 text-xs sm:text-base text-white" />
-            <p className=" text-white tracking-wide text-xs sm:text-base">
+            <MdEmail className="scale-110 mt-1 text-sm sm:text-base text-white" />
+            <p className=" text-white tracking-wide text-sm sm:text-base">
               info@des.org.np
             </p>
           </div>

@@ -19,12 +19,12 @@ const newsAndEventsData = [
 const Leaderships = () => {
   return (
     <>
-      <div className="grid gap-4 gridcontainer">
+      <div className="grid gap-4 gridcontainer justify-center sm:justify-start">
         {newsAndEventsData.map((data, index) => (
           <Link
             href={`/leadership/item-${data._id}`}
             key={index}
-            className="max-w-[300px]"
+            className="max-w-[300px] md:mx-0 mx-auto"
           >
             <Card className="pb-4 pt-1 min-h-[150px] overflow-hidden">
               <CardBody className="overflow-visible py-2">

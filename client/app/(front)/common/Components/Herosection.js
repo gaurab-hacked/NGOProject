@@ -21,7 +21,7 @@ const Herosection = () => {
         <h1 className="text-white text-lg md:text-3xl text-center  font-semibold">
           Digital Empowerment Society
         </h1>
-        <h3 className="text-white md:text-3xl text-[3rem]  text-center scale-125 font-semibold">
+        <h3 className="text-white md:text-3xl text-3xl md:text-[3rem]  text-center scale-125 font-semibold">
           Our Mission
         </h3>
       </div>

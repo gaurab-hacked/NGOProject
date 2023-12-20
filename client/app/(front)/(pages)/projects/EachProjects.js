@@ -6,9 +6,12 @@ import Link from "next/link";
 
 export default function EachProjects({ data }) {
   return (
-    <Link href={`/projects/item-${data._id}`} className="max-w-[300px]">
-      <Card className="pb-4 h-[150px] overflow-hidden">
-        <CardHeader className="pb-0 px-4 flex-col items-start">
+    <Link
+      href={`/projects/item-${data._id}`}
+      className="max-w-[300px] md:mx-0 mx-auto"
+    >
+      <Card className="pb-4 h-[150px] !z-[2] overflow-hidden">
+        <CardHeader className="pb-0 px-4 !z-[2] flex-col items-start">
           {/* <p className="text-tiny uppercase font-bold">Daily Mix</p> */}
           <h4 className="font-bold font-mono text-large">
             {data.title.length > 23

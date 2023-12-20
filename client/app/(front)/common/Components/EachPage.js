@@ -1,12 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
+// import React, { useRef } from "react";
 import Image from "next/image";
 import scrollImage from "@/public/scrollImage.gif";
-import { Button, Card } from "@nextui-org/react";
+import { Card } from "@nextui-org/react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Link from "next/link";
-// import Lottie, { LottieRefCurrentProps } from "lottie-react";
-// import animation1 from "@/assets/herosection1.json";
 
 const EachPage = ({ data }) => {
   const scrollDown = () => {
@@ -16,7 +15,7 @@ const EachPage = ({ data }) => {
     });
   };
 
-  const animationRef = useRef();
+  // const animationRef = useRef();
 
   return (
     <div className="md:h-[550px] h-[550px] relative w-full bg-black custom-gradient">
@@ -42,16 +41,16 @@ const EachPage = ({ data }) => {
 
       <div className="absolute z-50 inset-0">
         <div className="carousel-caption flex flex-col h-full items-center justify-center">
-          <div className="p-3 flex justify-center items-center flex-col max-w-[800px] font-mono">
+          <div className="p-3 flex justify-center items-center flex-col md:w-[80%] w-[95%] max-w-[800px] font-mono">
             <h1
               data-aos="fade-down"
-              className="font-bold joseFin text-[2.5rem] text-white tracking-wide"
+              className="font-bold joseFin text-2xl md:text-3xl font-mono lg:text-[2.5rem] text-white tracking-wide"
             >
               {data.title} <br />
             </h1>
             <p
               data-aos="flip-up"
-              className="w-full lg:w-[80%] text-white text-center text-2xl"
+              className="w-full lg:w-[80%]  text-white text-center text-lg md:text-xl my-1 lg:text-2xl"
             >
               {data.description}
             </p>
@@ -63,7 +62,7 @@ const EachPage = ({ data }) => {
                   variant="bordered"
                   radius="none"
                   isPressable
-                  className="!rounded-sm flex flex-row gap-1 border-2 hover:bg-blue-300 hover:text-black !tracking-wide border-blue-200  mt-1 text-base py-[.6rem] px-6 pr-6 font-bold bg-transparent text-white "
+                  className="!rounded-sm flex flex-row gap-1 border-2 hover:bg-blue-300 hover:text-black !tracking-wide border-blue-200  mt-1 text-base py-[.4rem] px-4 md:py-[.6rem] md:px-6 pr-6 font-bold bg-transparent text-white "
                 >
                   Explore
                   <IoArrowForwardCircleOutline className=" text-xl mt-[1px]" />

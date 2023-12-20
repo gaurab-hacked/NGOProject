@@ -65,7 +65,7 @@ const BottomNav = () => {
             </div>
             <div
               onClick={() => setHamburgerOpen((p) => !p)}
-              className="flex justify-center duration-200 items-center flex-col h-[30px] w-[30px] gap-1 absolute cursor-pointer right-9 z-[50000000000000000000] lg:hidden"
+              className="flex justify-center duration-200 items-center flex-col h-[32px] w-[30px] gap-[5px] absolute cursor-pointer right-9 z-[50000000000000000000] lg:hidden"
             >
               <div
                 className={`h-[3px] duration-150  rounded-sm w-[25px] ${

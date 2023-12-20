@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export default function EachEventCards({ data }) {
   return (
-    <Link href="/news-and-events/news-1" className="max-w-[300px]">
+    <Link
+      href="/news-and-events/news-1"
+      className="max-w-[300px] md:mx-0 mx-auto"
+    >
       <Card className="pb-4 !font-mono">
         <CardBody className="overflow-visible pb-2">
           <Image

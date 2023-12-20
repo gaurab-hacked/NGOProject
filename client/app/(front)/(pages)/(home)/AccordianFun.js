@@ -51,7 +51,7 @@ export default function AccordianFun() {
 
   return (
     <div className="w-[95%] md:max-w-[65%] m-auto my-20">
-      <h2 className=" font-semibold text-center text-lg font-mono md:text-3xl mb-2">
+      <h2 className=" font-semibold text-center text-2xl font-mono md:text-3xl mb-2">
         Key Focus Areas
       </h2>
       <Accordion

@@ -8,16 +8,22 @@ import Events from "./Events";
 const Slogan = () => {
   return (
     <div className="relative w-full h-full">
-      <div className="mx-auto  max-w-[80%]">
+      <div className="mx-auto max-w-[95%] md:max-w-[80%]">
         <div className="flex flex-col min-h-[250px]">
           <div className="flex justify-center items-center ">
-            <div className="flex items-center m-6 mb-5">
-              <Image src={image1} height={300} width={300} alt="slogan" />
-              <div className="bg-blue-100 py-5 px-7">
-                <h2 className="text-[3rem] font-mono font-semibold">
+            <div className="flex items-center md:m-6 bg-2 md:mb-5">
+              <Image
+                src={image1}
+                height={300}
+                width={300}
+                className="md:w-[300px] md:h-[300px] h-[150px] w-[150px]"
+                alt="slogan"
+              />
+              <div className="bg-blue-100 md:py-5 py-3 px-3 md:px-7">
+                <h2 className="text-2xl md:text-[3rem] font-mono font-semibold">
                   #TechForAll
                 </h2>
-                <h3 className="font-semibold font-mono italic text-lg">
+                <h3 className="font-semibold font-mono italic text-sm md:text-lg">
                   Bridging Gaps, Empowering Lives
                 </h3>
               </div>
@@ -25,7 +31,7 @@ const Slogan = () => {
           </div>
           <p
             data-aos="fade-up"
-            className="font-semibold italic text-center pb-3  max-w-[90%] mx-auto"
+            className="font-semibold italic text-center pb-3 text-sm md:text-based max-w-[95%] md:max-w-[90%] mx-auto"
           >
             DES: A non-profit bridging the digital divide, empowering
             underserved communities through transformative digital literacy for

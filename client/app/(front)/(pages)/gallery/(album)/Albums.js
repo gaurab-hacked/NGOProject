@@ -16,9 +16,13 @@ const list = [
 
 export default function Albums() {
   return (
-    <div className="gap-5 gridcontainer">
+    <div className="gap-5 gridcontainer justify-center sm:justify-start">
       {list.map((item, index) => (
-        <Link href="gallery/images" className="max-w-[300px]" key={index}>
+        <Link
+          href="gallery/images"
+          className="max-w-[300px] md:mx-0 mx-auto"
+          key={index}
+        >
           <Card className="py-4 pt-1">
             <CardBody className="overflow-visible py-2">
               <Image
