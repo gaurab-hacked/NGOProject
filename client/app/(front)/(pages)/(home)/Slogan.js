@@ -38,7 +38,7 @@ const Slogan = () => {
             an inclusive future.
           </p>
         </div>
-        <div className="flex w-full gap-2 mt-5 justify-center items-center">
+        <div className="flex w-[80%] mx-auto md:w-full gap-2 mt-5 justify-center items-center">
           <Divider className="w-[50%]" />
           <Image src={image2} height={40} width={40} alt="devider" />
           <Divider className="w-[50%]" />

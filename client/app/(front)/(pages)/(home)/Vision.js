@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 
 const Vision = ({ data }) => {
   return (
-    <div className="relative flex flex-col-reverse md:flex-row justify-center items-center shadow w-full h-full py-14 bg-blue-50">
+    <div className="relative overflow-x-hidden flex flex-col-reverse md:flex-row justify-center items-center shadow w-full h-full py-14 bg-blue-50">
       <div className="md:w-1/3 flex justify-center items-center  h-full">
         <div className="-mt-24 md:mt-0 md:absolute bottom-8 w-[650px]">
           <div className="relative">

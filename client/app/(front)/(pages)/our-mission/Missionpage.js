@@ -8,7 +8,7 @@ const MissionPage = () => {
   return (
     <div
       id="mission"
-      className="w-full md:flex-row flex-col flex max-w-[100%] gap-5 mx-auto items-center justify-center h-full min-h-[100px]"
+      className="w-full overflow-x-hidden md:flex-row flex-col flex max-w-[100%] gap-5 mx-auto items-center justify-center h-full min-h-[100px]"
     >
       <div data-aos="fade-right" className="w-full md:w-[60%]">
         <h2 className="font-semibold text-center text-2xl font-mono md:text-3xl mb-2">
