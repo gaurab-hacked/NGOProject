@@ -9,17 +9,17 @@ const Slogan = () => {
   return (
     <div className="relative w-full h-full">
       <div className="mx-auto max-w-[95%] md:max-w-[80%]">
-        <div className="flex flex-col min-h-[250px]">
+        <div className="flex flex-col min-h-[100px]">
           <div className="flex justify-center items-center ">
             <div className="flex items-center md:m-6 bg-2 md:mb-5">
               <Image
                 src={image1}
                 height={300}
                 width={300}
-                className="md:w-[300px] md:h-[300px] h-[150px] w-[150px]"
+                className="md:w-[300px] md:h-[200px] h-[150px] w-[150px]"
                 alt="slogan"
               />
-              <div className="bg-blue-100 md:py-5 py-3 px-3 md:px-7">
+              <div className="bg-blue-100 md:py-8 py-3 px-3 md:px-7">
                 <h2 className="text-2xl md:text-[3rem] font-mono font-semibold">
                   #TechForAll
                 </h2>
